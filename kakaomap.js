@@ -168,9 +168,6 @@ $(function () {
             map.setCenter(position)
             createIw();
             setMarkers('radio-all');
-            valueInitialize();
-            makeTable();
-
 
         }
     });
@@ -190,31 +187,6 @@ $(function () {
         " - " + $("#slider-range").slider("values", 1));
 });
 
-function valueInitialize() {
-    for (let key of Object.keys(csv_data[0])) {
-        if (key === 'w' || key === 'note' || key === 'status_img' || key === 'surf_img' || key === 'latlng') {
-            continue;
-        }
-        // else if (key === 'dist') {
-        //     setText(parseFloat(ColumnData.dist[csv_data.length - 1]).toFixed(3) + " km", "dist");
-        // }
-        else if (key === 'AP_L' || key === 'AP_T' || key === 'AP_CJ' || key === 'AP_AC' || key === 'AP_P' || key === 'AP_H') {
-            let sum = [0, 0, 0]
-
-            for (let j = 0; j < 3; j++) {
-                for (let i = 0; i < csv_data.length; i++) {
-                    sum[j] += parseFloat(ColumnData[key][i][j]);
-                }
-            }
-            myChart[key] = new Chart(key + '_Chart', makeChartData(sum));
-        }
-        else {
-            setText(getAvg(ColumnData[key]).toFixed(3), key)
-        }
-
-    }
-
-}
 
 function getSum(data_array) {
     let sum = 0;
@@ -237,35 +209,6 @@ function setText(value, ID) {
     document.getElementById(ID).innerText = value
 }
 
-function makeTable() {
-
-    let table = document.getElementById('cb3-table-body');
-    let table_head = ["dist", "note", "w", "pd", "roughness", "amount_crack", "ratio_crack", "SPI_1", "SPI_2",
-        "SPI_3", "AP_L", "AP_L", "AP_L", "AP_T", "AP_T", "AP_T", "AP_CJ", "AP_CJ", "AP_CJ", "AP_AC", "AP_AC", "AP_AC", "AP_P", "AP_P", "AP_P", "AP_H", "AP_H", "AP_H"];
-
-    for (let i = 0; i < csv_data.length; i++) {
-        let tr = document.createElement("tr");
-        tr.id = 'table-row-' + i
-        count = 0
-        for (let head of table_head) {
-            let td = document.createElement("td")
-            if (head.startsWith('AP_')) {
-                td.appendChild(document.createTextNode(ColumnData[head][i][count % 3] + ""));
-                tr.appendChild(td)
-                count++
-            }
-            else {
-                td.appendChild(document.createTextNode(ColumnData[head][i] + ""));
-                tr.appendChild(td)
-            }
-        }
-        table.appendChild(tr);
-        tr.addEventListener('click', function () {
-            selectData(i)
-        })
-    }
-
-}
 
 
 function selectData(selectedRow) {
@@ -281,22 +224,7 @@ function selectData(selectedRow) {
     // 선택된 행을 다시 눌렀을 때
     if (selected === index) {
         // chart 부분
-        for (let key of keys) {
-            removeData(myChart[key]);   // 기존 데이터 지움
-            let sum = [0, 0, 0]
-            label = ['L', 'M', 'H'];
-            for (let i = 0; i < 3; i++) // 데이터 다시 체워넣기
-            {
-                for (let j = 0; j < csv_data.length; j++) {
-                    sum[i] += parseFloat(ColumnData[key][j][i]);
-                }
-                console.log(sum);
-                addData(myChart[key], label[i], sum[i]);
-            }
-        }
 
-
-        document.getElementById("table-row-" + index).style = "background-color : white"
         if (map.getLevel() <= 2) {
             zoomOut()
         }
@@ -306,20 +234,7 @@ function selectData(selectedRow) {
     infoWindows[index].open(map, marker[index]); // 클릭할 때 인포 윈도우 생성
     document.getElementById("status_img").src = status_img_src; // 도로 현황 이미지 변경
     document.getElementById("surf_img").src = surf_img_src; // 도로 표면 이미지 변경
-    for (let i = 0; i < csv_data.length; i++) // 다른 행 강조 해제
-    {
-        document.getElementById("table-row-" + i).style = "background-color : white"
-    }
-    document.getElementById("table-row-" + index).style = "background-color : rgb(144 144 185)" // 행 강조
-
     // 선택시 chart 생성하는 for문
-    for (let key of keys) {
-        removeData(myChart[key]);
-        label = ['L', 'M', 'H'];
-        for (let i = 0; i < 3; i++) {
-            addData(myChart[key], label[i], csv_data[index][key][i]);
-        }
-    }
 
     if (map.getLevel() > 2) {
         zoomIn()
@@ -328,80 +243,3 @@ function selectData(selectedRow) {
     selected = index
 }
 
-
-function makeChartData(dataArr) {
-    /** 차트 생성 함수의 파라미터를 만드는 함수. 
-     * 파라미터: dataArr(array)를 받아들임
-     * return : object
-     */
-    // key로 label 값 정해주기
-    return {
-        type: 'bar',
-        data: {
-            labels: ['L', 'M', 'H'],
-            datasets: [{
-                data: dataArr,
-                datalabels : {
-                    color:'black', 
-                    font:{size:12},
-                    offset : 3,
-                    anchor: 'end',
-                    clamp: true,
-                    clip: false,
-                    align : 'top'
-                 
-                    
-                    
-                },
-                backgroundColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                ],
-            }]
-        },
-        plugins:[ChartDataLabels],
-        options: {
-            plugins:{
-                legend: {
-                    display: false
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks:{ // y축 줄당 표시 값
-                        stepSize:2
-                  }
-                },
-                x: {
-                    beginAtZero: true,
-                    type: 'category',
-                  }
-            
-            }
-        }
-}
-}
-
-
-function removeData(chart) {
-    /** 기존에 저장된 차트의 라벨과 데이터를 지우는 함수 */
-    chart.data.labels.pop();
-    chart.data.labels.pop();
-    chart.data.labels.pop();
-    chart.data.datasets.forEach((dataset) => {
-        dataset.data.pop();
-        dataset.data.pop();
-        dataset.data.pop();
-    });
-    chart.update();
-}
-function addData(chart, label, data) {
-    /** 기존에 저장된 차트에 데이터를 추가하는 함수 */
-    chart.data.labels.push(label);
-    chart.data.datasets.forEach((dataset) => {
-        dataset.data.push(data);
-    });
-    chart.update();
-}

@@ -20,7 +20,7 @@ body span {
 }
 .selectbox{
     border : 1px ridge;
-    width : 180px; 
+    width : 190px; 
     position : relative; left : 10px; top : 10px;
 }
 .radiobox{

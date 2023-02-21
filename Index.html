@@ -84,22 +84,22 @@
                 <div style="text-align : center; width : 150px; margin : 0 auto">
                     <div style="width : 120px; margin : 0 auto;" id="slider-range"></div>
                 </div>
-                <div class='category-color-box'>
-                    <div style = "margin-top : 30px">
-                        <div>
-                            0 - 2 <img style = "margin-left : 5px;width :  12px; height : 12px;" src = "redcircle.png">
+                <div class='category-color-box flex flex-col justify-center'>
+                    <div class ="mx-auto">
+                        <div class = "flex flex-row">
+                            0 - 2 <img style = "margin-left : 10px;width :  12px; height : 12px;" src = "redcircle.png">
                         </div>
-                        <div>
-                            2 - 4<img style = "margin-left : 5px;width :  12px; height : 12px;" src = "orangecircle.png">
+                        <div class = "flex flex-row">
+                            2 - 4<img style = "margin-left : 10px;width :  12px; height : 12px;" src = "orangecircle.png">
                         </div>
-                        <div>
-                            4 - 6<img style = "margin-left : 5px;width :  12px; height : 12px;" src = "yellowcircle.png">
+                        <div class = "flex flex-row">
+                            4 - 6<img style = "margin-left : 10px;width :  12px; height : 12px;" src = "yellowcircle.png">
                         </div>
-                        <div>
-                            6 - 8<img style = "margin-left : 5px;width :  12px; height : 12px;" src = "greencircle.png">
+                        <div class = "flex flex-row">
+                            6 - 8<img style = "margin-left : 10px;width :  12px; height : 12px;" src = "greencircle.png">
                         </div>
-                        <div>
-                            8 - 10<img style = "margin-left : 5px;width :  12px; height : 12px;" src = "bluecircle.png">
+                        <div class = "flex flex-row">
+                            8 - 10<img style = "margin-left : 10px;width :  12px; height : 12px;" src = "bluecircle.png">
                         </div>
                     </div>
                 </div>
@@ -111,22 +111,16 @@
 
             <div class="imagebox">
                 <div class="imagedetail">
-                    <button
-                        onclick='window.open(document.getElementById("status_img").src,"도로 현황","width= 1024, height=768, location = no, status = no, scrollbars = yes")'
-                        type="button" class="btn btn-dark">확대</button>
                     <div class="imageborder">
-                        <img class="img" id="status_img">
+                        <img class="img cursor-pointer" id="status_img" onclick='window.open(document.getElementById("status_img").src,"도로 현황","width= 1024, height=768, location = no, status = no, scrollbars = yes")'>
                     </div>
-                    <div>도로 현황</div>
+                    <div class = "mt-2 text-lg font-bold">도로 현황</div>
                 </div>
                 <div class="imagedetail">
-                    <button
-                        onclick='window.open(document.getElementById("surf_img").src,"도로 표면","width= 1024, height=768, location = no, status = no, scrollbars = yes")'
-                        type="button" class="btn btn-dark">확대</button>
                     <div class="imageborder">
-                        <img class="img" id="surf_img">
+                        <img class="img cursor-pointer" id="surf_img" onclick='window.open(document.getElementById("surf_img").src,"도로 표면","width= 1024, height=768, location = no, status = no, scrollbars = yes")'>
                     </div>
-                    <div>도로 표면</div>
+                    <div class = "mt-2 text-lg font-bold">도로 표면</div>
                 </div>
             </div>
         </div>
