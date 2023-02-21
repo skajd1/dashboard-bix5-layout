@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body div {
+    font-family: 'Roboto', sans-serif;
+}
+body span {
+    color: gray;
+}
+.cb1-SPI div{
+    color: black;
+}
+.cb1-SPI div span{
+    color: gray;
+}
+
+.main{
+    margin-left : 7.5px;
+    width : 1920px;
+    display : flex;
+}
+.selectbox{
+    border : 1px ridge;
+    width : 180px; 
+    position : relative; left : 10px; top : 10px;
+}
+.radiobox{
+    padding-left : 15px;
+    height : 300px; 
+}
+.rangebox{
+    text-align : center;
+    height : 300px
+}
+.category-color-box{
+    
+    height : 200px;
+    border : 1px ridge;
+    margin-top : 20px;
+    margin-left : 10px;
+    margin-right : 10px;
+}
+
+.mapbox{
+    width : 700px;
+    position : relative;left: 20px;top: 10px
+}
+.kakaomap{
+    height:550px; 
+}
+.imagebox{
+    border : 1px ridge;
+    margin-top : 10px;
+    display : flex;
+}
+.imagedetail{
+    width : 50%;
+    height : 320px;
+    text-align : center;
+}
+.imageborder{
+    margin : 1px 5px 1px 5px;
+    border : 1px groove;
+    height : 252px;
+}
+.imagebox img{
+    width : 100%;
+    height : 250px;
+}
+.imagebox button{
+    margin-top : 3px;
+}
+
+/** class chartbox - html, chart, grid */
+.chartbox{
+    position : relative;left : 30px;top: 10px;
+    width : 970px;
+    height : 880px;
+}
+
+/** class cb1 - html 1, 2, 3, 4 */
