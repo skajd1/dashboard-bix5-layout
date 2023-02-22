@@ -7,7 +7,7 @@ f.close()
 
 data_col  = list(rdr)
 invest_id = data_col[0][1]
-
+invest_date = data_col[8][1]
 def createCsv(row_list):
     with open(invest_id + '_preprocessed.csv', 'w', encoding = 'utf8', newline='') as f:
         wr = csv.writer(f)
@@ -51,7 +51,8 @@ ncsv = [['거리',
          'AP거북등균열_L','AP거북등균열_M','AP거북등균열_H',
          'AP패칭_L','AP패칭_M','AP패칭_H',
          'AP포트홀_L','AP포트홀_M','AP포트홀_H',
-         '비고']]
+         '비고',
+         '조사명','조사일자']]
 # set data
 row_num = [0,3,4,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23,24,26,27,28,30,31,32,34,35,36,38,39,40,42,43,44,45]
 for i in range(13,len(data_col)):
@@ -59,7 +60,8 @@ for i in range(13,len(data_col)):
     for row in row_num:
         col.append(data_col[i][row])
     ncsv.append(col)
-
+ncsv[1].append(invest_id)
+ncsv[1].append(invest_date.split(' ')[0])
 ## csv 전처리 파일 생성
 createCsv(ncsv)
 
@@ -67,37 +69,37 @@ createCsv(ncsv)
 
 ap_json = [
     {
-        '종류' : 'AP종방향',
+        '종류' : '종방향',
         'L' : round(sum(list(map(lambda x : float(x[17]), ncsv[1:]))),2),
         'M' : round(sum(list(map(lambda x : float(x[18]), ncsv[1:]))),2),
         'H' : round(sum(list(map(lambda x : float(x[19]), ncsv[1:]))),2)
     },
     {
-        '종류' : 'AP횡방향',
+        '종류' : '횡방향',
         'L' : round(sum(list(map(lambda x : float(x[20]), ncsv[1:]))),2),
         'M' : round(sum(list(map(lambda x : float(x[21]), ncsv[1:]))),2),
         'H' : round(sum(list(map(lambda x : float(x[22]), ncsv[1:]))),2)
     },
     {
-        '종류' : 'AP시공줄눈',
+        '종류' : '시공줄눈',
         'L' : round(sum(list(map(lambda x : float(x[23]), ncsv[1:]))),2),
         'M' : round(sum(list(map(lambda x : float(x[24]), ncsv[1:]))),2),
         'H' : round(sum(list(map(lambda x : float(x[25]), ncsv[1:]))),2)
     },
     {
-        '종류' : 'AP거북등균열',
+        '종류' : '거북등균열',
         'L' : round(sum(list(map(lambda x : float(x[26]), ncsv[1:]))),2),
         'M' : round(sum(list(map(lambda x : float(x[27]), ncsv[1:]))),2),
         'H' : round(sum(list(map(lambda x : float(x[28]), ncsv[1:]))),2)
     },
     {
-        '종류' : 'AP패칭',
+        '종류' : '패칭',
         'L' : round(sum(list(map(lambda x : float(x[29]), ncsv[1:]))),2),
         'M' : round(sum(list(map(lambda x : float(x[30]), ncsv[1:]))),2),
         'H' : round(sum(list(map(lambda x : float(x[31]), ncsv[1:]))),2)
     },
     {
-        '종류' : 'AP포트홀',
+        '종류' : '포트홀',
         'L' : round(sum(list(map(lambda x : float(x[32]), ncsv[1:]))),2),
         'M' : round(sum(list(map(lambda x : float(x[33]), ncsv[1:]))),2),
         'H' : round(sum(list(map(lambda x : float(x[34]), ncsv[1:]))),2)
@@ -109,4 +111,3 @@ ff = open('ap.json','w', encoding='utf-8')
 json.dump(json.loads(json.dumps(ap_json, ensure_ascii=False)),ff, ensure_ascii=False)
 
 ff.close()
-print(json.dumps(ap_json, ensure_ascii=False))

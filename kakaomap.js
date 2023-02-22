@@ -27,6 +27,8 @@ let marker_red = "./redcircle.png";
 let marker_yellow = "./yellowcircle.png";
 let marker_blue = './bluecircle.png';
 let selected = -1
+let invest_id
+let invest_date
 
 let myChart = {};
 let chart = {}
@@ -147,21 +149,24 @@ $(function () {
         dataType: "text",
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         success: function (data) {
-            console.log()
             let allRow = data.split("\n");
             for (let i = 1; i < allRow.length - 1; i++) {
                 let column = allRow[i].split(",")
                 csv_data.push({
-                    dist: column[0], pd: column[1], roughness: column[2], SPI_1: column[14], SPI_2: column[15], SPI_3 : column[16] , latlng : [column[7], column[8]], note : column[35]
+                    dist: column[0], SPI_1: column[14], SPI_2: column[15], SPI_3 : column[16] , latlng : [column[7], column[8]], note : column[35]
                 })
-                console.log(column[35])
             }
+            row = allRow[1].split(',')
+            invest_id = row[row.length-2]
+            invest_date = row[row.length-1]
             
             let position = new kakao.maps.LatLng(parseFloat(csv_data[parseInt(csv_data.length/2)].latlng[0]), parseFloat(csv_data[parseInt(csv_data.length/2)].latlng[1]))
             // 여기에 함수 추가.
             map.setCenter(position)
             createIw();
             setMarkers('radio-all');
+            setText(invest_id,'invest-id')
+            setText(invest_date,'invest-date')
 
         }
     });

@@ -42,10 +42,10 @@
     </style>
     <div class="main">
         <!-- 선택 메뉴바 -->
-        <div class='selectbox' id="select">
+        <div class='selectbox flex flex-col' id="select">
             <form method="get">
                 <fieldset class='radiobox'>
-                    <legend>도로상태유형</legend>
+                    <div class ="mb-2 text-xl font-semibold">도로상태유형</div>
                     <input class="form-check-input" type="radio" id="radio-all" name="select_form" value="All" checked
                         onclick='setMarkers(event.target.id)'>
                     <label for="radio-all"> 전체 </label><br>
@@ -104,6 +104,12 @@
                     </div>
                 </div>
             </div>
+
+            <div class = 'mx-auto text-black font-bold text-lg'>
+                <div>조사명 : </div><span class = "mt-2" id = 'invest-id'></span>
+                <div>조사 일자 : </div><span class = "mt-2" id = 'invest-date'></span>
+                
+            </div>
         </div>
         <!-- 카카오 맵 -->
         <div class="mapbox ">
@@ -127,8 +133,8 @@
 
         <!-- html&chart&grid -->
         <div class="chartbox flex flex-col ">
-            <div class = 'flex flex-row h-2/3'>
-                <iframe width="1000" height="1080" src="https://studio.bix5.net/dashboards/4aab652329c2d853a38347e57de6dd2f" frameborder="0" style="border:0"></iframe>
+            <div class = 'flex flex-row h-full'>
+                <iframe width="1100" height="100%" src="https://studio.bix5.net/dashboards/47cc366bfb443aaf83f56917a6bf08ae" frameborder="0" style="border:0"></iframe>
             </div>
 
     </div>
