@@ -242,3 +242,6 @@ function selectData(selectedRow) {
     selected = index
 }
 
+window.addEventListener('message', (eventObj) => {
+    selectData(eventObj.data.detail)
+}, false);
