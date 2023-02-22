@@ -7,15 +7,12 @@ f.close()
 
 data_col  = list(rdr)
 invest_id = data_col[0][1]
-dist = data_col[-1][0]
 
 def createCsv(row_list):
-    w = open(invest_id + '_preprocessed.csv', 'w', encoding = 'cp949', newline='')
-    wr = csv.writer(w)
-    for row in row_list :
-        wr.writerow(row)
-    w.close()
-
+    with open(invest_id + '_preprocessed.csv', 'w', encoding = 'utf8', newline='') as f:
+        wr = csv.writer(f)
+        for row in row_list :
+            wr.writerow(row)
 
 # set header
 # 거리 : 0

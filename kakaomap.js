@@ -35,7 +35,7 @@ let chart = {}
 let mapContainer = document.getElementById('map'), // 지도를 표시할 div  
     mapOption = {
         center: new kakao.maps.LatLng(37, 125), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
+        level: 7 // 지도의 확대 레벨
     };
 
 let map = new kakao.maps.Map(mapContainer, mapOption);
@@ -50,14 +50,14 @@ function zoomIn() {
     var level = map.getLevel();
 
     // 지도를 1레벨 내립니다
-    map.setLevel(level - 1);
+    map.setLevel(level - 2);
 }
 function zoomOut() {
     // 현재 지도의 레벨을 얻어옵니다
     var level = map.getLevel();
 
     // 지도를 1레벨 내립니다 (지도가 확대됩니다)
-    map.setLevel(level + 1);
+    map.setLevel(level + 2);
 
 }
 function get_color_SPI(num) {
@@ -142,28 +142,22 @@ function deleteMarkers(marker) {
 }
 // ajax call
 $(function () {
-    let fileName = "pont.csv";
     $.ajax({
-        url: fileName,
+        url: '경인로(51)_상_2_preprocessed.csv',
         dataType: "text",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         success: function (data) {
+            console.log()
             let allRow = data.split("\n");
-            for (let i = 14; i < allRow.length - 1; i++) {
+            for (let i = 1; i < allRow.length - 1; i++) {
                 let column = allRow[i].split(",")
                 csv_data.push({
-                    dist: column[0], status_img: column[1], surf_img: column[2], pd: column[3], roughness: column[4], latlng: [column[5], column[6]],
-                    amount_crack: column[7], ratio_crack: column[8], SPI_1: column[9], SPI_2: column[10], SPI_3: column[11], AP_L: [column[12], column[13], column[14]],
-                    AP_T: [column[15], column[16], column[17]], AP_CJ: [column[18], column[19], column[20]], AP_AC: [column[21], column[22], column[23]],
-                    AP_P: [column[24], column[25], column[26]], AP_H: [column[27], column[28], column[29]], note: column[30], w: column[31]
+                    dist: column[0], pd: column[1], roughness: column[2], SPI_1: column[14], SPI_2: column[15], SPI_3 : column[16] , latlng : [column[7], column[8]], note : column[35]
                 })
+                console.log(column[35])
             }
-            for (let key of Object.keys(csv_data[0])) {
-                ColumnData[key] = [];
-                for (let i = 0; i < csv_data.length; i++) {
-                    ColumnData[key].push(csv_data[i][key])
-                }
-            }
-            let position = new kakao.maps.LatLng(parseFloat(csv_data[0].latlng[0]), parseFloat(csv_data[0].latlng[1]))
+            
+            let position = new kakao.maps.LatLng(parseFloat(csv_data[parseInt(csv_data.length/2)].latlng[0]), parseFloat(csv_data[parseInt(csv_data.length/2)].latlng[1]))
             // 여기에 함수 추가.
             map.setCenter(position)
             createIw();
@@ -217,26 +211,26 @@ function selectData(selectedRow) {
 
     let index = selectedRow;
     let position = new kakao.maps.LatLng(parseFloat(csv_data[index].latlng[0]), parseFloat(csv_data[index].latlng[1]))
-    let status_img_src = './가산로(2103)_하_2_2/가산로(2103)_하_2_2_도로현황/D810/Camera1/0/' + csv_data[index].status_img
-    let surf_img_src = './가산로(2103)_하_2_2/가산로(2103)_하_2_2_U_net-result/0/' + csv_data[index].surf_img
-    let keys = ['AP_L', 'AP_T', 'AP_CJ', 'AP_AC', 'AP_P', 'AP_H'];
+    //let status_img_src = './가산로(2103)_하_2_2/가산로(2103)_하_2_2_도로현황/D810/Camera1/0/' + csv_data[index].status_img
+    //let surf_img_src = './가산로(2103)_하_2_2/가산로(2103)_하_2_2_U_net-result/0/' + csv_data[index].surf_img
+    //let keys = ['AP_L', 'AP_T', 'AP_CJ', 'AP_AC', 'AP_P', 'AP_H'];
     deleteIw(infoWindows)
     // 선택된 행을 다시 눌렀을 때
     if (selected === index) {
         // chart 부분
 
-        if (map.getLevel() <= 2) {
+        if (map.getLevel() <= 4) {
             zoomOut()
         }
         selected = -1
         return
     }
     infoWindows[index].open(map, marker[index]); // 클릭할 때 인포 윈도우 생성
-    document.getElementById("status_img").src = status_img_src; // 도로 현황 이미지 변경
-    document.getElementById("surf_img").src = surf_img_src; // 도로 표면 이미지 변경
+    //    document.getElementById("status_img").src = status_img_src; // 도로 현황 이미지 변경
+    //    document.getElementById("surf_img").src = surf_img_src; // 도로 표면 이미지 변경
     // 선택시 chart 생성하는 for문
 
-    if (map.getLevel() > 2) {
+    if (map.getLevel() > 4) {
         zoomIn()
     }
     map.setCenter(position) // 선택한 마커 중심으로 맵 이동
