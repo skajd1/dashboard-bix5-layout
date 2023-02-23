@@ -1,0 +1,363 @@
+{
+    "options": {
+        "border": false,
+        "borderWidth": "0px",
+        "borderColor": "rgb(240, 240, 240)",
+        "borderRadius": "0px",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "0px",
+        "borderBottomRightRadius": "0px",
+        "borderBottomLeftRadius": "0px",
+        "resizable": true,
+        "allowDrop": true
+    },
+    "sid": "",
+    "x": 582,
+    "y": 8,
+    "width": 560,
+    "height": 497,
+    "layoutType": "headless",
+    "type": "chart",
+    "title": "박스형 컬럼 2D 차트",
+    "showMaximizer": true,
+    "label": "박스형 컬럼 2D 차트",
+    "icon": "widgetIcons/gray/chart_column_2d",
+    "userData": {},
+    "lock": false,
+    "backgroundColor": "transparent",
+    "backgroundImage": {
+        "src": null
+    },
+    "backgroundRepeat": "no-repeat",
+    "backgroundPosition": "center",
+    "backgroundSize": "cover",
+    "backgroundAlpha": 1,
+    "contentUrl": "/BIX5/Assets/Modules/Chart/Column-Column.html",
+    "componentOptions": {
+        "isAggregation": true,
+        "dataFields": [
+            {
+                "label": "수평축 필드",
+                "columns": [
+                    {
+                        "id": 3863,
+                        "name": "평균",
+                        "label": "평균",
+                        "dataType": "string",
+                        "rm_internal_uid": "63652B07-C54F-58A9-3468-7C972B166F3A",
+                        "aggregate": "count",
+                        "alias": "count(평균)"
+                    }
+                ],
+                "maximum": 1,
+                "fieldName": "xField",
+                "category": "dimension",
+                "use": true
+            },
+            {
+                "label": "수직축 필드",
+                "columns": [
+                    {
+                        "id": 3837,
+                        "name": "HPICI_아스팔트",
+                        "label": "HPICI_아스팔트",
+                        "dataType": "numeric",
+                        "rm_internal_uid": "4FA7AC1A-CD60-954F-3165-7C97376DD74E",
+                        "aggregate": "avg",
+                        "alias": "avg(HPICI_아스팔트)"
+                    },
+                    {
+                        "id": 3838,
+                        "name": "HPICI_콘크리트",
+                        "label": "HPICI_콘크리트",
+                        "dataType": "numeric",
+                        "rm_internal_uid": "D14A51E2-19B2-135B-0345-7C973AADD7F4",
+                        "aggregate": "avg",
+                        "alias": "avg(HPICI_콘크리트)"
+                    },
+                    {
+                        "id": 3839,
+                        "name": "NHPCI",
+                        "label": "NHPCI",
+                        "dataType": "numeric",
+                        "rm_internal_uid": "7DDA7559-4458-C3C6-BFA9-7C973F4DAC95",
+                        "aggregate": "avg",
+                        "alias": "avg(NHPCI)"
+                    }
+                ],
+                "maximum": 100,
+                "fieldName": "yField",
+                "category": "measure",
+                "use": true
+            }
+        ],
+        "customStyle": false,
+        "propertyOptions": [],
+        "layoutMetaData": {},
+        "isMultiView": false,
+        "multiViewRow": 2,
+        "multiViewColumn": 2,
+        "multiViewSubCategoryField": {},
+        "multiViewFillType": null,
+        "marginLeft": 0,
+        "marginTop": 0,
+        "marginRight": 0,
+        "marginBottom": 0,
+        "isAutoServiceStart": true,
+        "vars": "",
+        "componentLayout": "<BIX5 backgroundColor=\"transparent\" alpha=\"1\" fontSize=\"14\" padding=\"7\"><Options><Caption text=\"평균 PCI 지수\" color=\"#333333\" textAlign=\"center\" fontSize=\"17\" fontFamily=\"NanumGothic\" fontWeight=\"bold\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"1\" backgroundColor=\"transparent\" /><SubCaption text=\"\" height=\"1\" color=\"#999999\" textAlign=\"center\" fontSize=\"13\" fontFamily=\"\" fontWeight=\"normal\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"0\" backgroundColor=\"transparent\" /><Legend position=\"bottom\" display=\"block\" backgroundColor=\"transparent\" borderStyle=\"none\" hAlign=\"center\" /></Options><UnitFormatter id=\"unitfmt\" useThousandsSeparator=\"true\" units=\"auto\" unitSymbols=\"[,K,M,G,T]\" divisor=\"1000\" rounding=\"none\" /><DateFormatter id=\"dateFmt\" formatString=\"YYYY&#x2F;MM&#x2F;DD\" /><SeriesInterpolate id=\"si\" /><SeriesSlide id=\"ss\" direction=\"right\" /><Column2DChart showDataTips=\"true\" columnWidthRatio=\"0.5\" columnWidthMinRatio=\"1\" _cType=\"Column2DChart\"><horizontalAxis><CategoryAxis id=\"hAxis\" categoryField=\"평균\" formatter=\"\" /></horizontalAxis><verticalAxis><LinearAxis id=\"vAxis\" formatter=\"{unitfmt}\" minimum=\"NaN\" maximum=\"NaN\" interval=\"NaN\" /></verticalAxis><series><Column2DSet type=\"clustered\"><series><Column2DSeries itemRenderer=\"BoxItemRenderer\" labelPosition=\"none\" yField=\"avg(HPICI_아스팔트)\" displayName=\"HPICI_아스팔트\" showDataEffect=\"\" color=\"#808080\" _nodeName=\"Column2DSeries\" formatter=\"{unitfmt}\"><fills><SolidColor color=\"#61609b\" /></fills><stroke><Stroke color=\"#61609b\" weight=\"2\" alpha=\"1\" /></stroke></Column2DSeries><Column2DSeries itemRenderer=\"BoxItemRenderer\" labelPosition=\"none\" yField=\"avg(HPICI_콘크리트)\" displayName=\"HPICI_콘크리트\" showDataEffect=\"\" color=\"#808080\" _nodeName=\"Column2DSeries\" formatter=\"{unitfmt}\"><fills><SolidColor color=\"#8590d8\" /></fills><stroke><Stroke color=\"#8590d8\" weight=\"2\" alpha=\"1\" /></stroke></Column2DSeries><Column2DSeries itemRenderer=\"BoxItemRenderer\" labelPosition=\"none\" yField=\"avg(NHPCI)\" displayName=\"NHPCI\" showDataEffect=\"\" color=\"#808080\" _nodeName=\"Column2DSeries\" formatter=\"{unitfmt}\"><fills><SolidColor color=\"#4087c6\" /></fills><stroke><Stroke color=\"#4087c6\" weight=\"2\" alpha=\"1\" /></stroke></Column2DSeries></series></Column2DSet></series><horizontalAxisRenderers><Axis2DRenderer axis=\"{hAxis}\" showLine=\"true\" color=\"#808080\"><axisStroke><Stroke color=\"#eeeeee\" alpha=\"1\" /></axisStroke></Axis2DRenderer></horizontalAxisRenderers><verticalAxisRenderers><Axis2DRenderer axis=\"{vAxis}\" showLine=\"true\" placement=\"left\" color=\"#808080\"><axisStroke><Stroke color=\"#eeeeee\" alpha=\"1\" /></axisStroke></Axis2DRenderer></verticalAxisRenderers><backgroundElements><GridLines direction=\"horizontal\" showBorderStroke=\"false\"><horizontalStroke><Stroke color=\"#eeeeee\" alpha=\"1\" weight=\"1\" /></horizontalStroke><verticalStroke><Stroke color=\"#eeeeee\" alpha=\"1\" weight=\"1\" /></verticalStroke><borderStroke><Stroke color=\"#eeeeee\" alpha=\"1\" weight=\"1\" /></borderStroke></GridLines></backgroundElements></Column2DChart></BIX5>",
+        "componentLayoutId": "Column-Column",
+        "componentLayoutJson": {
+            "BIX5": [
+                {
+                    "Options": {
+                        "Caption": {
+                            "text": "평균 PCI 지수",
+                            "color": "#333333",
+                            "textAlign": "center",
+                            "fontSize": "17",
+                            "fontFamily": "NanumGothic",
+                            "fontWeight": "bold",
+                            "paddingLeft": "0",
+                            "paddingRight": "0",
+                            "paddingTop": "0",
+                            "paddingBottom": 1,
+                            "backgroundColor": "transparent"
+                        },
+                        "SubCaption": {
+                            "text": "",
+                            "height": "1",
+                            "color": "#999999",
+                            "textAlign": "center",
+                            "fontSize": "13",
+                            "fontFamily": "",
+                            "fontWeight": "normal",
+                            "paddingLeft": "0",
+                            "paddingRight": "0",
+                            "paddingTop": "0",
+                            "paddingBottom": "0",
+                            "backgroundColor": "transparent"
+                        },
+                        "Legend": {
+                            "position": "bottom",
+                            "display": "block",
+                            "backgroundColor": "transparent",
+                            "borderStyle": "none",
+                            "hAlign": "center"
+                        }
+                    }
+                },
+                {
+                    "UnitFormatter": {
+                        "id": "unitfmt",
+                        "useThousandsSeparator": "true",
+                        "units": "auto",
+                        "unitSymbols": "[,K,M,G,T]",
+                        "divisor": "1000",
+                        "rounding": "none"
+                    }
+                },
+                {
+                    "DateFormatter": {
+                        "id": "dateFmt",
+                        "formatString": "YYYY/MM/DD"
+                    }
+                },
+                {
+                    "SeriesInterpolate": {
+                        "id": "si"
+                    }
+                },
+                {
+                    "SeriesSlide": {
+                        "id": "ss",
+                        "direction": "right"
+                    }
+                },
+                {
+                    "component": {
+                        "showDataTips": "true",
+                        "columnWidthRatio": "0.5",
+                        "columnWidthMinRatio": "1",
+                        "horizontalAxis": {
+                            "CategoryAxis": {
+                                "id": "hAxis",
+                                "categoryField": "평균",
+                                "formatter": ""
+                            }
+                        },
+                        "verticalAxis": {
+                            "LinearAxis": {
+                                "id": "vAxis",
+                                "formatter": "{unitfmt}",
+                                "minimum": "NaN",
+                                "maximum": "NaN",
+                                "interval": "NaN"
+                            }
+                        },
+                        "series": [
+                            {
+                                "Column2DSet": {
+                                    "type": "clustered",
+                                    "series": [
+                                        {
+                                            "Column2DSeries": {
+                                                "itemRenderer": "BoxItemRenderer",
+                                                "labelPosition": "none",
+                                                "yField": "avg(HPICI_아스팔트)",
+                                                "displayName": "HPICI_아스팔트",
+                                                "showDataEffect": "",
+                                                "color": "#808080",
+                                                "fills": [
+                                                    {
+                                                        "SolidColor": {
+                                                            "color": "#61609b"
+                                                        }
+                                                    }
+                                                ],
+                                                "stroke": {
+                                                    "Stroke": {
+                                                        "color": "#61609b",
+                                                        "weight": "2",
+                                                        "alpha": "1"
+                                                    }
+                                                },
+                                                "_nodeName": "Column2DSeries",
+                                                "formatter": "{unitfmt}"
+                                            }
+                                        },
+                                        {
+                                            "Column2DSeries": {
+                                                "itemRenderer": "BoxItemRenderer",
+                                                "labelPosition": "none",
+                                                "yField": "avg(HPICI_콘크리트)",
+                                                "displayName": "HPICI_콘크리트",
+                                                "showDataEffect": "",
+                                                "color": "#808080",
+                                                "fills": [
+                                                    {
+                                                        "SolidColor": {
+                                                            "color": "#8590d8"
+                                                        }
+                                                    }
+                                                ],
+                                                "stroke": {
+                                                    "Stroke": {
+                                                        "color": "#8590d8",
+                                                        "weight": "2",
+                                                        "alpha": "1"
+                                                    }
+                                                },
+                                                "_nodeName": "Column2DSeries",
+                                                "formatter": "{unitfmt}"
+                                            }
+                                        },
+                                        {
+                                            "Column2DSeries": {
+                                                "itemRenderer": "BoxItemRenderer",
+                                                "labelPosition": "none",
+                                                "yField": "avg(NHPCI)",
+                                                "displayName": "NHPCI",
+                                                "showDataEffect": "",
+                                                "color": "#808080",
+                                                "fills": [
+                                                    {
+                                                        "SolidColor": {
+                                                            "color": "#4087c6"
+                                                        }
+                                                    }
+                                                ],
+                                                "stroke": {
+                                                    "Stroke": {
+                                                        "color": "#4087c6",
+                                                        "weight": "2",
+                                                        "alpha": "1"
+                                                    }
+                                                },
+                                                "_nodeName": "Column2DSeries",
+                                                "formatter": "{unitfmt}"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "horizontalAxisRenderers": [
+                            {
+                                "Axis2DRenderer": {
+                                    "axis": "{hAxis}",
+                                    "showLine": "true",
+                                    "color": "#808080",
+                                    "axisStroke": {
+                                        "Stroke": {
+                                            "color": "#eeeeee",
+                                            "alpha": "1"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "verticalAxisRenderers": [
+                            {
+                                "Axis2DRenderer": {
+                                    "axis": "{vAxis}",
+                                    "showLine": "true",
+                                    "placement": "left",
+                                    "color": "#808080",
+                                    "axisStroke": {
+                                        "Stroke": {
+                                            "color": "#eeeeee",
+                                            "alpha": "1"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "backgroundElements": [
+                            {
+                                "GridLines": {
+                                    "direction": "horizontal",
+                                    "showBorderStroke": "false",
+                                    "horizontalStroke": {
+                                        "Stroke": {
+                                            "color": "#eeeeee",
+                                            "alpha": "1",
+                                            "weight": "1"
+                                        }
+                                    },
+                                    "verticalStroke": {
+                                        "Stroke": {
+                                            "color": "#eeeeee",
+                                            "alpha": "1",
+                                            "weight": "1"
+                                        }
+                                    },
+                                    "borderStroke": {
+                                        "Stroke": {
+                                            "color": "#eeeeee",
+                                            "alpha": "1",
+                                            "weight": "1"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "_cType": "Column2DChart"
+                    }
+                },
+                {
+                    "_attr": {
+                        "backgroundColor": "transparent",
+                        "alpha": "1",
+                        "fontSize": 14,
+                        "padding": 7
+                    }
+                }
+            ]
+        },
+        "componentLayoutType": "column",
+        "bindingSource": "44337cc58f383ead81bf0a5b2acdfcc2",
+        "referenceSources": []
+    },
+    "exportType": "widget"
+}

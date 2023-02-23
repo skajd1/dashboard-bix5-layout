@@ -1,0 +1,362 @@
+{
+    "options": {
+        "border": false,
+        "borderWidth": "0px",
+        "borderColor": "rgb(240, 240, 240)",
+        "borderRadius": "0px",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "0px",
+        "borderBottomRightRadius": "0px",
+        "borderBottomLeftRadius": "0px",
+        "resizable": true,
+        "allowDrop": true
+    },
+    "sid": "",
+    "x": 5,
+    "y": 9,
+    "width": 560,
+    "height": 497,
+    "layoutType": "headless",
+    "type": "chart",
+    "title": "박스형 컬럼 2D 차트",
+    "showMaximizer": true,
+    "label": "박스형 컬럼 2D 차트",
+    "icon": "widgetIcons/gray/chart_column_2d",
+    "userData": {},
+    "lock": false,
+    "backgroundColor": "transparent",
+    "backgroundImage": {
+        "src": null
+    },
+    "backgroundRepeat": "no-repeat",
+    "backgroundPosition": "center",
+    "backgroundSize": "cover",
+    "backgroundAlpha": 1,
+    "contentUrl": "/BIX5/Assets/Modules/Chart/Column-Column.html",
+    "componentOptions": {
+        "isAggregation": true,
+        "dataFields": [
+            {
+                "label": "수평축 필드",
+                "columns": [
+                    {
+                        "id": 3863,
+                        "name": "평균",
+                        "label": "평균",
+                        "dataType": "string",
+                        "rm_internal_uid": "20EA8D85-285B-936C-F354-7C94C9D6CF54",
+                        "aggregate": "",
+                        "alias": "평균"
+                    }
+                ],
+                "maximum": 1,
+                "fieldName": "xField",
+                "category": "dimension",
+                "use": true
+            },
+            {
+                "label": "수직축 필드",
+                "columns": [
+                    {
+                        "id": 3840,
+                        "name": "SPI_도시고속",
+                        "label": "SPI_도시고속",
+                        "dataType": "numeric",
+                        "rm_internal_uid": "B1B2676E-1220-86A9-7905-7C94FFDD522D",
+                        "aggregate": "avg",
+                        "alias": "avg(SPI_도시고속)"
+                    },
+                    {
+                        "id": 3841,
+                        "name": "SPI_주간선",
+                        "label": "SPI_주간선",
+                        "dataType": "numeric",
+                        "rm_internal_uid": "D8F55B64-EFAD-1B4E-D8D3-7C9506766050",
+                        "aggregate": "avg",
+                        "alias": "avg(SPI_주간선)"
+                    },
+                    {
+                        "id": 3842,
+                        "name": "SPI_보조간선",
+                        "label": "SPI_보조간선",
+                        "dataType": "numeric",
+                        "rm_internal_uid": "F90A29F2-356C-606F-DC9F-7C950BC6F206",
+                        "aggregate": "avg",
+                        "alias": "avg(SPI_보조간선)"
+                    }
+                ],
+                "maximum": 100,
+                "fieldName": "yField",
+                "category": "measure",
+                "use": true
+            }
+        ],
+        "customStyle": false,
+        "propertyOptions": [],
+        "layoutMetaData": {},
+        "isMultiView": false,
+        "multiViewRow": 2,
+        "multiViewColumn": 2,
+        "multiViewSubCategoryField": {},
+        "multiViewFillType": null,
+        "marginLeft": 0,
+        "marginTop": 0,
+        "marginRight": 0,
+        "marginBottom": 0,
+        "isAutoServiceStart": true,
+        "vars": "",
+        "componentLayout": "<BIX5 backgroundColor=\"transparent\" alpha=\"1\" fontSize=\"14\" padding=\"7\"><Options><Caption text=\"평균 SPI 지수 \" color=\"#333333\" textAlign=\"center\" fontSize=\"17\" fontFamily=\"NanumGothic\" fontWeight=\"bold\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"1\" backgroundColor=\"transparent\" /><SubCaption text=\"\" height=\"1\" color=\"#999999\" textAlign=\"center\" fontSize=\"13\" fontFamily=\"\" fontWeight=\"normal\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"0\" backgroundColor=\"transparent\" /><Legend position=\"bottom\" display=\"block\" backgroundColor=\"transparent\" borderStyle=\"none\" hAlign=\"center\" /></Options><UnitFormatter id=\"unitfmt\" useThousandsSeparator=\"true\" units=\"auto\" unitSymbols=\"[,K,M,G,T]\" divisor=\"1000\" rounding=\"nearest\" /><DateFormatter id=\"dateFmt\" formatString=\"YYYY&#x2F;MM&#x2F;DD\" /><SeriesInterpolate id=\"si\" /><SeriesSlide id=\"ss\" direction=\"right\" /><Column2DChart showDataTips=\"true\" columnWidthRatio=\"0.5\" columnWidthMinRatio=\"1\" _cType=\"Column2DChart\"><horizontalAxis><CategoryAxis id=\"hAxis\" categoryField=\"평균\" /></horizontalAxis><verticalAxis><LinearAxis id=\"vAxis\" formatter=\"{unitfmt}\" minimum=\"NaN\" maximum=\"NaN\" interval=\"NaN\" /></verticalAxis><series><Column2DSet type=\"clustered\"><series><Column2DSeries itemRenderer=\"BoxItemRenderer\" labelPosition=\"none\" yField=\"avg(SPI_도시고속)\" displayName=\"SPI_도시고속\" showDataEffect=\"\" color=\"#808080\" _nodeName=\"Column2DSeries\" formatter=\"{unitfmt}\"><fills><SolidColor color=\"#5587a2\" /></fills><stroke><Stroke color=\"#5587a2\" weight=\"2\" alpha=\"1\" /></stroke></Column2DSeries><Column2DSeries itemRenderer=\"BoxItemRenderer\" labelPosition=\"none\" yField=\"avg(SPI_주간선)\" displayName=\"SPI_주간선\" showDataEffect=\"\" color=\"#808080\" _nodeName=\"Column2DSeries\" formatter=\"{unitfmt}\"><fills><SolidColor color=\"#519c90\" /></fills><stroke><Stroke color=\"#519c90\" weight=\"2\" alpha=\"1\" /></stroke></Column2DSeries><Column2DSeries itemRenderer=\"BoxItemRenderer\" labelPosition=\"none\" yField=\"avg(SPI_보조간선)\" displayName=\"SPI_보조간선\" showDataEffect=\"\" color=\"#808080\" _nodeName=\"Column2DSeries\" formatter=\"{unitfmt}\"><fills><SolidColor color=\"#86c1e0\" /></fills><stroke><Stroke color=\"#86c1e0\" weight=\"2\" alpha=\"1\" /></stroke></Column2DSeries></series></Column2DSet></series><horizontalAxisRenderers><Axis2DRenderer axis=\"{hAxis}\" showLine=\"true\" color=\"#808080\"><axisStroke><Stroke color=\"#eeeeee\" alpha=\"1\" /></axisStroke></Axis2DRenderer></horizontalAxisRenderers><verticalAxisRenderers><Axis2DRenderer axis=\"{vAxis}\" showLine=\"true\" placement=\"left\" color=\"#808080\"><axisStroke><Stroke color=\"#eeeeee\" alpha=\"1\" /></axisStroke></Axis2DRenderer></verticalAxisRenderers><backgroundElements><GridLines direction=\"horizontal\" showBorderStroke=\"false\"><horizontalStroke><Stroke color=\"#eeeeee\" alpha=\"1\" weight=\"1\" /></horizontalStroke><verticalStroke><Stroke color=\"#eeeeee\" alpha=\"1\" weight=\"1\" /></verticalStroke><borderStroke><Stroke color=\"#eeeeee\" alpha=\"1\" weight=\"1\" /></borderStroke></GridLines></backgroundElements></Column2DChart></BIX5>",
+        "componentLayoutId": "Column-Column",
+        "componentLayoutJson": {
+            "BIX5": [
+                {
+                    "Options": {
+                        "Caption": {
+                            "text": "평균 SPI 지수 ",
+                            "color": "#333333",
+                            "textAlign": "center",
+                            "fontSize": "17",
+                            "fontFamily": "NanumGothic",
+                            "fontWeight": "bold",
+                            "paddingLeft": "0",
+                            "paddingRight": "0",
+                            "paddingTop": 0,
+                            "paddingBottom": 1,
+                            "backgroundColor": "transparent"
+                        },
+                        "SubCaption": {
+                            "text": "",
+                            "height": "1",
+                            "color": "#999999",
+                            "textAlign": "center",
+                            "fontSize": "13",
+                            "fontFamily": "",
+                            "fontWeight": "normal",
+                            "paddingLeft": "0",
+                            "paddingRight": "0",
+                            "paddingTop": "0",
+                            "paddingBottom": "0",
+                            "backgroundColor": "transparent"
+                        },
+                        "Legend": {
+                            "position": "bottom",
+                            "display": "block",
+                            "backgroundColor": "transparent",
+                            "borderStyle": "none",
+                            "hAlign": "center"
+                        }
+                    }
+                },
+                {
+                    "UnitFormatter": {
+                        "id": "unitfmt",
+                        "useThousandsSeparator": "true",
+                        "units": "auto",
+                        "unitSymbols": "[,K,M,G,T]",
+                        "divisor": "1000",
+                        "rounding": "nearest"
+                    }
+                },
+                {
+                    "DateFormatter": {
+                        "id": "dateFmt",
+                        "formatString": "YYYY/MM/DD"
+                    }
+                },
+                {
+                    "SeriesInterpolate": {
+                        "id": "si"
+                    }
+                },
+                {
+                    "SeriesSlide": {
+                        "id": "ss",
+                        "direction": "right"
+                    }
+                },
+                {
+                    "component": {
+                        "showDataTips": "true",
+                        "columnWidthRatio": "0.5",
+                        "columnWidthMinRatio": "1",
+                        "horizontalAxis": {
+                            "CategoryAxis": {
+                                "id": "hAxis",
+                                "categoryField": "평균"
+                            }
+                        },
+                        "verticalAxis": {
+                            "LinearAxis": {
+                                "id": "vAxis",
+                                "formatter": "{unitfmt}",
+                                "minimum": "NaN",
+                                "maximum": "NaN",
+                                "interval": "NaN"
+                            }
+                        },
+                        "series": [
+                            {
+                                "Column2DSet": {
+                                    "type": "clustered",
+                                    "series": [
+                                        {
+                                            "Column2DSeries": {
+                                                "itemRenderer": "BoxItemRenderer",
+                                                "labelPosition": "none",
+                                                "yField": "avg(SPI_도시고속)",
+                                                "displayName": "SPI_도시고속",
+                                                "showDataEffect": "",
+                                                "color": "#808080",
+                                                "fills": [
+                                                    {
+                                                        "SolidColor": {
+                                                            "color": "#5587a2"
+                                                        }
+                                                    }
+                                                ],
+                                                "stroke": {
+                                                    "Stroke": {
+                                                        "color": "#5587a2",
+                                                        "weight": "2",
+                                                        "alpha": "1"
+                                                    }
+                                                },
+                                                "_nodeName": "Column2DSeries",
+                                                "formatter": "{unitfmt}"
+                                            }
+                                        },
+                                        {
+                                            "Column2DSeries": {
+                                                "itemRenderer": "BoxItemRenderer",
+                                                "labelPosition": "none",
+                                                "yField": "avg(SPI_주간선)",
+                                                "displayName": "SPI_주간선",
+                                                "showDataEffect": "",
+                                                "color": "#808080",
+                                                "fills": [
+                                                    {
+                                                        "SolidColor": {
+                                                            "color": "#519c90"
+                                                        }
+                                                    }
+                                                ],
+                                                "stroke": {
+                                                    "Stroke": {
+                                                        "color": "#519c90",
+                                                        "weight": "2",
+                                                        "alpha": "1"
+                                                    }
+                                                },
+                                                "_nodeName": "Column2DSeries",
+                                                "formatter": "{unitfmt}"
+                                            }
+                                        },
+                                        {
+                                            "Column2DSeries": {
+                                                "itemRenderer": "BoxItemRenderer",
+                                                "labelPosition": "none",
+                                                "yField": "avg(SPI_보조간선)",
+                                                "displayName": "SPI_보조간선",
+                                                "showDataEffect": "",
+                                                "color": "#808080",
+                                                "fills": [
+                                                    {
+                                                        "SolidColor": {
+                                                            "color": "#86c1e0"
+                                                        }
+                                                    }
+                                                ],
+                                                "stroke": {
+                                                    "Stroke": {
+                                                        "color": "#86c1e0",
+                                                        "weight": "2",
+                                                        "alpha": "1"
+                                                    }
+                                                },
+                                                "_nodeName": "Column2DSeries",
+                                                "formatter": "{unitfmt}"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "horizontalAxisRenderers": [
+                            {
+                                "Axis2DRenderer": {
+                                    "axis": "{hAxis}",
+                                    "showLine": "true",
+                                    "color": "#808080",
+                                    "axisStroke": {
+                                        "Stroke": {
+                                            "color": "#eeeeee",
+                                            "alpha": "1"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "verticalAxisRenderers": [
+                            {
+                                "Axis2DRenderer": {
+                                    "axis": "{vAxis}",
+                                    "showLine": "true",
+                                    "placement": "left",
+                                    "color": "#808080",
+                                    "axisStroke": {
+                                        "Stroke": {
+                                            "color": "#eeeeee",
+                                            "alpha": "1"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "backgroundElements": [
+                            {
+                                "GridLines": {
+                                    "direction": "horizontal",
+                                    "showBorderStroke": "false",
+                                    "horizontalStroke": {
+                                        "Stroke": {
+                                            "color": "#eeeeee",
+                                            "alpha": "1",
+                                            "weight": "1"
+                                        }
+                                    },
+                                    "verticalStroke": {
+                                        "Stroke": {
+                                            "color": "#eeeeee",
+                                            "alpha": "1",
+                                            "weight": "1"
+                                        }
+                                    },
+                                    "borderStroke": {
+                                        "Stroke": {
+                                            "color": "#eeeeee",
+                                            "alpha": "1",
+                                            "weight": "1"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "_cType": "Column2DChart"
+                    }
+                },
+                {
+                    "_attr": {
+                        "backgroundColor": "transparent",
+                        "alpha": "1",
+                        "fontSize": 14,
+                        "padding": 7
+                    }
+                }
+            ]
+        },
+        "componentLayoutType": "column",
+        "bindingSource": "44337cc58f383ead81bf0a5b2acdfcc2",
+        "referenceSources": []
+    },
+    "exportType": "widget"
+}

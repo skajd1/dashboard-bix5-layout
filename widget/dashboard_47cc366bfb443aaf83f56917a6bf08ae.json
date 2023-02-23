@@ -1,0 +1,3101 @@
+{
+  "gap": 10,
+  "enabled": true,
+  "showSlideNavigator": true,
+  "showSideBarBtn": false,
+  "gridlines": false,
+  "initialSlideIndex": 0,
+  "borderWidth": "0px",
+  "borderStyle": "solid",
+  "borderColor": "rgb(255, 255, 255)",
+  "backgroundColor": "#ffffff",
+  "backgroundAlpha": 1,
+  "width": 1920,
+  "height": 1080,
+  "fixSideBar": false,
+  "masters": {
+    "widgets": []
+  },
+  "visibleWidgetLoading": true,
+  "userData": {},
+  "slides": [
+    {
+      "slideName": "슬라이드",
+      "backgroundColor": "#ffffff",
+      "backgroundAlpha": 1,
+      "userData": {},
+      "widgets": [
+        {
+          "options": {
+            "border": false,
+            "borderWidth": "0px",
+            "borderColor": "rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "borderTopLeftRadius": "0px",
+            "borderTopRightRadius": "0px",
+            "borderBottomRightRadius": "0px",
+            "borderBottomLeftRadius": "0px",
+            "resizable": true,
+            "allowDrop": true
+          },
+          "sid": "wE067FC0228BD3068AAEA77762D4CB53F",
+          "x": 10,
+          "y": 653,
+          "width": 1900,
+          "height": 405,
+          "layoutType": "headless",
+          "type": "grid",
+          "title": "그리드 - style2",
+          "showMaximizer": true,
+          "label": "그리드 - style2",
+          "icon": "widgetIcons/gray/grid_style2",
+          "userData": {},
+          "lock": false,
+          "backgroundColor": "transparent",
+          "backgroundImage": {},
+          "backgroundRepeat": "no-repeat",
+          "backgroundPosition": "center",
+          "backgroundSize": "cover",
+          "backgroundAlpha": 1,
+          "contentUrl": "/BIX5/Assets/Modules/Grid/Grid-Grid.html",
+          "contentHtml": "<script>\n  \nwidget._gridRoot = null;\nwidget._dataGrid = null;\nwidget.componentReadyHandler = function(componentId){\n  if(!widget.isBindingSource()){\n    document.getElementById(componentId).setDataType(\"json\");\n    document.getElementById(componentId).setDataURLEx(BIX5.getAssetsPath() + \"Datasources/data2.json\");\n  }\n      \n  widget._gridRoot = widget.getComponent().getRoot();\n  var dataCompleteHandler = function(event) {\n    widget._gridRoot.removeEventListener(\"dataComplete\", dataCompleteHandler);\n    widget._dataGrid = widget._gridRoot.getDataGrid();\n\n    widget._dataGrid.addEventListener(\"itemClick\", widget._itemClickHandler);\n  }\n  widget._gridRoot.addEventListener(\"dataComplete\", dataCompleteHandler);\n  \n}\n\n\nwidget.selectItem = function(data){\n  var selectItemEvent = BIX5.dashboard.createEvent(\"selectItem\");\n  selectItemEvent.detail = {\n    data : JSON.parse(JSON.stringify(data))\n};\n  sendMsgToParent(data);\n }\n widget._itemClickHandler = function(event){\n  widget.selectItem(widget._gridRoot.getItemAt(event.rowIndex));\n}\n  \nfunction sendMsgToParent(msg){\n  window.parent.postMessage(msg, '*');\n}\n  \n \n \n \n\n\n</script>",
+          "componentOptions": {
+            "isAggregation": false,
+            "dataFields": [
+              {
+                "label": "컬럼",
+                "columns": [
+                  {
+                    "id": 3748,
+                    "name": "거리",
+                    "label": "거리",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3749,
+                    "name": "소성변형",
+                    "label": "소성변형",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3750,
+                    "name": "종단평탄성",
+                    "label": "종단평탄성",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3751,
+                    "name": "편경사",
+                    "label": "편경사",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3752,
+                    "name": "종단경사",
+                    "label": "종단경사",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3753,
+                    "name": "곡률",
+                    "label": "곡률",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3754,
+                    "name": "조사속도",
+                    "label": "조사속도",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3755,
+                    "name": "위도",
+                    "label": "위도",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3756,
+                    "name": "경도",
+                    "label": "경도",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3757,
+                    "name": "균열량",
+                    "label": "균열량",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3758,
+                    "name": "균열율",
+                    "label": "균열율",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3759,
+                    "name": "HPICI_아스팔트",
+                    "label": "HPICI_아스팔트",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3760,
+                    "name": "HPICI_콘크리트",
+                    "label": "HPICI_콘크리트",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3761,
+                    "name": "NHPCI",
+                    "label": "NHPCI",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3762,
+                    "name": "SPI_도시고속",
+                    "label": "SPI_도시고속",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3763,
+                    "name": "SPI_주간선",
+                    "label": "SPI_주간선",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3764,
+                    "name": "SPI_보조간선",
+                    "label": "SPI_보조간선",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3765,
+                    "name": "AP종방향_L",
+                    "label": "AP종방향_L",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3766,
+                    "name": "AP종방향_M",
+                    "label": "AP종방향_M",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3767,
+                    "name": "AP종방향_H",
+                    "label": "AP종방향_H",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3768,
+                    "name": "AP횡방향_L",
+                    "label": "AP횡방향_L",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3769,
+                    "name": "AP횡방향_M",
+                    "label": "AP횡방향_M",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3770,
+                    "name": "AP횡방향_H",
+                    "label": "AP횡방향_H",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3771,
+                    "name": "AP시공줄눈_L",
+                    "label": "AP시공줄눈_L",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3772,
+                    "name": "AP시공줄눈_M",
+                    "label": "AP시공줄눈_M",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3773,
+                    "name": "AP시공줄눈_H",
+                    "label": "AP시공줄눈_H",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3774,
+                    "name": "AP거북등균열_L",
+                    "label": "AP거북등균열_L",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3775,
+                    "name": "AP거북등균열_M",
+                    "label": "AP거북등균열_M",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3776,
+                    "name": "AP거북등균열_H",
+                    "label": "AP거북등균열_H",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3777,
+                    "name": "AP패칭_L",
+                    "label": "AP패칭_L",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3778,
+                    "name": "AP패칭_M",
+                    "label": "AP패칭_M",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3779,
+                    "name": "AP패칭_H",
+                    "label": "AP패칭_H",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3780,
+                    "name": "AP포트홀_L",
+                    "label": "AP포트홀_L",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3781,
+                    "name": "AP포트홀_M",
+                    "label": "AP포트홀_M",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3782,
+                    "name": "AP포트홀_H",
+                    "label": "AP포트홀_H",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3783,
+                    "name": "비고",
+                    "label": "비고",
+                    "dataType": "string"
+                  },
+                  {
+                    "id": 3784,
+                    "name": "index",
+                    "label": "index",
+                    "dataType": "numeric"
+                  },
+                  {
+                    "id": 3785,
+                    "name": "조사명",
+                    "label": "조사명",
+                    "dataType": "string"
+                  },
+                  {
+                    "id": 3786,
+                    "name": "조사일자",
+                    "label": "조사일자",
+                    "dataType": "date"
+                  }
+                ],
+                "maximum": 100,
+                "fieldName": "group",
+                "category": "dimension",
+                "use": true
+              },
+              {
+                "label": "컬럼",
+                "columns": [],
+                "maximum": 100,
+                "fieldName": "column",
+                "category": "measure",
+                "use": false
+              }
+            ],
+            "customStyle": true,
+            "propertyOptions": [],
+            "layoutMetaData": {},
+            "isMultiView": false,
+            "multiViewRow": 2,
+            "multiViewColumn": 2,
+            "multiViewSubCategoryField": {},
+            "multiViewFillType": null,
+            "marginLeft": 0,
+            "marginTop": 0,
+            "marginRight": 0,
+            "marginBottom": 0,
+            "isAutoServiceStart": true,
+            "componentLayout": "<BIX5>\n  <NumberFormatter id=\"numfmt\" useThousandsSeparator=\"true\"/>\n  <DataGrid headerColors=\"[#86c1e0,#86c1e0]\" color=\"#31393F\" alternatingItemColors=\"[#FFFFFF,#FFFFFF]\" _cType=\"DataGrid\" fontSize=\"16\" horizontalScrollPolicy=\"on\" verticalScrollPolicy=\"on\" sortableColumns=\"true\" sortExpertMode=\"false\" lockedRowCount=\"0\" lockedColumnCount=\"1\">\n    <columns>\n      <DataGridColumn dataField=\"거리\" headerText=\"거리\" textAlign=\"right\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"소성변형\" headerText=\"소성변형\" textAlign=\"right\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"종단평탄성\" headerText=\"종단평탄성\" textAlign=\"right\" width=\"120\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"편경사\" headerText=\"편경사\" textAlign=\"right\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"종단경사\" headerText=\"종단경사\" textAlign=\"right\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"곡률\" headerText=\"곡률\" textAlign=\"right\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"조사속도\" headerText=\"조사속도\" textAlign=\"right\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"위도\" headerText=\"위도\" textAlign=\"right\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"경도\" headerText=\"경도\" textAlign=\"right\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"균열량\" headerText=\"균열량\" textAlign=\"right\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"균열율\" headerText=\"균열율\" textAlign=\"right\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"HPICI_아스팔트\" headerText=\"HPICI_아스팔트\" textAlign=\"right\" width=\"150\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"HPICI_콘크리트\" headerText=\"HPICI_콘크리트\" textAlign=\"right\" width=\"150\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"NHPCI\" headerText=\"NHPCI\" textAlign=\"right\" width=\"100\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"SPI_도시고속\" headerText=\"SPI_도시고속\" textAlign=\"right\" width=\"150\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"SPI_주간선\" headerText=\"SPI_주간선\" textAlign=\"right\" width=\"150\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"SPI_보조간선\" headerText=\"SPI_보조간선\" textAlign=\"right\" width=\"150\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"AP종방향_L\" headerText=\"AP종방향_L\" textAlign=\"right\" width=\"150\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"AP종방향_M\" headerText=\"AP종방향_M\" textAlign=\"right\" width=\"150\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"AP종방향_H\" headerText=\"AP종방향_H\" textAlign=\"right\" width=\"150\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"AP횡방향_L\" headerText=\"AP횡방향_L\" textAlign=\"right\" width=\"150\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"AP횡방향_M\" headerText=\"AP횡방향_M\" textAlign=\"right\" width=\"150\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"AP횡방향_H\" headerText=\"AP횡방향_H\" textAlign=\"right\" width=\"150\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"AP시공줄눈_L\" headerText=\"AP시공줄눈_L\" textAlign=\"right\" width=\"150\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"AP시공줄눈_M\" headerText=\"AP시공줄눈_M\" textAlign=\"right\" width=\"150\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"AP시공줄눈_H\" headerText=\"AP시공줄눈_H\" textAlign=\"right\" width=\"150\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"AP거북등균열_L\" headerText=\"AP거북등균열_L\" textAlign=\"right\" width=\"150\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"AP거북등균열_M\" headerText=\"AP거북등균열_M\" textAlign=\"right\" width=\"150\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"AP거북등균열_H\" headerText=\"AP거북등균열_H\" textAlign=\"right\" width=\"150\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"AP패칭_L\" headerText=\"AP패칭_L\" textAlign=\"right\" width=\"130\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"AP패칭_M\" headerText=\"AP패칭_M\" textAlign=\"right\" width=\"130\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"AP패칭_H\" headerText=\"AP패칭_H\" textAlign=\"right\" width=\"130\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"AP포트홀_L\" headerText=\"AP포트홀_L\" textAlign=\"right\" width=\"130\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"AP포트홀_M\" headerText=\"AP포트홀_M\" textAlign=\"right\" width=\"130\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"AP포트홀_H\" headerText=\"AP포트홀_H\" textAlign=\"right\" width=\"130\">\n        <formatter>\n          <NumberFormatter useThousandsSeparator=\"true\"/>\n        </formatter>\n      </DataGridColumn>\n      <DataGridColumn dataField=\"비고\" headerText=\"비고\"/>\n      <DataGridColumn dataField=\"조사명\" headerText=\"조사명\"/>\n    </columns>\n  </DataGrid>\n</BIX5>",
+            "componentLayoutJson": {
+              "BIX5": [
+                {
+                  "NumberFormatter": {
+                    "id": "numfmt",
+                    "useThousandsSeparator": "true"
+                  }
+                },
+                {
+                  "component": {
+                    "columns": [
+                      {
+                        "DataGridColumn": {
+                          "dataField": "거리",
+                          "headerText": "거리",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "소성변형",
+                          "headerText": "소성변형",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "종단평탄성",
+                          "headerText": "종단평탄성",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "편경사",
+                          "headerText": "편경사",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "종단경사",
+                          "headerText": "종단경사",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "곡률",
+                          "headerText": "곡률",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "조사속도",
+                          "headerText": "조사속도",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "위도",
+                          "headerText": "위도",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "경도",
+                          "headerText": "경도",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "균열량",
+                          "headerText": "균열량",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "균열율",
+                          "headerText": "균열율",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "HPICI_아스팔트",
+                          "headerText": "HPICI_아스팔트",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "HPICI_콘크리트",
+                          "headerText": "HPICI_콘크리트",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "NHPCI",
+                          "headerText": "NHPCI",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "SPI_도시고속",
+                          "headerText": "SPI_도시고속",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "SPI_주간선",
+                          "headerText": "SPI_주간선",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "SPI_보조간선",
+                          "headerText": "SPI_보조간선",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "AP종방향_L",
+                          "headerText": "AP종방향_L",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "AP종방향_M",
+                          "headerText": "AP종방향_M",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "AP종방향_H",
+                          "headerText": "AP종방향_H",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "AP횡방향_L",
+                          "headerText": "AP횡방향_L",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "AP횡방향_M",
+                          "headerText": "AP횡방향_M",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "AP횡방향_H",
+                          "headerText": "AP횡방향_H",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "AP시공줄눈_L",
+                          "headerText": "AP시공줄눈_L",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "AP시공줄눈_M",
+                          "headerText": "AP시공줄눈_M",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "AP시공줄눈_H",
+                          "headerText": "AP시공줄눈_H",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "AP거북등균열_L",
+                          "headerText": "AP거북등균열_L",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "AP거북등균열_M",
+                          "headerText": "AP거북등균열_M",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "AP거북등균열_H",
+                          "headerText": "AP거북등균열_H",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "AP패칭_L",
+                          "headerText": "AP패칭_L",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "AP패칭_M",
+                          "headerText": "AP패칭_M",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "AP패칭_H",
+                          "headerText": "AP패칭_H",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "AP포트홀_L",
+                          "headerText": "AP포트홀_L",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "AP포트홀_M",
+                          "headerText": "AP포트홀_M",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "AP포트홀_H",
+                          "headerText": "AP포트홀_H",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "비고",
+                          "headerText": "비고",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "index",
+                          "headerText": "index",
+                          "formatter": {
+                            "NumberFormatter": {
+                              "useThousandsSeparator": "true"
+                            }
+                          },
+                          "textAlign": "right",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "조사명",
+                          "headerText": "조사명",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      },
+                      {
+                        "DataGridColumn": {
+                          "dataField": "조사일자",
+                          "headerText": "조사일자",
+                          "_nodeName": "DataGridColumn"
+                        }
+                      }
+                    ],
+                    "headerColors": "[#86c1e0,#86c1e0]",
+                    "color": "#31393F",
+                    "alternatingItemColors": "[#FFFFFF,#FFFFFF]",
+                    "_cType": "DataGrid",
+                    "fontSize": 16,
+                    "horizontalScrollPolicy": "on",
+                    "verticalScrollPolicy": "on",
+                    "sortableColumns": "true",
+                    "sortExpertMode": "false",
+                    "lockedRowCount": 0,
+                    "lockedColumnCount": 1
+                  }
+                }
+              ]
+            },
+            "componentLayoutType": "grid1",
+            "bindingSource": "43025f982e4fec0db942a21c3b8d3bb5",
+            "referenceSources": [],
+            "hierarchicalField": ""
+          }
+        },
+        {
+          "options": {
+            "border": false,
+            "borderWidth": "0px",
+            "borderColor": "rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "borderTopLeftRadius": "0px",
+            "borderTopRightRadius": "0px",
+            "borderBottomRightRadius": "0px",
+            "borderBottomLeftRadius": "0px",
+            "resizable": true,
+            "allowDrop": true
+          },
+          "sid": "wED35D31467150038823C77AE8EE8D08A",
+          "x": -7,
+          "y": 314,
+          "width": 950,
+          "height": 343,
+          "layoutType": "headless",
+          "type": "chart",
+          "title": "직선 라인 차트",
+          "showMaximizer": true,
+          "label": "직선 라인 차트",
+          "icon": "widgetIcons/gray/chart_line_segment",
+          "userData": {},
+          "lock": false,
+          "backgroundColor": "transparent",
+          "backgroundImage": {},
+          "backgroundRepeat": "no-repeat",
+          "backgroundPosition": "center",
+          "backgroundSize": "cover",
+          "backgroundAlpha": 1,
+          "contentUrl": "/BIX5/Assets/Modules/Chart/Line-Line_Segment.html",
+          "contentHtml": "<script>\n  var rangeUpdate = \"rangeUpdate\";\n  widget.componentReadyHandler = function(componentId){\n    if(!widget.isBindingSource()){\n      document.getElementById(componentId).setDataType(\"json\");\n      document.getElementById(componentId).setDataURL(BIX5.getAssetsPath() + \"Datasources/Line-Line_Segment.json\");\n    }\n  \twidget.componentId = componentId;\n\twidget.getSlide().addEventListener(rangeUpdate, widget.rangeUpdateHandler);\n}\n  widget.rangeUpdateHandler = function(event){\n\tvar type = event.detail.type;\n \tvar x = event.detail.x;\n \tvar y = event.detail.y;\n\tdocument.getElementById(widget.componentId).updateCrossRange(type, x, y);\n}\n\n  \n\n\n</script>",
+          "componentOptions": {
+            "isAggregation": false,
+            "dataFields": [
+              {
+                "label": "수평축 필드",
+                "columns": [
+                  {
+                    "id": 3689,
+                    "name": "거리",
+                    "label": "거리",
+                    "dataType": "numeric",
+                    "rm_internal_uid": "BBBA1E3F-E437-B8E9-F02B-77AE9D4EB6B3",
+                    "aggregate": "",
+                    "alias": "거리"
+                  }
+                ],
+                "maximum": 1,
+                "fieldName": "xField",
+                "category": "dimension",
+                "use": true
+              },
+              {
+                "label": "수직축 필드",
+                "columns": [
+                  {
+                    "id": 3690,
+                    "name": "소성변형",
+                    "label": "소성변형",
+                    "dataType": "numeric",
+                    "rm_internal_uid": "59AE5698-0E45-3B08-A143-77978604C6B6",
+                    "aggregate": "",
+                    "alias": "소성변형"
+                  },
+                  {
+                    "id": 3691,
+                    "name": "종단평탄성",
+                    "label": "종단평탄성",
+                    "dataType": "numeric",
+                    "rm_internal_uid": "B4269D42-20BA-3812-F232-77AEC3253128",
+                    "aggregate": "",
+                    "alias": "종단평탄성"
+                  }
+                ],
+                "maximum": 100,
+                "fieldName": "yField",
+                "category": "measure",
+                "use": true
+              }
+            ],
+            "customStyle": true,
+            "propertyOptions": [],
+            "layoutMetaData": {},
+            "isMultiView": false,
+            "multiViewRow": 2,
+            "multiViewColumn": 2,
+            "multiViewSubCategoryField": {
+              "label": "비고",
+              "id": 3724,
+              "name": "비고"
+            },
+            "multiViewFillType": null,
+            "marginLeft": 0,
+            "marginTop": 0,
+            "marginRight": 0,
+            "marginBottom": 0,
+            "isAutoServiceStart": true,
+            "vars": "",
+            "componentLayout": "<BIX5 backgroundColor=\"transparent\" alpha=\"1\" fontSize=\"12\" padding=\"6\">\n  <Options>\n    <Caption text=\"\" height=\"1\" color=\"#333333\" textAlign=\"center\" fontSize=\"15\" fontFamily=\"\" fontWeight=\"normal\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"5\" backgroundColor=\"transparent\"/>\n    <SubCaption text=\"\" height=\"1\" color=\"#999999\" textAlign=\"center\" fontSize=\"13\" fontFamily=\"\" fontWeight=\"normal\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"0\" backgroundColor=\"transparent\"/>\n    <Legend position=\"bottom\" display=\"block\" backgroundColor=\"transparent\" borderStyle=\"none\" hAlign=\"center\"/>\n  </Options>\n  <UnitFormatter id=\"unitfmt\" useThousandsSeparator=\"true\" units=\"auto\" unitSymbols=\"[,K,M,G,T]\" divisor=\"1000\" rounding=\"none\"/>\n  <DateFormatter id=\"dateFmt\" formatString=\"YYYY/MM/DD\"/>\n  <SeriesInterpolate id=\"si\"/>\n  <SeriesSlide id=\"ss\" direction=\"right\"/>\n  <Line2DChart showDataTips=\"true\" _cType=\"Line2DChart\">\n    <horizontalAxis>\n      <LinearAxis id=\"hAxis\"/>\n    </horizontalAxis>\n    <verticalAxis>\n      <LinearAxis id=\"vAxis\" formatter=\"{unitfmt}\" minimum=\"NaN\" maximum=\"NaN\" interval=\"NaN\"/>\n    </verticalAxis>\n    <series>\n      <Line2DSeries formatter=\"{unitfmt}\" dashLinePlacement=\"after\" dashLinePattern=\"3\" dashLineSeperatePos=\"0\" lineStyle=\"normal\" labelPosition=\"none\" yField=\"소성변형\" displayName=\"소성변형\" showDataEffect=\"\" color=\"#808080\" itemRenderer=\"none\" form=\"curve\" _nodeName=\"Line2DSeries\" xField=\"거리\">\n        <fills>\n          <SolidColor color=\"#ffffff\"/>\n        </fills>\n        <stroke>\n          <Stroke color=\"#fabc05\" weight=\"2\" alpha=\"1\"/>\n        </stroke>\n        <lineStroke>\n          <Stroke color=\"#fabc05\" weight=\"3\" alpha=\"1\"/>\n        </lineStroke>\n      </Line2DSeries>\n      <Line2DSeries formatter=\"{unitfmt}\" dashLinePlacement=\"after\" dashLinePattern=\"3\" dashLineSeperatePos=\"0\" lineStyle=\"normal\" labelPosition=\"none\" yField=\"종단평탄성\" displayName=\"종단평탄성\" showDataEffect=\"\" color=\"#808080\" itemRenderer=\"none\" form=\"curve\" _nodeName=\"Line2DSeries\" xField=\"거리\">\n        <fills>\n          <SolidColor color=\"#ffffff\"/>\n        </fills>\n        <stroke>\n          <Stroke color=\"#86c1e0\" weight=\"2\" alpha=\"1\"/>\n        </stroke>\n        <lineStroke>\n          <Stroke color=\"#86c1e0\" weight=\"3\" alpha=\"1\"/>\n        </lineStroke>\n      </Line2DSeries>\n    </series>\n    <horizontalAxisRenderers>\n      <Axis2DRenderer axis=\"{hAxis}\" showLine=\"true\" color=\"#808080\">\n        <axisStroke>\n          <Stroke color=\"#eeeeee\" alpha=\"1\"/>\n        </axisStroke>\n      </Axis2DRenderer>\n    </horizontalAxisRenderers>\n    <verticalAxisRenderers>\n      <Axis2DRenderer axis=\"{vAxis}\" showLine=\"true\" placement=\"left\" color=\"#808080\">\n        <axisStroke>\n          <Stroke color=\"#eeeeee\" alpha=\"1\"/>\n        </axisStroke>\n      </Axis2DRenderer>\n    </verticalAxisRenderers>\n    <backgroundElements>\n      <GridLines direction=\"horizontal\" showBorderStroke=\"false\">\n        <horizontalStroke>\n          <Stroke color=\"#c3bcc7\" alpha=\"1\" weight=\"1\"/>\n        </horizontalStroke>\n        <verticalStroke>\n          <Stroke color=\"#c3bcc7\" alpha=\"1\" weight=\"1\"/>\n        </verticalStroke>\n        <borderStroke>\n          <Stroke color=\"#eeeeee\" alpha=\"1\" weight=\"1\"/>\n        </borderStroke>\n      </GridLines>\n    </backgroundElements>\n    <annotationElements>\n      <CrossRangeZoomer enableZooming=\"true\"/>\n    </annotationElements>\n  </Line2DChart>\n</BIX5>",
+            "componentLayoutId": "Line-Line_Segment",
+            "componentLayoutJson": {
+              "BIX5": [
+                {
+                  "Options": {
+                    "Caption": {
+                      "text": "",
+                      "height": "1",
+                      "color": "#333333",
+                      "textAlign": "center",
+                      "fontSize": "15",
+                      "fontFamily": "",
+                      "fontWeight": "normal",
+                      "paddingLeft": "0",
+                      "paddingRight": "0",
+                      "paddingTop": "0",
+                      "paddingBottom": "5",
+                      "backgroundColor": "transparent"
+                    },
+                    "SubCaption": {
+                      "text": "",
+                      "height": "1",
+                      "color": "#999999",
+                      "textAlign": "center",
+                      "fontSize": "13",
+                      "fontFamily": "",
+                      "fontWeight": "normal",
+                      "paddingLeft": "0",
+                      "paddingRight": "0",
+                      "paddingTop": "0",
+                      "paddingBottom": "0",
+                      "backgroundColor": "transparent"
+                    },
+                    "Legend": {
+                      "position": "bottom",
+                      "display": "block",
+                      "backgroundColor": "transparent",
+                      "borderStyle": "none",
+                      "hAlign": "center"
+                    }
+                  }
+                },
+                {
+                  "UnitFormatter": {
+                    "id": "unitfmt",
+                    "useThousandsSeparator": "true",
+                    "units": "auto",
+                    "unitSymbols": "[,K,M,G,T]",
+                    "divisor": "1000",
+                    "rounding": "none"
+                  }
+                },
+                {
+                  "DateFormatter": {
+                    "id": "dateFmt",
+                    "formatString": "YYYY/MM/DD"
+                  }
+                },
+                {
+                  "SeriesInterpolate": {
+                    "id": "si"
+                  }
+                },
+                {
+                  "SeriesSlide": {
+                    "id": "ss",
+                    "direction": "right"
+                  }
+                },
+                {
+                  "component": {
+                    "showDataTips": "true",
+                    "horizontalAxis": {
+                      "LinearAxis": {
+                        "id": "hAxis"
+                      }
+                    },
+                    "verticalAxis": {
+                      "LinearAxis": {
+                        "id": "vAxis",
+                        "formatter": "{unitfmt}",
+                        "minimum": "NaN",
+                        "maximum": "NaN",
+                        "interval": "NaN"
+                      }
+                    },
+                    "series": [
+                      {
+                        "Line2DSeries": {
+                          "formatter": "{unitfmt}",
+                          "dashLinePlacement": "after",
+                          "dashLinePattern": "3",
+                          "dashLineSeperatePos": "0",
+                          "lineStyle": "normal",
+                          "labelPosition": "none",
+                          "yField": "소성변형",
+                          "displayName": "소성변형",
+                          "showDataEffect": "",
+                          "color": "#808080",
+                          "itemRenderer": "none",
+                          "form": "curve",
+                          "fills": [
+                            {
+                              "SolidColor": {
+                                "color": "#ffffff"
+                              }
+                            }
+                          ],
+                          "stroke": {
+                            "Stroke": {
+                              "color": "#fabc05",
+                              "weight": "2",
+                              "alpha": "1"
+                            }
+                          },
+                          "lineStroke": {
+                            "Stroke": {
+                              "color": "#fabc05",
+                              "weight": 3,
+                              "alpha": "1"
+                            }
+                          },
+                          "_nodeName": "Line2DSeries",
+                          "xField": "거리"
+                        }
+                      },
+                      {
+                        "Line2DSeries": {
+                          "formatter": "{unitfmt}",
+                          "dashLinePlacement": "after",
+                          "dashLinePattern": "3",
+                          "dashLineSeperatePos": "0",
+                          "lineStyle": "normal",
+                          "labelPosition": "none",
+                          "yField": "종단평탄성",
+                          "displayName": "종단평탄성",
+                          "showDataEffect": "",
+                          "color": "#808080",
+                          "itemRenderer": "none",
+                          "form": "curve",
+                          "fills": [
+                            {
+                              "SolidColor": {
+                                "color": "#ffffff"
+                              }
+                            }
+                          ],
+                          "stroke": {
+                            "Stroke": {
+                              "color": "#86c1e0",
+                              "weight": "2",
+                              "alpha": "1"
+                            }
+                          },
+                          "lineStroke": {
+                            "Stroke": {
+                              "color": "#86c1e0",
+                              "weight": 3,
+                              "alpha": "1"
+                            }
+                          },
+                          "_nodeName": "Line2DSeries",
+                          "xField": "거리"
+                        }
+                      }
+                    ],
+                    "horizontalAxisRenderers": [
+                      {
+                        "Axis2DRenderer": {
+                          "axis": "{hAxis}",
+                          "showLine": "true",
+                          "color": "#808080",
+                          "axisStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1"
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "verticalAxisRenderers": [
+                      {
+                        "Axis2DRenderer": {
+                          "axis": "{vAxis}",
+                          "showLine": "true",
+                          "placement": "left",
+                          "color": "#808080",
+                          "axisStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1"
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "backgroundElements": [
+                      {
+                        "GridLines": {
+                          "direction": "horizontal",
+                          "showBorderStroke": "false",
+                          "horizontalStroke": {
+                            "Stroke": {
+                              "color": "#c3bcc7",
+                              "alpha": 1,
+                              "weight": "1"
+                            }
+                          },
+                          "verticalStroke": {
+                            "Stroke": {
+                              "color": "#c3bcc7",
+                              "alpha": 1,
+                              "weight": "1"
+                            }
+                          },
+                          "borderStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1",
+                              "weight": "1"
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "_cType": "Line2DChart"
+                  }
+                },
+                {
+                  "_attr": {
+                    "backgroundColor": "transparent",
+                    "alpha": "1",
+                    "fontSize": 12,
+                    "padding": 6
+                  }
+                }
+              ]
+            },
+            "componentLayoutType": "line",
+            "bindingSource": "4a7a2f14de639ef98cadf0b857e8af0b",
+            "referenceSources": []
+          }
+        },
+        {
+          "options": {
+            "border": false,
+            "borderWidth": "0px",
+            "borderColor": "rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "borderTopLeftRadius": "0px",
+            "borderTopRightRadius": "0px",
+            "borderBottomRightRadius": "0px",
+            "borderBottomLeftRadius": "0px",
+            "resizable": true,
+            "allowDrop": true
+          },
+          "sid": "w58E07B801F7E66CB65E277C631B0CEB5",
+          "x": -7,
+          "y": -7,
+          "width": 950,
+          "height": 343,
+          "layoutType": "headless",
+          "type": "chart",
+          "title": "직선 라인 차트",
+          "showMaximizer": true,
+          "label": "직선 라인 차트",
+          "icon": "widgetIcons/gray/chart_line_segment",
+          "userData": {},
+          "lock": false,
+          "backgroundColor": "transparent",
+          "backgroundImage": {},
+          "backgroundRepeat": "no-repeat",
+          "backgroundPosition": "center",
+          "backgroundSize": "cover",
+          "backgroundAlpha": 1,
+          "contentUrl": "/BIX5/Assets/Modules/Chart/Line-Line_Segment.html",
+          "contentHtml": "<script>\nwidget.componentReadyHandler = function(componentId){\n\tif(!widget.isBindingSource()){\n\t\tdocument.getElementById(componentId).setDataType(\"json\");\n\t\tdocument.getElementById(componentId).setDataURL(BIX5.getAssetsPath() + \"Datasources/Line-Line_Segment.json\");\n\t}\n  widget.componentId = componentId;\n}\nfunction rangeFunc(type, x, y){\n  var slide = widget.getSlide();\n  //사용자 정의 이벤트\n  var evt = BIX5.dashboard.createEvent(\"rangeUpdate\");\n  var detail = {};\n  detail.widgetId = widget.id;\n  detail.componentId = widget.componentId;\n  detail.type = type;\n  detail.x = x;\n  detail.y = y;\n  evt.detail = detail;\n  slide.dispatchEvent(evt);\n  \n}\n</script>",
+          "componentOptions": {
+            "isAggregation": false,
+            "dataFields": [
+              {
+                "label": "수평축 필드",
+                "columns": [
+                  {
+                    "id": 3689,
+                    "name": "거리",
+                    "label": "거리",
+                    "dataType": "numeric",
+                    "rm_internal_uid": "FB1B1CBC-FA20-E0C6-FA44-77C63CAB3DCC",
+                    "aggregate": "",
+                    "alias": "거리"
+                  }
+                ],
+                "maximum": 1,
+                "fieldName": "xField",
+                "category": "dimension",
+                "use": true
+              },
+              {
+                "label": "수직축 필드",
+                "columns": [
+                  {
+                    "id": 3698,
+                    "name": "균열량",
+                    "label": "균열량",
+                    "dataType": "numeric",
+                    "rm_internal_uid": "8632B43D-A7B9-58A3-7E98-77C655B2D9F4",
+                    "aggregate": "",
+                    "alias": "균열량"
+                  },
+                  {
+                    "id": 3699,
+                    "name": "균열율",
+                    "label": "균열율",
+                    "dataType": "numeric",
+                    "rm_internal_uid": "4544C871-DD68-5D26-83DD-77C65A127D1D",
+                    "aggregate": "",
+                    "alias": "균열율"
+                  }
+                ],
+                "maximum": 100,
+                "fieldName": "yField",
+                "category": "measure",
+                "use": true
+              }
+            ],
+            "customStyle": true,
+            "propertyOptions": [],
+            "layoutMetaData": {},
+            "isMultiView": false,
+            "multiViewRow": 1,
+            "multiViewColumn": 2,
+            "multiViewSubCategoryField": {
+              "label": "조사명",
+              "id": 3725,
+              "name": "조사명",
+              "rm_internal_uid": "2CE23D6B-EAD1-8613-F357-77C82C901D75"
+            },
+            "multiViewFillType": null,
+            "marginLeft": 0,
+            "marginTop": 0,
+            "marginRight": 0,
+            "marginBottom": 0,
+            "isAutoServiceStart": true,
+            "vars": "",
+            "componentLayout": "<BIX5 backgroundColor=\"transparent\" alpha=\"1\" fontSize=\"12\" padding=\"6\">\n  <Options>\n    <Caption text=\"\" height=\"1\" color=\"#333333\" textAlign=\"center\" fontSize=\"15\" fontFamily=\"\" fontWeight=\"normal\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"5\" backgroundColor=\"transparent\"/>\n    <SubCaption text=\"\" height=\"1\" color=\"#999999\" textAlign=\"center\" fontSize=\"13\" fontFamily=\"\" fontWeight=\"normal\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"0\" backgroundColor=\"transparent\"/>\n    <Legend position=\"top\" display=\"block\" backgroundColor=\"transparent\" borderStyle=\"none\" hAlign=\"center\"/>\n  </Options>\n  <UnitFormatter id=\"unitfmt\" useThousandsSeparator=\"true\" units=\"auto\" unitSymbols=\"[,K,M,G,T]\" divisor=\"1000\" rounding=\"none\"/>\n  <DateFormatter id=\"dateFmt\" formatString=\"YYYY/MM/DD\"/>\n  <SeriesInterpolate id=\"si\"/>\n  <SeriesSlide id=\"ss\" direction=\"right\"/>\n  <Line2DChart showDataTips=\"true\" _cType=\"Line2DChart\">\n    <horizontalAxis>\n      <LinearAxis id=\"hAxis\"/>\n    </horizontalAxis>\n    <verticalAxis>\n      <LinearAxis id=\"vAxis\" formatter=\"{unitfmt}\" minimum=\"NaN\" maximum=\"NaN\" interval=\"NaN\"/>\n    </verticalAxis>\n    <series>\n      <Line2DSeries formatter=\"{unitfmt}\" dashLinePlacement=\"after\" dashLinePattern=\"3\" dashLineSeperatePos=\"0\" lineStyle=\"normal\" labelPosition=\"none\" yField=\"균열량\" displayName=\"균열량\" showDataEffect=\"\" color=\"#808080\" itemRenderer=\"none\" form=\"curve\" _nodeName=\"Line2DSeries\" xField=\"거리\">\n        <fills>\n          <SolidColor color=\"#ffffff\"/>\n        </fills>\n        <stroke>\n          <Stroke color=\"#ffb808\" weight=\"2\" alpha=\"1\"/>\n        </stroke>\n        <lineStroke>\n          <Stroke color=\"#ffb808\" weight=\"3\" alpha=\"1\"/>\n        </lineStroke>\n      </Line2DSeries>\n      <Line2DSeries formatter=\"{unitfmt}\" dashLinePlacement=\"after\" dashLinePattern=\"3\" dashLineSeperatePos=\"0\" lineStyle=\"normal\" labelPosition=\"none\" yField=\"균열율\" displayName=\"균열율\" showDataEffect=\"\" color=\"#808080\" itemRenderer=\"none\" form=\"curve\" _nodeName=\"Line2DSeries\" xField=\"거리\">\n        <fills>\n          <SolidColor color=\"#ffffff\"/>\n        </fills>\n        <stroke>\n          <Stroke color=\"#86c1e0\" weight=\"2\" alpha=\"1\"/>\n        </stroke>\n        <lineStroke>\n          <Stroke color=\"#86c1e0\" weight=\"3\" alpha=\"1\"/>\n        </lineStroke>\n      </Line2DSeries>\n    </series>\n    <horizontalAxisRenderers>\n      <Axis2DRenderer axis=\"{hAxis}\" showLine=\"true\" color=\"#808080\">\n        <axisStroke>\n          <Stroke color=\"#eeeeee\" alpha=\"1\"/>\n        </axisStroke>\n      </Axis2DRenderer>\n    </horizontalAxisRenderers>\n    <verticalAxisRenderers>\n      <Axis2DRenderer axis=\"{vAxis}\" showLine=\"true\" placement=\"left\" color=\"#808080\">\n        <axisStroke>\n          <Stroke color=\"#eeeeee\" alpha=\"1\"/>\n        </axisStroke>\n      </Axis2DRenderer>\n    </verticalAxisRenderers>\n    <backgroundElements>\n      <GridLines direction=\"horizontal\" showBorderStroke=\"false\">\n        <horizontalStroke>\n          <Stroke color=\"#cecece\" alpha=\"1\" weight=\"1\"/>\n        </horizontalStroke>\n        <verticalStroke>\n          <Stroke color=\"#cecece\" alpha=\"1\" weight=\"1\"/>\n        </verticalStroke>\n        <borderStroke>\n          <Stroke color=\"#eeeeee\" alpha=\"1\" weight=\"1\"/>\n        </borderStroke>\n      </GridLines>\n    </backgroundElements>\n    <annotationElements>\n      <CrossRangeZoomer enableZooming=\"true\" rangeUpdateJsFunction=\"\"/>\n    </annotationElements>\n  </Line2DChart>\n</BIX5>",
+            "componentLayoutId": "Line-Line_Segment",
+            "componentLayoutJson": {
+              "BIX5": [
+                {
+                  "Options": {
+                    "Caption": {
+                      "text": "",
+                      "height": "1",
+                      "color": "#333333",
+                      "textAlign": "center",
+                      "fontSize": "15",
+                      "fontFamily": "",
+                      "fontWeight": "normal",
+                      "paddingLeft": "0",
+                      "paddingRight": "0",
+                      "paddingTop": "0",
+                      "paddingBottom": "5",
+                      "backgroundColor": "transparent"
+                    },
+                    "SubCaption": {
+                      "text": "",
+                      "height": "1",
+                      "color": "#999999",
+                      "textAlign": "center",
+                      "fontSize": "13",
+                      "fontFamily": "",
+                      "fontWeight": "normal",
+                      "paddingLeft": "0",
+                      "paddingRight": "0",
+                      "paddingTop": "0",
+                      "paddingBottom": "0",
+                      "backgroundColor": "transparent"
+                    },
+                    "Legend": {
+                      "position": "top",
+                      "display": "block",
+                      "backgroundColor": "transparent",
+                      "borderStyle": "none",
+                      "hAlign": "center"
+                    }
+                  }
+                },
+                {
+                  "UnitFormatter": {
+                    "id": "unitfmt",
+                    "useThousandsSeparator": "true",
+                    "units": "auto",
+                    "unitSymbols": "[,K,M,G,T]",
+                    "divisor": "1000",
+                    "rounding": "none"
+                  }
+                },
+                {
+                  "DateFormatter": {
+                    "id": "dateFmt",
+                    "formatString": "YYYY/MM/DD"
+                  }
+                },
+                {
+                  "SeriesInterpolate": {
+                    "id": "si"
+                  }
+                },
+                {
+                  "SeriesSlide": {
+                    "id": "ss",
+                    "direction": "right"
+                  }
+                },
+                {
+                  "component": {
+                    "showDataTips": "true",
+                    "horizontalAxis": {
+                      "LinearAxis": {
+                        "id": "hAxis"
+                      }
+                    },
+                    "verticalAxis": {
+                      "LinearAxis": {
+                        "id": "vAxis",
+                        "formatter": "{unitfmt}",
+                        "minimum": "NaN",
+                        "maximum": "NaN",
+                        "interval": "NaN"
+                      }
+                    },
+                    "series": [
+                      {
+                        "Line2DSeries": {
+                          "formatter": "{unitfmt}",
+                          "dashLinePlacement": "after",
+                          "dashLinePattern": "3",
+                          "dashLineSeperatePos": "0",
+                          "lineStyle": "normal",
+                          "labelPosition": "none",
+                          "yField": "균열량",
+                          "displayName": "균열량",
+                          "showDataEffect": "",
+                          "color": "#808080",
+                          "itemRenderer": "none",
+                          "form": "curve",
+                          "fills": [
+                            {
+                              "SolidColor": {
+                                "color": "#ffffff"
+                              }
+                            }
+                          ],
+                          "stroke": {
+                            "Stroke": {
+                              "color": "#ffb808",
+                              "weight": "2",
+                              "alpha": "1"
+                            }
+                          },
+                          "lineStroke": {
+                            "Stroke": {
+                              "color": "#ffb808",
+                              "weight": 3,
+                              "alpha": "1"
+                            }
+                          },
+                          "_nodeName": "Line2DSeries",
+                          "xField": "거리"
+                        }
+                      },
+                      {
+                        "Line2DSeries": {
+                          "formatter": "{unitfmt}",
+                          "dashLinePlacement": "after",
+                          "dashLinePattern": "3",
+                          "dashLineSeperatePos": "0",
+                          "lineStyle": "normal",
+                          "labelPosition": "none",
+                          "yField": "균열율",
+                          "displayName": "균열율",
+                          "showDataEffect": "",
+                          "color": "#808080",
+                          "itemRenderer": "none",
+                          "form": "curve",
+                          "fills": [
+                            {
+                              "SolidColor": {
+                                "color": "#ffffff"
+                              }
+                            }
+                          ],
+                          "stroke": {
+                            "Stroke": {
+                              "color": "#86c1e0",
+                              "weight": "2",
+                              "alpha": "1"
+                            }
+                          },
+                          "lineStroke": {
+                            "Stroke": {
+                              "color": "#86c1e0",
+                              "weight": 3,
+                              "alpha": "1"
+                            }
+                          },
+                          "_nodeName": "Line2DSeries",
+                          "xField": "거리"
+                        }
+                      }
+                    ],
+                    "horizontalAxisRenderers": [
+                      {
+                        "Axis2DRenderer": {
+                          "axis": "{hAxis}",
+                          "showLine": "true",
+                          "color": "#808080",
+                          "axisStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1"
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "verticalAxisRenderers": [
+                      {
+                        "Axis2DRenderer": {
+                          "axis": "{vAxis}",
+                          "showLine": "true",
+                          "placement": "left",
+                          "color": "#808080",
+                          "axisStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1"
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "backgroundElements": [
+                      {
+                        "GridLines": {
+                          "direction": "horizontal",
+                          "showBorderStroke": "false",
+                          "horizontalStroke": {
+                            "Stroke": {
+                              "color": "#cecece",
+                              "alpha": 1,
+                              "weight": "1"
+                            }
+                          },
+                          "verticalStroke": {
+                            "Stroke": {
+                              "color": "#cecece",
+                              "alpha": 1,
+                              "weight": "1"
+                            }
+                          },
+                          "borderStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1",
+                              "weight": "1"
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "_cType": "Line2DChart"
+                  }
+                },
+                {
+                  "_attr": {
+                    "backgroundColor": "transparent",
+                    "alpha": "1",
+                    "fontSize": 12,
+                    "padding": 6
+                  }
+                }
+              ]
+            },
+            "componentLayoutType": "line",
+            "bindingSource": "4a7a2f14de639ef98cadf0b857e8af0b",
+            "referenceSources": []
+          }
+        },
+        {
+          "options": {
+            "border": false,
+            "borderWidth": "0px",
+            "borderColor": "rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "borderTopLeftRadius": "0px",
+            "borderTopRightRadius": "0px",
+            "borderBottomRightRadius": "0px",
+            "borderBottomLeftRadius": "0px",
+            "resizable": true,
+            "allowDrop": true
+          },
+          "sid": "w063D426ADFFC509BD2F377DD85F977B6",
+          "x": 916,
+          "y": -2,
+          "width": 999,
+          "height": 324,
+          "layoutType": "headless",
+          "type": "chart",
+          "title": "라인 + 컬럼 차트",
+          "showMaximizer": true,
+          "label": "라인 + 컬럼 차트",
+          "icon": "widgetIcons/gray/chart_combi_2d",
+          "userData": {},
+          "lock": false,
+          "backgroundColor": "transparent",
+          "backgroundImage": {},
+          "backgroundRepeat": "no-repeat",
+          "backgroundPosition": "center",
+          "backgroundSize": "cover",
+          "backgroundAlpha": 1,
+          "contentUrl": "/BIX5/Assets/Modules/Chart/Combination-Combination_2D_+_Line.html",
+          "contentHtml": "<script>\nwidget.componentReadyHandler = function(componentId){\n\tif(!widget.isBindingSource()){\n\t\tdocument.getElementById(componentId).setDataType(\"json\");\n\t\tdocument.getElementById(componentId).setDataURL(BIX5.getAssetsPath() + \"Datasources/combi1.json\");\n\t}\n}\n</script>",
+          "componentOptions": {
+            "isAggregation": false,
+            "dataFields": [
+              {
+                "label": "수평축 필드",
+                "columns": [
+                  {
+                    "id": 3689,
+                    "name": "거리",
+                    "label": "거리",
+                    "dataType": "numeric",
+                    "rm_internal_uid": "4B5A1286-EBF3-6395-8A4C-77E853A0F6CC",
+                    "aggregate": "",
+                    "alias": "거리"
+                  }
+                ],
+                "maximum": 1,
+                "fieldName": "xField",
+                "category": "dimension",
+                "use": true
+              },
+              {
+                "label": "수직축 필드 - 막대",
+                "columns": [
+                  {
+                    "id": 3694,
+                    "name": "곡률",
+                    "label": "곡률",
+                    "dataType": "numeric",
+                    "rm_internal_uid": "024F00F4-FC48-6686-3A24-77DD9A595947",
+                    "aggregate": "",
+                    "alias": "곡률"
+                  }
+                ],
+                "maximum": 100,
+                "fieldName": "yField",
+                "seriesType": "column",
+                "category": "measure",
+                "use": true
+              },
+              {
+                "label": "수직축 필드 - 라인",
+                "columns": [
+                  {
+                    "id": 3692,
+                    "name": "편경사",
+                    "label": "편경사",
+                    "dataType": "numeric",
+                    "rm_internal_uid": "B933EA72-A827-1769-7187-77DDB3A8AE40",
+                    "aggregate": "",
+                    "alias": "편경사"
+                  },
+                  {
+                    "id": 3693,
+                    "name": "종단경사",
+                    "label": "종단경사",
+                    "dataType": "numeric",
+                    "rm_internal_uid": "C52D60BF-E13E-A0E4-C1D2-77DDBA783C31",
+                    "aggregate": "",
+                    "alias": "종단경사"
+                  }
+                ],
+                "maximum": 100,
+                "fieldName": "yField",
+                "seriesType": "line",
+                "category": "measure",
+                "use": true
+              }
+            ],
+            "customStyle": true,
+            "propertyOptions": [],
+            "layoutMetaData": {},
+            "isMultiView": false,
+            "multiViewRow": 2,
+            "multiViewColumn": 2,
+            "multiViewSubCategoryField": {
+              "label": "비고",
+              "id": 3724,
+              "name": "비고"
+            },
+            "multiViewFillType": null,
+            "marginLeft": 0,
+            "marginTop": 0,
+            "marginRight": 0,
+            "marginBottom": 0,
+            "isAutoServiceStart": true,
+            "vars": "",
+            "componentLayout": "<BIX5 backgroundColor=\"transparent\" alpha=\"1\" padding=\"8\" fontSize=\"12\">\n  <Options>\n    <Caption text=\"\" height=\"1\" color=\"#333333\" textAlign=\"center\" fontSize=\"15\" fontFamily=\"\" fontWeight=\"normal\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"5\" backgroundColor=\"transparent\"/>\n    <SubCaption text=\"\" height=\"1\" color=\"#999999\" textAlign=\"center\" fontSize=\"13\" fontFamily=\"\" fontWeight=\"normal\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"0\" backgroundColor=\"transparent\"/>\n    <Legend position=\"top\" display=\"block\" backgroundColor=\"transparent\" borderStyle=\"none\" hAlign=\"center\"/>\n  </Options>\n  <UnitFormatter id=\"unitfmt\" useThousandsSeparator=\"true\" units=\"auto\" unitSymbols=\"[,K,M,G,T]\" divisor=\"1000\" rounding=\"none\" precision=\"undefined\"/>\n  <DateFormatter id=\"dateFmt\" formatString=\"YYYY/MM/DD\"/>\n  <SeriesInterpolate id=\"si\"/>\n  <SeriesSlide id=\"ss\" direction=\"right\"/>\n  <Combination2DChart showDataTips=\"true\" _cType=\"Combination2DChart\">\n    <horizontalAxis>\n      <LinearAxis id=\"hAxis\"/>\n    </horizontalAxis>\n    <verticalAxis>\n      <LinearAxis id=\"vAxis\" formatter=\"{unitfmt}\" title=\"곡률\" minimum=\"NaN\" maximum=\"NaN\" interval=\"NaN\"/>\n    </verticalAxis>\n    <series>\n      <Column2DSet type=\"clustered\" columnWidthRatio=\"0.1\" columnWidthMinRatio=\"1\">\n        <series>\n          <Column2DSeries labelPosition=\"none\" formatter=\"{unitfmt}\" yField=\"곡률\" displayName=\"곡률\" color=\"#808080\" showDataEffect=\"\" xField=\"거리\">\n            <fills>\n              <SolidColor color=\"#ffb808\"/>\n            </fills>\n            <stroke>\n              <Stroke color=\"#ffb808\" weight=\"2\" alpha=\"1\"/>\n            </stroke>\n          </Column2DSeries>\n        </series>\n      </Column2DSet>\n      <Line2DSeries radius=\"6\" formatter=\"{unitfmt}\" yField=\"편경사\" displayName=\"편경사\" showDataEffect=\"\" xField=\"거리\">\n        <verticalAxis>\n          <LinearAxis id=\"vAxis2\" formatter=\"{unitfmt}\" minimum=\"NaN\" maximum=\"NaN\" interval=\"NaN\"/>\n        </verticalAxis>\n        <lineStroke>\n          <Stroke color=\"#2d219b\" weight=\"2\"/>\n        </lineStroke>\n        <stroke>\n          <Stroke color=\"#2d219b\" weight=\"3\"/>\n        </stroke>\n        <fills>\n          <SolidColor color=\"#ffffff\"/>\n        </fills>\n      </Line2DSeries>\n      <Line2DSeries radius=\"6\" formatter=\"{unitfmt}\" yField=\"종단경사\" displayName=\"종단경사\" showDataEffect=\"\" xField=\"거리\">\n        <verticalAxis>\n          <LinearAxis id=\"vAxis2\" formatter=\"{unitfmt}\" minimum=\"NaN\" title=\"경사\" maximum=\"NaN\" interval=\"1\"/>\n        </verticalAxis>\n        <lineStroke>\n          <Stroke color=\"#86c1e0\" weight=\"2\"/>\n        </lineStroke>\n        <stroke>\n          <Stroke color=\"#86c1e0\" weight=\"3\"/>\n        </stroke>\n        <fills>\n          <SolidColor color=\"#ffffff\"/>\n        </fills>\n      </Line2DSeries>\n    </series>\n    <horizontalAxisRenderers>\n      <Axis2DRenderer axis=\"{hAxis}\" showLine=\"true\" color=\"#808080\">\n        <axisStroke>\n          <Stroke color=\"#eeeeee\" alpha=\"1\"/>\n        </axisStroke>\n      </Axis2DRenderer>\n    </horizontalAxisRenderers>\n    <verticalAxisRenderers>\n      <Axis2DRenderer axis=\"{vAxis}\" showLine=\"true\" placement=\"left\" verticalAxisTitleAlignment=\"bottom\" color=\"#808080\">\n        <axisStroke>\n          <Stroke color=\"#eeeeee\" alpha=\"1\"/>\n        </axisStroke>\n      </Axis2DRenderer>\n      <Axis2DRenderer axis=\"{vAxis2}\" showLine=\"true\" color=\"#808080\" verticalAxisTitleAlignment=\"bottom\" placement=\"right\">\n        <axisStroke>\n          <Stroke color=\"#eeeeee\" alpha=\"1\"/>\n        </axisStroke>\n      </Axis2DRenderer>\n    </verticalAxisRenderers>\n    <backgroundElements>\n      <GridLines direction=\"horizontal\" showBorderStroke=\"false\">\n        <horizontalStroke>\n          <Stroke color=\"#d3d3d3\" alpha=\"1\" weight=\"1\"/>\n        </horizontalStroke>\n        <verticalStroke>\n          <Stroke color=\"#d3d3d3\" alpha=\"1\" weight=\"1\"/>\n        </verticalStroke>\n        <borderStroke>\n          <Stroke color=\"#eeeeee\" alpha=\"1\" weight=\"1\"/>\n        </borderStroke>\n      </GridLines>\n    </backgroundElements>\n    <annotationElements>\n      <CrossRangeZoomer enableZooming=\"true\"/>\n    </annotationElements>\n  </Combination2DChart>\n</BIX5>",
+            "componentLayoutId": "Combination-Combination_2D_+_Line",
+            "componentLayoutJson": {
+              "BIX5": [
+                {
+                  "Options": {
+                    "Caption": {
+                      "text": "",
+                      "height": "1",
+                      "color": "#333333",
+                      "textAlign": "center",
+                      "fontSize": "15",
+                      "fontFamily": "",
+                      "fontWeight": "normal",
+                      "paddingLeft": "0",
+                      "paddingRight": "0",
+                      "paddingTop": "0",
+                      "paddingBottom": "5",
+                      "backgroundColor": "transparent"
+                    },
+                    "SubCaption": {
+                      "text": "",
+                      "height": "1",
+                      "color": "#999999",
+                      "textAlign": "center",
+                      "fontSize": "13",
+                      "fontFamily": "",
+                      "fontWeight": "normal",
+                      "paddingLeft": "0",
+                      "paddingRight": "0",
+                      "paddingTop": "0",
+                      "paddingBottom": "0",
+                      "backgroundColor": "transparent"
+                    },
+                    "Legend": {
+                      "position": "top",
+                      "display": "block",
+                      "backgroundColor": "transparent",
+                      "borderStyle": "none",
+                      "hAlign": "center"
+                    }
+                  }
+                },
+                {
+                  "UnitFormatter": {
+                    "id": "unitfmt",
+                    "useThousandsSeparator": "true",
+                    "units": "auto",
+                    "unitSymbols": "[,K,M,G,T]",
+                    "divisor": "1000",
+                    "rounding": "none"
+                  }
+                },
+                {
+                  "DateFormatter": {
+                    "id": "dateFmt",
+                    "formatString": "YYYY/MM/DD"
+                  }
+                },
+                {
+                  "SeriesInterpolate": {
+                    "id": "si"
+                  }
+                },
+                {
+                  "SeriesSlide": {
+                    "id": "ss",
+                    "direction": "right"
+                  }
+                },
+                {
+                  "component": {
+                    "showDataTips": "true",
+                    "_cType": "Combination2DChart",
+                    "horizontalAxis": {
+                      "LinearAxis": {
+                        "id": "hAxis"
+                      }
+                    },
+                    "verticalAxis": {
+                      "LinearAxis": {
+                        "id": "vAxis",
+                        "formatter": "{unitfmt}",
+                        "minimum": "NaN",
+                        "maximum": "NaN",
+                        "interval": "NaN"
+                      }
+                    },
+                    "series": [
+                      {
+                        "Column2DSet": {
+                          "type": "clustered",
+                          "columnWidthRatio": 0.1,
+                          "columnWidthMinRatio": "1",
+                          "series": [
+                            {
+                              "Column2DSeries": {
+                                "labelPosition": "none",
+                                "formatter": "{unitfmt}",
+                                "yField": "곡률",
+                                "displayName": "곡률",
+                                "color": "#808080",
+                                "showDataEffect": "",
+                                "fills": [
+                                  {
+                                    "SolidColor": {
+                                      "color": "#ffb808"
+                                    }
+                                  }
+                                ],
+                                "stroke": {
+                                  "Stroke": {
+                                    "color": "#ffb808",
+                                    "weight": "2",
+                                    "alpha": "1"
+                                  }
+                                },
+                                "xField": "거리"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "Line2DSeries": {
+                          "radius": "6",
+                          "formatter": "{unitfmt}",
+                          "yField": "편경사",
+                          "displayName": "편경사",
+                          "itemRenderer": "CircleItemRenderer",
+                          "showDataEffect": "",
+                          "verticalAxis": {
+                            "LinearAxis": {
+                              "id": "vAxis2",
+                              "formatter": "{unitfmt}",
+                              "minimum": "NaN",
+                              "maximum": "NaN",
+                              "interval": "NaN"
+                            }
+                          },
+                          "lineStroke": {
+                            "Stroke": {
+                              "color": "#2d219b",
+                              "weight": 2
+                            }
+                          },
+                          "stroke": {
+                            "Stroke": {
+                              "color": "#2d219b",
+                              "weight": "3"
+                            }
+                          },
+                          "fills": [
+                            {
+                              "SolidColor": {
+                                "color": "#ffffff"
+                              }
+                            }
+                          ],
+                          "xField": "거리"
+                        }
+                      },
+                      {
+                        "Line2DSeries": {
+                          "radius": "6",
+                          "formatter": "{unitfmt}",
+                          "yField": "종단경사",
+                          "displayName": "종단경사",
+                          "itemRenderer": "CircleItemRenderer",
+                          "showDataEffect": "",
+                          "verticalAxis": {
+                            "LinearAxis": {
+                              "id": "vAxis2",
+                              "formatter": "{unitfmt}",
+                              "minimum": "NaN",
+                              "maximum": "NaN",
+                              "interval": "NaN"
+                            }
+                          },
+                          "lineStroke": {
+                            "Stroke": {
+                              "color": "#86c1e0",
+                              "weight": 2
+                            }
+                          },
+                          "stroke": {
+                            "Stroke": {
+                              "color": "#86c1e0",
+                              "weight": "3"
+                            }
+                          },
+                          "fills": [
+                            {
+                              "SolidColor": {
+                                "color": "#ffffff"
+                              }
+                            }
+                          ],
+                          "xField": "거리"
+                        }
+                      }
+                    ],
+                    "horizontalAxisRenderers": [
+                      {
+                        "Axis2DRenderer": {
+                          "axis": "{hAxis}",
+                          "showLine": "true",
+                          "color": "#808080",
+                          "axisStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1"
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "verticalAxisRenderers": [
+                      {
+                        "Axis2DRenderer": {
+                          "axis": "{vAxis}",
+                          "showLine": "true",
+                          "placement": "left",
+                          "color": "#808080",
+                          "axisStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "Axis2DRenderer": {
+                          "axis": "{vAxis2}",
+                          "showLine": "true",
+                          "color": "#808080",
+                          "placement": "right",
+                          "axisStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1"
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "backgroundElements": [
+                      {
+                        "GridLines": {
+                          "direction": "horizontal",
+                          "showBorderStroke": "false",
+                          "horizontalStroke": {
+                            "Stroke": {
+                              "color": "#d3d3d3",
+                              "alpha": 1,
+                              "weight": "1"
+                            }
+                          },
+                          "verticalStroke": {
+                            "Stroke": {
+                              "color": "#d3d3d3",
+                              "alpha": 1,
+                              "weight": "1"
+                            }
+                          },
+                          "borderStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1",
+                              "weight": "1"
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "_attr": {
+                    "backgroundColor": "transparent",
+                    "alpha": "1",
+                    "padding": 6,
+                    "fontSize": 12
+                  }
+                }
+              ]
+            },
+            "componentLayoutType": "combi1",
+            "bindingSource": "4a7a2f14de639ef98cadf0b857e8af0b",
+            "referenceSources": []
+          }
+        }
+      ]
+    },
+    {
+      "slideName": "슬라이드2",
+      "backgroundColor": "#ffffff",
+      "backgroundAlpha": 1,
+      "userData": {},
+      "widgets": [
+        {
+          "options": {
+            "border": false,
+            "borderWidth": "0px",
+            "borderColor": "rgb(240, 240, 240)",
+            "borderRadius": "0px",
+            "borderTopLeftRadius": "0px",
+            "borderTopRightRadius": "0px",
+            "borderBottomRightRadius": "0px",
+            "borderBottomLeftRadius": "0px",
+            "resizable": true,
+            "allowDrop": true
+          },
+          "sid": "w7409AD7D768512DC60C77C90876D6791",
+          "x": 5,
+          "y": 9,
+          "width": 560,
+          "height": 497,
+          "layoutType": "headless",
+          "type": "chart",
+          "title": "박스형 컬럼 2D 차트",
+          "showMaximizer": true,
+          "label": "박스형 컬럼 2D 차트",
+          "icon": "widgetIcons/gray/chart_column_2d",
+          "userData": {},
+          "lock": false,
+          "backgroundColor": "transparent",
+          "backgroundImage": {
+            "src": null
+          },
+          "backgroundRepeat": "no-repeat",
+          "backgroundPosition": "center",
+          "backgroundSize": "cover",
+          "backgroundAlpha": 1,
+          "contentUrl": "/BIX5/Assets/Modules/Chart/Column-Column.html",
+          "componentOptions": {
+            "isAggregation": true,
+            "dataFields": [
+              {
+                "label": "수평축 필드",
+                "columns": [
+                  {
+                    "id": 3863,
+                    "name": "평균",
+                    "label": "평균",
+                    "dataType": "string",
+                    "rm_internal_uid": "20EA8D85-285B-936C-F354-7C94C9D6CF54",
+                    "aggregate": "",
+                    "alias": "평균"
+                  }
+                ],
+                "maximum": 1,
+                "fieldName": "xField",
+                "category": "dimension",
+                "use": true
+              },
+              {
+                "label": "수직축 필드",
+                "columns": [
+                  {
+                    "id": 3840,
+                    "name": "SPI_도시고속",
+                    "label": "SPI_도시고속",
+                    "dataType": "numeric",
+                    "rm_internal_uid": "B1B2676E-1220-86A9-7905-7C94FFDD522D",
+                    "aggregate": "avg",
+                    "alias": "avg(SPI_도시고속)"
+                  },
+                  {
+                    "id": 3841,
+                    "name": "SPI_주간선",
+                    "label": "SPI_주간선",
+                    "dataType": "numeric",
+                    "rm_internal_uid": "D8F55B64-EFAD-1B4E-D8D3-7C9506766050",
+                    "aggregate": "avg",
+                    "alias": "avg(SPI_주간선)"
+                  },
+                  {
+                    "id": 3842,
+                    "name": "SPI_보조간선",
+                    "label": "SPI_보조간선",
+                    "dataType": "numeric",
+                    "rm_internal_uid": "F90A29F2-356C-606F-DC9F-7C950BC6F206",
+                    "aggregate": "avg",
+                    "alias": "avg(SPI_보조간선)"
+                  }
+                ],
+                "maximum": 100,
+                "fieldName": "yField",
+                "category": "measure",
+                "use": true
+              }
+            ],
+            "customStyle": false,
+            "propertyOptions": [],
+            "layoutMetaData": {},
+            "isMultiView": false,
+            "multiViewRow": 2,
+            "multiViewColumn": 2,
+            "multiViewSubCategoryField": {},
+            "multiViewFillType": null,
+            "marginLeft": 0,
+            "marginTop": 0,
+            "marginRight": 0,
+            "marginBottom": 0,
+            "isAutoServiceStart": true,
+            "vars": "",
+            "componentLayout": "<BIX5 backgroundColor=\"transparent\" alpha=\"1\" fontSize=\"14\" padding=\"7\"><Options><Caption text=\"평균 SPI 지수 \" color=\"#333333\" textAlign=\"center\" fontSize=\"17\" fontFamily=\"NanumGothic\" fontWeight=\"bold\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"1\" backgroundColor=\"transparent\" /><SubCaption text=\"\" height=\"1\" color=\"#999999\" textAlign=\"center\" fontSize=\"13\" fontFamily=\"\" fontWeight=\"normal\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"0\" backgroundColor=\"transparent\" /><Legend position=\"bottom\" display=\"block\" backgroundColor=\"transparent\" borderStyle=\"none\" hAlign=\"center\" /></Options><UnitFormatter id=\"unitfmt\" useThousandsSeparator=\"true\" units=\"auto\" unitSymbols=\"[,K,M,G,T]\" divisor=\"1000\" rounding=\"nearest\" /><DateFormatter id=\"dateFmt\" formatString=\"YYYY&#x2F;MM&#x2F;DD\" /><SeriesInterpolate id=\"si\" /><SeriesSlide id=\"ss\" direction=\"right\" /><Column2DChart showDataTips=\"true\" columnWidthRatio=\"0.5\" columnWidthMinRatio=\"1\" _cType=\"Column2DChart\"><horizontalAxis><CategoryAxis id=\"hAxis\" categoryField=\"평균\" /></horizontalAxis><verticalAxis><LinearAxis id=\"vAxis\" formatter=\"{unitfmt}\" minimum=\"NaN\" maximum=\"NaN\" interval=\"NaN\" /></verticalAxis><series><Column2DSet type=\"clustered\"><series><Column2DSeries itemRenderer=\"BoxItemRenderer\" labelPosition=\"none\" yField=\"avg(SPI_도시고속)\" displayName=\"SPI_도시고속\" showDataEffect=\"\" color=\"#808080\" _nodeName=\"Column2DSeries\" formatter=\"{unitfmt}\"><fills><SolidColor color=\"#5587a2\" /></fills><stroke><Stroke color=\"#5587a2\" weight=\"2\" alpha=\"1\" /></stroke></Column2DSeries><Column2DSeries itemRenderer=\"BoxItemRenderer\" labelPosition=\"none\" yField=\"avg(SPI_주간선)\" displayName=\"SPI_주간선\" showDataEffect=\"\" color=\"#808080\" _nodeName=\"Column2DSeries\" formatter=\"{unitfmt}\"><fills><SolidColor color=\"#519c90\" /></fills><stroke><Stroke color=\"#519c90\" weight=\"2\" alpha=\"1\" /></stroke></Column2DSeries><Column2DSeries itemRenderer=\"BoxItemRenderer\" labelPosition=\"none\" yField=\"avg(SPI_보조간선)\" displayName=\"SPI_보조간선\" showDataEffect=\"\" color=\"#808080\" _nodeName=\"Column2DSeries\" formatter=\"{unitfmt}\"><fills><SolidColor color=\"#86c1e0\" /></fills><stroke><Stroke color=\"#86c1e0\" weight=\"2\" alpha=\"1\" /></stroke></Column2DSeries></series></Column2DSet></series><horizontalAxisRenderers><Axis2DRenderer axis=\"{hAxis}\" showLine=\"true\" color=\"#808080\"><axisStroke><Stroke color=\"#eeeeee\" alpha=\"1\" /></axisStroke></Axis2DRenderer></horizontalAxisRenderers><verticalAxisRenderers><Axis2DRenderer axis=\"{vAxis}\" showLine=\"true\" placement=\"left\" color=\"#808080\"><axisStroke><Stroke color=\"#eeeeee\" alpha=\"1\" /></axisStroke></Axis2DRenderer></verticalAxisRenderers><backgroundElements><GridLines direction=\"horizontal\" showBorderStroke=\"false\"><horizontalStroke><Stroke color=\"#eeeeee\" alpha=\"1\" weight=\"1\" /></horizontalStroke><verticalStroke><Stroke color=\"#eeeeee\" alpha=\"1\" weight=\"1\" /></verticalStroke><borderStroke><Stroke color=\"#eeeeee\" alpha=\"1\" weight=\"1\" /></borderStroke></GridLines></backgroundElements></Column2DChart></BIX5>",
+            "componentLayoutId": "Column-Column",
+            "componentLayoutJson": {
+              "BIX5": [
+                {
+                  "Options": {
+                    "Caption": {
+                      "text": "평균 SPI 지수 ",
+                      "color": "#333333",
+                      "textAlign": "center",
+                      "fontSize": "17",
+                      "fontFamily": "NanumGothic",
+                      "fontWeight": "bold",
+                      "paddingLeft": "0",
+                      "paddingRight": "0",
+                      "paddingTop": 0,
+                      "paddingBottom": 1,
+                      "backgroundColor": "transparent"
+                    },
+                    "SubCaption": {
+                      "text": "",
+                      "height": "1",
+                      "color": "#999999",
+                      "textAlign": "center",
+                      "fontSize": "13",
+                      "fontFamily": "",
+                      "fontWeight": "normal",
+                      "paddingLeft": "0",
+                      "paddingRight": "0",
+                      "paddingTop": "0",
+                      "paddingBottom": "0",
+                      "backgroundColor": "transparent"
+                    },
+                    "Legend": {
+                      "position": "bottom",
+                      "display": "block",
+                      "backgroundColor": "transparent",
+                      "borderStyle": "none",
+                      "hAlign": "center"
+                    }
+                  }
+                },
+                {
+                  "UnitFormatter": {
+                    "id": "unitfmt",
+                    "useThousandsSeparator": "true",
+                    "units": "auto",
+                    "unitSymbols": "[,K,M,G,T]",
+                    "divisor": "1000",
+                    "rounding": "nearest"
+                  }
+                },
+                {
+                  "DateFormatter": {
+                    "id": "dateFmt",
+                    "formatString": "YYYY/MM/DD"
+                  }
+                },
+                {
+                  "SeriesInterpolate": {
+                    "id": "si"
+                  }
+                },
+                {
+                  "SeriesSlide": {
+                    "id": "ss",
+                    "direction": "right"
+                  }
+                },
+                {
+                  "component": {
+                    "showDataTips": "true",
+                    "columnWidthRatio": "0.5",
+                    "columnWidthMinRatio": "1",
+                    "horizontalAxis": {
+                      "CategoryAxis": {
+                        "id": "hAxis",
+                        "categoryField": "평균"
+                      }
+                    },
+                    "verticalAxis": {
+                      "LinearAxis": {
+                        "id": "vAxis",
+                        "formatter": "{unitfmt}",
+                        "minimum": "NaN",
+                        "maximum": "NaN",
+                        "interval": "NaN"
+                      }
+                    },
+                    "series": [
+                      {
+                        "Column2DSet": {
+                          "type": "clustered",
+                          "series": [
+                            {
+                              "Column2DSeries": {
+                                "itemRenderer": "BoxItemRenderer",
+                                "labelPosition": "none",
+                                "yField": "avg(SPI_도시고속)",
+                                "displayName": "SPI_도시고속",
+                                "showDataEffect": "",
+                                "color": "#808080",
+                                "fills": [
+                                  {
+                                    "SolidColor": {
+                                      "color": "#5587a2"
+                                    }
+                                  }
+                                ],
+                                "stroke": {
+                                  "Stroke": {
+                                    "color": "#5587a2",
+                                    "weight": "2",
+                                    "alpha": "1"
+                                  }
+                                },
+                                "_nodeName": "Column2DSeries",
+                                "formatter": "{unitfmt}"
+                              }
+                            },
+                            {
+                              "Column2DSeries": {
+                                "itemRenderer": "BoxItemRenderer",
+                                "labelPosition": "none",
+                                "yField": "avg(SPI_주간선)",
+                                "displayName": "SPI_주간선",
+                                "showDataEffect": "",
+                                "color": "#808080",
+                                "fills": [
+                                  {
+                                    "SolidColor": {
+                                      "color": "#519c90"
+                                    }
+                                  }
+                                ],
+                                "stroke": {
+                                  "Stroke": {
+                                    "color": "#519c90",
+                                    "weight": "2",
+                                    "alpha": "1"
+                                  }
+                                },
+                                "_nodeName": "Column2DSeries",
+                                "formatter": "{unitfmt}"
+                              }
+                            },
+                            {
+                              "Column2DSeries": {
+                                "itemRenderer": "BoxItemRenderer",
+                                "labelPosition": "none",
+                                "yField": "avg(SPI_보조간선)",
+                                "displayName": "SPI_보조간선",
+                                "showDataEffect": "",
+                                "color": "#808080",
+                                "fills": [
+                                  {
+                                    "SolidColor": {
+                                      "color": "#86c1e0"
+                                    }
+                                  }
+                                ],
+                                "stroke": {
+                                  "Stroke": {
+                                    "color": "#86c1e0",
+                                    "weight": "2",
+                                    "alpha": "1"
+                                  }
+                                },
+                                "_nodeName": "Column2DSeries",
+                                "formatter": "{unitfmt}"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "horizontalAxisRenderers": [
+                      {
+                        "Axis2DRenderer": {
+                          "axis": "{hAxis}",
+                          "showLine": "true",
+                          "color": "#808080",
+                          "axisStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1"
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "verticalAxisRenderers": [
+                      {
+                        "Axis2DRenderer": {
+                          "axis": "{vAxis}",
+                          "showLine": "true",
+                          "placement": "left",
+                          "color": "#808080",
+                          "axisStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1"
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "backgroundElements": [
+                      {
+                        "GridLines": {
+                          "direction": "horizontal",
+                          "showBorderStroke": "false",
+                          "horizontalStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1",
+                              "weight": "1"
+                            }
+                          },
+                          "verticalStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1",
+                              "weight": "1"
+                            }
+                          },
+                          "borderStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1",
+                              "weight": "1"
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "_cType": "Column2DChart"
+                  }
+                },
+                {
+                  "_attr": {
+                    "backgroundColor": "transparent",
+                    "alpha": "1",
+                    "fontSize": 14,
+                    "padding": 7
+                  }
+                }
+              ]
+            },
+            "componentLayoutType": "column",
+            "bindingSource": "44337cc58f383ead81bf0a5b2acdfcc2",
+            "referenceSources": []
+          }
+        },
+        {
+          "options": {
+            "border": false,
+            "borderWidth": "0px",
+            "borderColor": "rgb(240, 240, 240)",
+            "borderRadius": "0px",
+            "borderTopLeftRadius": "0px",
+            "borderTopRightRadius": "0px",
+            "borderBottomRightRadius": "0px",
+            "borderBottomLeftRadius": "0px",
+            "resizable": true,
+            "allowDrop": true
+          },
+          "sid": "w1987A59AB748EC50A0917C971EB60463",
+          "x": 582,
+          "y": 8,
+          "width": 560,
+          "height": 497,
+          "layoutType": "headless",
+          "type": "chart",
+          "title": "박스형 컬럼 2D 차트",
+          "showMaximizer": true,
+          "label": "박스형 컬럼 2D 차트",
+          "icon": "widgetIcons/gray/chart_column_2d",
+          "userData": {},
+          "lock": false,
+          "backgroundColor": "transparent",
+          "backgroundImage": {
+            "src": null
+          },
+          "backgroundRepeat": "no-repeat",
+          "backgroundPosition": "center",
+          "backgroundSize": "cover",
+          "backgroundAlpha": 1,
+          "contentUrl": "/BIX5/Assets/Modules/Chart/Column-Column.html",
+          "componentOptions": {
+            "isAggregation": true,
+            "dataFields": [
+              {
+                "label": "수평축 필드",
+                "columns": [
+                  {
+                    "id": 3863,
+                    "name": "평균",
+                    "label": "평균",
+                    "dataType": "string",
+                    "rm_internal_uid": "63652B07-C54F-58A9-3468-7C972B166F3A",
+                    "aggregate": "count",
+                    "alias": "count(평균)"
+                  }
+                ],
+                "maximum": 1,
+                "fieldName": "xField",
+                "category": "dimension",
+                "use": true
+              },
+              {
+                "label": "수직축 필드",
+                "columns": [
+                  {
+                    "id": 3837,
+                    "name": "HPICI_아스팔트",
+                    "label": "HPICI_아스팔트",
+                    "dataType": "numeric",
+                    "rm_internal_uid": "4FA7AC1A-CD60-954F-3165-7C97376DD74E",
+                    "aggregate": "avg",
+                    "alias": "avg(HPICI_아스팔트)"
+                  },
+                  {
+                    "id": 3838,
+                    "name": "HPICI_콘크리트",
+                    "label": "HPICI_콘크리트",
+                    "dataType": "numeric",
+                    "rm_internal_uid": "D14A51E2-19B2-135B-0345-7C973AADD7F4",
+                    "aggregate": "avg",
+                    "alias": "avg(HPICI_콘크리트)"
+                  },
+                  {
+                    "id": 3839,
+                    "name": "NHPCI",
+                    "label": "NHPCI",
+                    "dataType": "numeric",
+                    "rm_internal_uid": "7DDA7559-4458-C3C6-BFA9-7C973F4DAC95",
+                    "aggregate": "avg",
+                    "alias": "avg(NHPCI)"
+                  }
+                ],
+                "maximum": 100,
+                "fieldName": "yField",
+                "category": "measure",
+                "use": true
+              }
+            ],
+            "customStyle": false,
+            "propertyOptions": [],
+            "layoutMetaData": {},
+            "isMultiView": false,
+            "multiViewRow": 2,
+            "multiViewColumn": 2,
+            "multiViewSubCategoryField": {},
+            "multiViewFillType": null,
+            "marginLeft": 0,
+            "marginTop": 0,
+            "marginRight": 0,
+            "marginBottom": 0,
+            "isAutoServiceStart": true,
+            "vars": "",
+            "componentLayout": "<BIX5 backgroundColor=\"transparent\" alpha=\"1\" fontSize=\"14\" padding=\"7\"><Options><Caption text=\"평균 PCI 지수\" color=\"#333333\" textAlign=\"center\" fontSize=\"17\" fontFamily=\"NanumGothic\" fontWeight=\"bold\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"1\" backgroundColor=\"transparent\" /><SubCaption text=\"\" height=\"1\" color=\"#999999\" textAlign=\"center\" fontSize=\"13\" fontFamily=\"\" fontWeight=\"normal\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"0\" backgroundColor=\"transparent\" /><Legend position=\"bottom\" display=\"block\" backgroundColor=\"transparent\" borderStyle=\"none\" hAlign=\"center\" /></Options><UnitFormatter id=\"unitfmt\" useThousandsSeparator=\"true\" units=\"auto\" unitSymbols=\"[,K,M,G,T]\" divisor=\"1000\" rounding=\"none\" /><DateFormatter id=\"dateFmt\" formatString=\"YYYY&#x2F;MM&#x2F;DD\" /><SeriesInterpolate id=\"si\" /><SeriesSlide id=\"ss\" direction=\"right\" /><Column2DChart showDataTips=\"true\" columnWidthRatio=\"0.5\" columnWidthMinRatio=\"1\" _cType=\"Column2DChart\"><horizontalAxis><CategoryAxis id=\"hAxis\" categoryField=\"평균\" formatter=\"\" /></horizontalAxis><verticalAxis><LinearAxis id=\"vAxis\" formatter=\"{unitfmt}\" minimum=\"NaN\" maximum=\"NaN\" interval=\"NaN\" /></verticalAxis><series><Column2DSet type=\"clustered\"><series><Column2DSeries itemRenderer=\"BoxItemRenderer\" labelPosition=\"none\" yField=\"avg(HPICI_아스팔트)\" displayName=\"HPICI_아스팔트\" showDataEffect=\"\" color=\"#808080\" _nodeName=\"Column2DSeries\" formatter=\"{unitfmt}\"><fills><SolidColor color=\"#61609b\" /></fills><stroke><Stroke color=\"#61609b\" weight=\"2\" alpha=\"1\" /></stroke></Column2DSeries><Column2DSeries itemRenderer=\"BoxItemRenderer\" labelPosition=\"none\" yField=\"avg(HPICI_콘크리트)\" displayName=\"HPICI_콘크리트\" showDataEffect=\"\" color=\"#808080\" _nodeName=\"Column2DSeries\" formatter=\"{unitfmt}\"><fills><SolidColor color=\"#8590d8\" /></fills><stroke><Stroke color=\"#8590d8\" weight=\"2\" alpha=\"1\" /></stroke></Column2DSeries><Column2DSeries itemRenderer=\"BoxItemRenderer\" labelPosition=\"none\" yField=\"avg(NHPCI)\" displayName=\"NHPCI\" showDataEffect=\"\" color=\"#808080\" _nodeName=\"Column2DSeries\" formatter=\"{unitfmt}\"><fills><SolidColor color=\"#4087c6\" /></fills><stroke><Stroke color=\"#4087c6\" weight=\"2\" alpha=\"1\" /></stroke></Column2DSeries></series></Column2DSet></series><horizontalAxisRenderers><Axis2DRenderer axis=\"{hAxis}\" showLine=\"true\" color=\"#808080\"><axisStroke><Stroke color=\"#eeeeee\" alpha=\"1\" /></axisStroke></Axis2DRenderer></horizontalAxisRenderers><verticalAxisRenderers><Axis2DRenderer axis=\"{vAxis}\" showLine=\"true\" placement=\"left\" color=\"#808080\"><axisStroke><Stroke color=\"#eeeeee\" alpha=\"1\" /></axisStroke></Axis2DRenderer></verticalAxisRenderers><backgroundElements><GridLines direction=\"horizontal\" showBorderStroke=\"false\"><horizontalStroke><Stroke color=\"#eeeeee\" alpha=\"1\" weight=\"1\" /></horizontalStroke><verticalStroke><Stroke color=\"#eeeeee\" alpha=\"1\" weight=\"1\" /></verticalStroke><borderStroke><Stroke color=\"#eeeeee\" alpha=\"1\" weight=\"1\" /></borderStroke></GridLines></backgroundElements></Column2DChart></BIX5>",
+            "componentLayoutId": "Column-Column",
+            "componentLayoutJson": {
+              "BIX5": [
+                {
+                  "Options": {
+                    "Caption": {
+                      "text": "평균 PCI 지수",
+                      "color": "#333333",
+                      "textAlign": "center",
+                      "fontSize": "17",
+                      "fontFamily": "NanumGothic",
+                      "fontWeight": "bold",
+                      "paddingLeft": "0",
+                      "paddingRight": "0",
+                      "paddingTop": "0",
+                      "paddingBottom": 1,
+                      "backgroundColor": "transparent"
+                    },
+                    "SubCaption": {
+                      "text": "",
+                      "height": "1",
+                      "color": "#999999",
+                      "textAlign": "center",
+                      "fontSize": "13",
+                      "fontFamily": "",
+                      "fontWeight": "normal",
+                      "paddingLeft": "0",
+                      "paddingRight": "0",
+                      "paddingTop": "0",
+                      "paddingBottom": "0",
+                      "backgroundColor": "transparent"
+                    },
+                    "Legend": {
+                      "position": "bottom",
+                      "display": "block",
+                      "backgroundColor": "transparent",
+                      "borderStyle": "none",
+                      "hAlign": "center"
+                    }
+                  }
+                },
+                {
+                  "UnitFormatter": {
+                    "id": "unitfmt",
+                    "useThousandsSeparator": "true",
+                    "units": "auto",
+                    "unitSymbols": "[,K,M,G,T]",
+                    "divisor": "1000",
+                    "rounding": "none"
+                  }
+                },
+                {
+                  "DateFormatter": {
+                    "id": "dateFmt",
+                    "formatString": "YYYY/MM/DD"
+                  }
+                },
+                {
+                  "SeriesInterpolate": {
+                    "id": "si"
+                  }
+                },
+                {
+                  "SeriesSlide": {
+                    "id": "ss",
+                    "direction": "right"
+                  }
+                },
+                {
+                  "component": {
+                    "showDataTips": "true",
+                    "columnWidthRatio": "0.5",
+                    "columnWidthMinRatio": "1",
+                    "horizontalAxis": {
+                      "CategoryAxis": {
+                        "id": "hAxis",
+                        "categoryField": "평균",
+                        "formatter": ""
+                      }
+                    },
+                    "verticalAxis": {
+                      "LinearAxis": {
+                        "id": "vAxis",
+                        "formatter": "{unitfmt}",
+                        "minimum": "NaN",
+                        "maximum": "NaN",
+                        "interval": "NaN"
+                      }
+                    },
+                    "series": [
+                      {
+                        "Column2DSet": {
+                          "type": "clustered",
+                          "series": [
+                            {
+                              "Column2DSeries": {
+                                "itemRenderer": "BoxItemRenderer",
+                                "labelPosition": "none",
+                                "yField": "avg(HPICI_아스팔트)",
+                                "displayName": "HPICI_아스팔트",
+                                "showDataEffect": "",
+                                "color": "#808080",
+                                "fills": [
+                                  {
+                                    "SolidColor": {
+                                      "color": "#61609b"
+                                    }
+                                  }
+                                ],
+                                "stroke": {
+                                  "Stroke": {
+                                    "color": "#61609b",
+                                    "weight": "2",
+                                    "alpha": "1"
+                                  }
+                                },
+                                "_nodeName": "Column2DSeries",
+                                "formatter": "{unitfmt}"
+                              }
+                            },
+                            {
+                              "Column2DSeries": {
+                                "itemRenderer": "BoxItemRenderer",
+                                "labelPosition": "none",
+                                "yField": "avg(HPICI_콘크리트)",
+                                "displayName": "HPICI_콘크리트",
+                                "showDataEffect": "",
+                                "color": "#808080",
+                                "fills": [
+                                  {
+                                    "SolidColor": {
+                                      "color": "#8590d8"
+                                    }
+                                  }
+                                ],
+                                "stroke": {
+                                  "Stroke": {
+                                    "color": "#8590d8",
+                                    "weight": "2",
+                                    "alpha": "1"
+                                  }
+                                },
+                                "_nodeName": "Column2DSeries",
+                                "formatter": "{unitfmt}"
+                              }
+                            },
+                            {
+                              "Column2DSeries": {
+                                "itemRenderer": "BoxItemRenderer",
+                                "labelPosition": "none",
+                                "yField": "avg(NHPCI)",
+                                "displayName": "NHPCI",
+                                "showDataEffect": "",
+                                "color": "#808080",
+                                "fills": [
+                                  {
+                                    "SolidColor": {
+                                      "color": "#4087c6"
+                                    }
+                                  }
+                                ],
+                                "stroke": {
+                                  "Stroke": {
+                                    "color": "#4087c6",
+                                    "weight": "2",
+                                    "alpha": "1"
+                                  }
+                                },
+                                "_nodeName": "Column2DSeries",
+                                "formatter": "{unitfmt}"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "horizontalAxisRenderers": [
+                      {
+                        "Axis2DRenderer": {
+                          "axis": "{hAxis}",
+                          "showLine": "true",
+                          "color": "#808080",
+                          "axisStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1"
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "verticalAxisRenderers": [
+                      {
+                        "Axis2DRenderer": {
+                          "axis": "{vAxis}",
+                          "showLine": "true",
+                          "placement": "left",
+                          "color": "#808080",
+                          "axisStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1"
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "backgroundElements": [
+                      {
+                        "GridLines": {
+                          "direction": "horizontal",
+                          "showBorderStroke": "false",
+                          "horizontalStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1",
+                              "weight": "1"
+                            }
+                          },
+                          "verticalStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1",
+                              "weight": "1"
+                            }
+                          },
+                          "borderStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1",
+                              "weight": "1"
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "_cType": "Column2DChart"
+                  }
+                },
+                {
+                  "_attr": {
+                    "backgroundColor": "transparent",
+                    "alpha": "1",
+                    "fontSize": 14,
+                    "padding": 7
+                  }
+                }
+              ]
+            },
+            "componentLayoutType": "column",
+            "bindingSource": "44337cc58f383ead81bf0a5b2acdfcc2",
+            "referenceSources": []
+          }
+        },
+        {
+          "options": {
+            "border": false,
+            "borderWidth": "0px",
+            "borderColor": "rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "borderTopLeftRadius": "0px",
+            "borderTopRightRadius": "0px",
+            "borderBottomRightRadius": "0px",
+            "borderBottomLeftRadius": "0px",
+            "resizable": true,
+            "allowDrop": false
+          },
+          "sid": "wA6A3BC92D9924102CC807CA5003363C9",
+          "x": 21,
+          "y": 600,
+          "width": 1120,
+          "height": 421,
+          "layoutType": "headless",
+          "type": "chart",
+          "title": "박스형 컬럼 2D 차트 (stacked)",
+          "showMaximizer": true,
+          "label": "박스형 컬럼 2D 차트 (stacked)",
+          "icon": "widgetIcons/gray/chart_column_2d_stacked",
+          "userData": {},
+          "lock": false,
+          "backgroundColor": "transparent",
+          "backgroundImage": {},
+          "backgroundRepeat": "no-repeat",
+          "backgroundPosition": "center",
+          "backgroundSize": "cover",
+          "backgroundAlpha": 1,
+          "contentUrl": "/BIX5/Assets/Modules/Chart/Column-Column_Stacked.html",
+          "contentHtml": "<script>\nwidget.componentReadyHandler = function(componentId){\n\tif(!widget.isBindingSource()){\n\t\tdocument.getElementById(componentId).setDataType(\"json\");\n\t\tdocument.getElementById(componentId).setDataURL(BIX5.getAssetsPath() + \"Datasources/Column-Column_Stacked.json\");\n\t}\n}\n</script>",
+          "componentOptions": {
+            "isAggregation": false,
+            "dataFields": [
+              {
+                "label": "수평축 필드",
+                "columns": [
+                  {
+                    "id": 3729,
+                    "name": "종류",
+                    "label": "종류",
+                    "dataType": "string",
+                    "rm_internal_uid": "18562732-68CF-84BA-B63D-77BCDDD93733"
+                  }
+                ],
+                "maximum": 1,
+                "fieldName": "xField",
+                "category": "dimension",
+                "use": true
+              },
+              {
+                "label": "수직축 필드",
+                "columns": [
+                  {
+                    "id": 3727,
+                    "name": "L",
+                    "label": "L",
+                    "dataType": "numeric",
+                    "rm_internal_uid": "C72CE7CA-EFA5-2380-F850-77BCDDD98C22",
+                    "aggregate": "",
+                    "alias": "L"
+                  },
+                  {
+                    "id": 3728,
+                    "name": "M",
+                    "label": "M",
+                    "dataType": "numeric",
+                    "rm_internal_uid": "86E86A41-6F73-3735-3DF6-77BCDDD901E6",
+                    "aggregate": "",
+                    "alias": "M"
+                  },
+                  {
+                    "id": 3726,
+                    "name": "H",
+                    "label": "H",
+                    "dataType": "numeric",
+                    "rm_internal_uid": "B558786F-DD4F-6BB0-9445-77BCDDD90B90",
+                    "aggregate": "",
+                    "alias": "H"
+                  }
+                ],
+                "maximum": 100,
+                "fieldName": "yField",
+                "category": "measure",
+                "use": true
+              }
+            ],
+            "customStyle": false,
+            "propertyOptions": [],
+            "layoutMetaData": {},
+            "isMultiView": false,
+            "multiViewRow": 2,
+            "multiViewColumn": 2,
+            "multiViewSubCategoryField": {
+              "label": "종류",
+              "id": 3729,
+              "name": "종류"
+            },
+            "multiViewFillType": null,
+            "marginLeft": 0,
+            "marginTop": 0,
+            "marginRight": 0,
+            "marginBottom": 0,
+            "isAutoServiceStart": true,
+            "vars": "",
+            "componentLayout": "<BIX5 backgroundColor=\"transparent\" alpha=\"1\" fontSize=\"14\" padding=\"2\"><Options><Caption text=\"AP 균열\" color=\"#333333\" textAlign=\"center\" fontSize=\"18\" fontFamily=\"NanumGothic\" fontWeight=\"bold\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"5\" backgroundColor=\"transparent\" /><SubCaption text=\"\" height=\"1\" color=\"#999999\" textAlign=\"center\" fontSize=\"13\" fontFamily=\"\" fontWeight=\"normal\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"0\" backgroundColor=\"transparent\" /><Legend position=\"bottom\" display=\"block\" backgroundColor=\"transparent\" borderStyle=\"none\" hAlign=\"center\" /></Options><UnitFormatter id=\"unitfmt\" useThousandsSeparator=\"true\" units=\"auto\" unitSymbols=\"[,K,M,G,T]\" divisor=\"1000\" rounding=\"none\" /><DateFormatter id=\"dateFmt\" formatString=\"YYYY&#x2F;MM&#x2F;DD\" /><SeriesInterpolate id=\"si\" /><SeriesSlide id=\"ss\" direction=\"right\" /><Column2DChart showDataTips=\"true\" columnWidthRatio=\"0.45\" columnWidthMinRatio=\"1\" _cType=\"Column2DChart\"><horizontalAxis><CategoryAxis id=\"hAxis\" categoryField=\"종류\" formatter=\"\" /></horizontalAxis><verticalAxis><LinearAxis id=\"vAxis\" formatter=\"{unitfmt}\" minimum=\"NaN\" maximum=\"NaN\" interval=\"NaN\" /></verticalAxis><series><Column2DSet type=\"stacked\"><series><Column2DSeries itemRenderer=\"BoxItemRenderer\" labelPosition=\"none\" yField=\"L\" displayName=\"L\" showDataEffect=\"\" color=\"#808080\" _nodeName=\"Column2DSeries\" formatter=\"{unitfmt}\"><fills><SolidColor color=\"#86c1e0\" /></fills><stroke><Stroke color=\"#86c1e0\" weight=\"2\" alpha=\"1\" /></stroke></Column2DSeries><Column2DSeries itemRenderer=\"BoxItemRenderer\" labelPosition=\"none\" yField=\"M\" displayName=\"M\" showDataEffect=\"\" color=\"#808080\" _nodeName=\"Column2DSeries\" formatter=\"{unitfmt}\"><fills><SolidColor color=\"#ffb808\" /></fills><stroke><Stroke color=\"#ffb808\" weight=\"2\" alpha=\"1\" /></stroke></Column2DSeries><Column2DSeries itemRenderer=\"BoxItemRenderer\" labelPosition=\"none\" yField=\"H\" displayName=\"H\" showDataEffect=\"\" color=\"#808080\" _nodeName=\"Column2DSeries\" formatter=\"{unitfmt}\"><fills><SolidColor color=\"#ef4d4d\" /></fills><stroke><Stroke color=\"#ef4d4d\" weight=\"2\" alpha=\"1\" /></stroke></Column2DSeries></series></Column2DSet></series><horizontalAxisRenderers><Axis2DRenderer axis=\"{hAxis}\" showLine=\"true\" color=\"#808080\"><axisStroke><Stroke color=\"#d3d3d3\" alpha=\"1\" /></axisStroke></Axis2DRenderer></horizontalAxisRenderers><verticalAxisRenderers><Axis2DRenderer axis=\"{vAxis}\" showLine=\"true\" placement=\"left\" color=\"#808080\"><axisStroke><Stroke color=\"#eeeeee\" alpha=\"1\" /></axisStroke></Axis2DRenderer></verticalAxisRenderers><backgroundElements><GridLines direction=\"horizontal\" showBorderStroke=\"false\"><horizontalStroke><Stroke color=\"#a9a3ac\" alpha=\"1\" weight=\"1\" /></horizontalStroke><verticalStroke><Stroke color=\"#a9a3ac\" alpha=\"1\" weight=\"1\" /></verticalStroke><borderStroke><Stroke color=\"#eeeeee\" alpha=\"1\" weight=\"1\" /></borderStroke></GridLines></backgroundElements></Column2DChart></BIX5>",
+            "componentLayoutId": "Column-Stacked",
+            "componentLayoutJson": {
+              "BIX5": [
+                {
+                  "Options": {
+                    "Caption": {
+                      "text": "AP 균열",
+                      "color": "#333333",
+                      "textAlign": "center",
+                      "fontSize": "18",
+                      "fontFamily": "NanumGothic",
+                      "fontWeight": "bold",
+                      "paddingLeft": "0",
+                      "paddingRight": "0",
+                      "paddingTop": "0",
+                      "paddingBottom": "5",
+                      "backgroundColor": "transparent"
+                    },
+                    "SubCaption": {
+                      "text": "",
+                      "height": "1",
+                      "color": "#999999",
+                      "textAlign": "center",
+                      "fontSize": "13",
+                      "fontFamily": "",
+                      "fontWeight": "normal",
+                      "paddingLeft": "0",
+                      "paddingRight": "0",
+                      "paddingTop": "0",
+                      "paddingBottom": "0",
+                      "backgroundColor": "transparent"
+                    },
+                    "Legend": {
+                      "position": "bottom",
+                      "display": "block",
+                      "backgroundColor": "transparent",
+                      "borderStyle": "none",
+                      "hAlign": "center"
+                    }
+                  }
+                },
+                {
+                  "UnitFormatter": {
+                    "id": "unitfmt",
+                    "useThousandsSeparator": "true",
+                    "units": "auto",
+                    "unitSymbols": "[,K,M,G,T]",
+                    "divisor": "1000",
+                    "rounding": "none"
+                  }
+                },
+                {
+                  "DateFormatter": {
+                    "id": "dateFmt",
+                    "formatString": "YYYY/MM/DD"
+                  }
+                },
+                {
+                  "SeriesInterpolate": {
+                    "id": "si"
+                  }
+                },
+                {
+                  "SeriesSlide": {
+                    "id": "ss",
+                    "direction": "right"
+                  }
+                },
+                {
+                  "component": {
+                    "showDataTips": "true",
+                    "columnWidthRatio": 0.45,
+                    "columnWidthMinRatio": "1",
+                    "horizontalAxis": {
+                      "CategoryAxis": {
+                        "id": "hAxis",
+                        "categoryField": "종류",
+                        "formatter": ""
+                      }
+                    },
+                    "verticalAxis": {
+                      "LinearAxis": {
+                        "id": "vAxis",
+                        "formatter": "{unitfmt}",
+                        "minimum": "NaN",
+                        "maximum": "NaN",
+                        "interval": "NaN"
+                      }
+                    },
+                    "series": [
+                      {
+                        "Column2DSet": {
+                          "type": "stacked",
+                          "series": [
+                            {
+                              "Column2DSeries": {
+                                "itemRenderer": "BoxItemRenderer",
+                                "labelPosition": "none",
+                                "yField": "L",
+                                "displayName": "L",
+                                "showDataEffect": "",
+                                "color": "#808080",
+                                "fills": [
+                                  {
+                                    "SolidColor": {
+                                      "color": "#86c1e0"
+                                    }
+                                  }
+                                ],
+                                "stroke": {
+                                  "Stroke": {
+                                    "color": "#86c1e0",
+                                    "weight": "2",
+                                    "alpha": "1"
+                                  }
+                                },
+                                "_nodeName": "Column2DSeries",
+                                "formatter": "{unitfmt}"
+                              }
+                            },
+                            {
+                              "Column2DSeries": {
+                                "itemRenderer": "BoxItemRenderer",
+                                "labelPosition": "none",
+                                "yField": "M",
+                                "displayName": "M",
+                                "showDataEffect": "",
+                                "color": "#808080",
+                                "fills": [
+                                  {
+                                    "SolidColor": {
+                                      "color": "#ffb808"
+                                    }
+                                  }
+                                ],
+                                "stroke": {
+                                  "Stroke": {
+                                    "color": "#ffb808",
+                                    "weight": "2",
+                                    "alpha": "1"
+                                  }
+                                },
+                                "_nodeName": "Column2DSeries",
+                                "formatter": "{unitfmt}"
+                              }
+                            },
+                            {
+                              "Column2DSeries": {
+                                "itemRenderer": "BoxItemRenderer",
+                                "labelPosition": "none",
+                                "yField": "H",
+                                "displayName": "H",
+                                "showDataEffect": "",
+                                "color": "#808080",
+                                "fills": [
+                                  {
+                                    "SolidColor": {
+                                      "color": "#ef4d4d"
+                                    }
+                                  }
+                                ],
+                                "stroke": {
+                                  "Stroke": {
+                                    "color": "#ef4d4d",
+                                    "weight": "2",
+                                    "alpha": "1"
+                                  }
+                                },
+                                "_nodeName": "Column2DSeries",
+                                "formatter": "{unitfmt}"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "horizontalAxisRenderers": [
+                      {
+                        "Axis2DRenderer": {
+                          "axis": "{hAxis}",
+                          "showLine": "true",
+                          "color": "#808080",
+                          "axisStroke": {
+                            "Stroke": {
+                              "color": "#d3d3d3",
+                              "alpha": "1"
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "verticalAxisRenderers": [
+                      {
+                        "Axis2DRenderer": {
+                          "axis": "{vAxis}",
+                          "showLine": "true",
+                          "placement": "left",
+                          "color": "#808080",
+                          "axisStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1"
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "backgroundElements": [
+                      {
+                        "GridLines": {
+                          "direction": "horizontal",
+                          "showBorderStroke": "false",
+                          "horizontalStroke": {
+                            "Stroke": {
+                              "color": "#a9a3ac",
+                              "alpha": 1,
+                              "weight": "1"
+                            }
+                          },
+                          "verticalStroke": {
+                            "Stroke": {
+                              "color": "#a9a3ac",
+                              "alpha": 1,
+                              "weight": "1"
+                            }
+                          },
+                          "borderStroke": {
+                            "Stroke": {
+                              "color": "#eeeeee",
+                              "alpha": "1",
+                              "weight": "1"
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "_cType": "Column2DChart"
+                  }
+                },
+                {
+                  "_attr": {
+                    "backgroundColor": "transparent",
+                    "alpha": "1",
+                    "fontSize": 14,
+                    "padding": 2
+                  }
+                }
+              ]
+            },
+            "componentLayoutType": "column",
+            "bindingSource": "4afa1720e5a0ce3886603c34b3820712",
+            "referenceSources": []
+          }
+        }
+      ]
+    }
+  ],
+  "bindingSources": [
+    {
+      "datasourceId": "43025f982e4fec0db942a21c3b8d3bb5",
+      "label": "csv index추가",
+      "url": "/api/datasources/43025f982e4fec0db942a21c3b8d3bb5",
+      "type": "RemoteDataService",
+      "aggregationType": "client",
+      "isExternal": false,
+      "method": "post",
+      "interval": 0
+    },
+    {
+      "datasourceId": "4a7a2f14de639ef98cadf0b857e8af0b",
+      "label": "전체 csv 데이터",
+      "url": "/api/datasources/4a7a2f14de639ef98cadf0b857e8af0b",
+      "type": "RemoteDataService",
+      "aggregationType": "client",
+      "isExternal": false,
+      "method": "post",
+      "interval": 0
+    },
+    {
+      "datasourceId": "44337cc58f383ead81bf0a5b2acdfcc2",
+      "label": "평균",
+      "url": "/api/datasources/44337cc58f383ead81bf0a5b2acdfcc2",
+      "type": "RemoteDataService",
+      "aggregationType": "client",
+      "isExternal": false,
+      "method": "post",
+      "interval": 0
+    },
+    {
+      "datasourceId": "4afa1720e5a0ce3886603c34b3820712",
+      "label": "ap 균열 JSON",
+      "url": "/api/datasources/4afa1720e5a0ce3886603c34b3820712",
+      "type": "RemoteDataService",
+      "aggregationType": "client",
+      "isExternal": false,
+      "method": "post",
+      "interval": 0
+    }
+  ],
+  "guideLines": [],
+  "exportType": "dashboard"
+}

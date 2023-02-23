@@ -1,0 +1,347 @@
+{
+    "options": {
+        "border": false,
+        "borderWidth": "0px",
+        "borderColor": "rgb(255, 255, 255)",
+        "borderRadius": "0px",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "0px",
+        "borderBottomRightRadius": "0px",
+        "borderBottomLeftRadius": "0px",
+        "resizable": true,
+        "allowDrop": true
+    },
+    "sid": "",
+    "x": -7,
+    "y": 314,
+    "width": 950,
+    "height": 343,
+    "layoutType": "headless",
+    "type": "chart",
+    "title": "직선 라인 차트",
+    "showMaximizer": true,
+    "label": "직선 라인 차트",
+    "icon": "widgetIcons/gray/chart_line_segment",
+    "userData": {},
+    "lock": false,
+    "backgroundColor": "transparent",
+    "backgroundImage": {},
+    "backgroundRepeat": "no-repeat",
+    "backgroundPosition": "center",
+    "backgroundSize": "cover",
+    "backgroundAlpha": 1,
+    "contentUrl": "/BIX5/Assets/Modules/Chart/Line-Line_Segment.html",
+    "contentHtml": "<script>\n  var rangeUpdate = \"rangeUpdate\";\n  widget.componentReadyHandler = function(componentId){\n    if(!widget.isBindingSource()){\n      document.getElementById(componentId).setDataType(\"json\");\n      document.getElementById(componentId).setDataURL(BIX5.getAssetsPath() + \"Datasources/Line-Line_Segment.json\");\n    }\n  \twidget.componentId = componentId;\n\twidget.getSlide().addEventListener(rangeUpdate, widget.rangeUpdateHandler);\n}\n  widget.rangeUpdateHandler = function(event){\n\tvar type = event.detail.type;\n \tvar x = event.detail.x;\n \tvar y = event.detail.y;\n\tdocument.getElementById(widget.componentId).updateCrossRange(type, x, y);\n}\n\n  \n\n\n</script>",
+    "componentOptions": {
+        "isAggregation": false,
+        "dataFields": [
+            {
+                "label": "수평축 필드",
+                "columns": [
+                    {
+                        "id": 3689,
+                        "name": "거리",
+                        "label": "거리",
+                        "dataType": "numeric",
+                        "rm_internal_uid": "BBBA1E3F-E437-B8E9-F02B-77AE9D4EB6B3",
+                        "aggregate": "",
+                        "alias": "거리"
+                    }
+                ],
+                "maximum": 1,
+                "fieldName": "xField",
+                "category": "dimension",
+                "use": true
+            },
+            {
+                "label": "수직축 필드",
+                "columns": [
+                    {
+                        "id": 3690,
+                        "name": "소성변형",
+                        "label": "소성변형",
+                        "dataType": "numeric",
+                        "rm_internal_uid": "59AE5698-0E45-3B08-A143-77978604C6B6",
+                        "aggregate": "",
+                        "alias": "소성변형"
+                    },
+                    {
+                        "id": 3691,
+                        "name": "종단평탄성",
+                        "label": "종단평탄성",
+                        "dataType": "numeric",
+                        "rm_internal_uid": "B4269D42-20BA-3812-F232-77AEC3253128",
+                        "aggregate": "",
+                        "alias": "종단평탄성"
+                    }
+                ],
+                "maximum": 100,
+                "fieldName": "yField",
+                "category": "measure",
+                "use": true
+            }
+        ],
+        "customStyle": true,
+        "propertyOptions": [],
+        "layoutMetaData": {},
+        "isMultiView": false,
+        "multiViewRow": 2,
+        "multiViewColumn": 2,
+        "multiViewSubCategoryField": {
+            "label": "비고",
+            "id": 3724,
+            "name": "비고"
+        },
+        "multiViewFillType": null,
+        "marginLeft": 0,
+        "marginTop": 0,
+        "marginRight": 0,
+        "marginBottom": 0,
+        "isAutoServiceStart": true,
+        "vars": "",
+        "componentLayout": "<BIX5 backgroundColor=\"transparent\" alpha=\"1\" fontSize=\"12\" padding=\"6\">\n  <Options>\n    <Caption text=\"\" height=\"1\" color=\"#333333\" textAlign=\"center\" fontSize=\"15\" fontFamily=\"\" fontWeight=\"normal\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"5\" backgroundColor=\"transparent\"/>\n    <SubCaption text=\"\" height=\"1\" color=\"#999999\" textAlign=\"center\" fontSize=\"13\" fontFamily=\"\" fontWeight=\"normal\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"0\" backgroundColor=\"transparent\"/>\n    <Legend position=\"bottom\" display=\"block\" backgroundColor=\"transparent\" borderStyle=\"none\" hAlign=\"center\"/>\n  </Options>\n  <UnitFormatter id=\"unitfmt\" useThousandsSeparator=\"true\" units=\"auto\" unitSymbols=\"[,K,M,G,T]\" divisor=\"1000\" rounding=\"none\"/>\n  <DateFormatter id=\"dateFmt\" formatString=\"YYYY/MM/DD\"/>\n  <SeriesInterpolate id=\"si\"/>\n  <SeriesSlide id=\"ss\" direction=\"right\"/>\n  <Line2DChart showDataTips=\"true\" _cType=\"Line2DChart\">\n    <horizontalAxis>\n      <LinearAxis id=\"hAxis\"/>\n    </horizontalAxis>\n    <verticalAxis>\n      <LinearAxis id=\"vAxis\" formatter=\"{unitfmt}\" minimum=\"NaN\" maximum=\"NaN\" interval=\"NaN\"/>\n    </verticalAxis>\n    <series>\n      <Line2DSeries formatter=\"{unitfmt}\" dashLinePlacement=\"after\" dashLinePattern=\"3\" dashLineSeperatePos=\"0\" lineStyle=\"normal\" labelPosition=\"none\" yField=\"소성변형\" displayName=\"소성변형\" showDataEffect=\"\" color=\"#808080\" itemRenderer=\"none\" form=\"curve\" _nodeName=\"Line2DSeries\" xField=\"거리\">\n        <fills>\n          <SolidColor color=\"#ffffff\"/>\n        </fills>\n        <stroke>\n          <Stroke color=\"#fabc05\" weight=\"2\" alpha=\"1\"/>\n        </stroke>\n        <lineStroke>\n          <Stroke color=\"#fabc05\" weight=\"3\" alpha=\"1\"/>\n        </lineStroke>\n      </Line2DSeries>\n      <Line2DSeries formatter=\"{unitfmt}\" dashLinePlacement=\"after\" dashLinePattern=\"3\" dashLineSeperatePos=\"0\" lineStyle=\"normal\" labelPosition=\"none\" yField=\"종단평탄성\" displayName=\"종단평탄성\" showDataEffect=\"\" color=\"#808080\" itemRenderer=\"none\" form=\"curve\" _nodeName=\"Line2DSeries\" xField=\"거리\">\n        <fills>\n          <SolidColor color=\"#ffffff\"/>\n        </fills>\n        <stroke>\n          <Stroke color=\"#86c1e0\" weight=\"2\" alpha=\"1\"/>\n        </stroke>\n        <lineStroke>\n          <Stroke color=\"#86c1e0\" weight=\"3\" alpha=\"1\"/>\n        </lineStroke>\n      </Line2DSeries>\n    </series>\n    <horizontalAxisRenderers>\n      <Axis2DRenderer axis=\"{hAxis}\" showLine=\"true\" color=\"#808080\">\n        <axisStroke>\n          <Stroke color=\"#eeeeee\" alpha=\"1\"/>\n        </axisStroke>\n      </Axis2DRenderer>\n    </horizontalAxisRenderers>\n    <verticalAxisRenderers>\n      <Axis2DRenderer axis=\"{vAxis}\" showLine=\"true\" placement=\"left\" color=\"#808080\">\n        <axisStroke>\n          <Stroke color=\"#eeeeee\" alpha=\"1\"/>\n        </axisStroke>\n      </Axis2DRenderer>\n    </verticalAxisRenderers>\n    <backgroundElements>\n      <GridLines direction=\"horizontal\" showBorderStroke=\"false\">\n        <horizontalStroke>\n          <Stroke color=\"#c3bcc7\" alpha=\"1\" weight=\"1\"/>\n        </horizontalStroke>\n        <verticalStroke>\n          <Stroke color=\"#c3bcc7\" alpha=\"1\" weight=\"1\"/>\n        </verticalStroke>\n        <borderStroke>\n          <Stroke color=\"#eeeeee\" alpha=\"1\" weight=\"1\"/>\n        </borderStroke>\n      </GridLines>\n    </backgroundElements>\n    <annotationElements>\n      <CrossRangeZoomer enableZooming=\"true\"/>\n    </annotationElements>\n  </Line2DChart>\n</BIX5>",
+        "componentLayoutId": "Line-Line_Segment",
+        "componentLayoutJson": {
+            "BIX5": [
+                {
+                    "Options": {
+                        "Caption": {
+                            "text": "",
+                            "height": "1",
+                            "color": "#333333",
+                            "textAlign": "center",
+                            "fontSize": "15",
+                            "fontFamily": "",
+                            "fontWeight": "normal",
+                            "paddingLeft": "0",
+                            "paddingRight": "0",
+                            "paddingTop": "0",
+                            "paddingBottom": "5",
+                            "backgroundColor": "transparent"
+                        },
+                        "SubCaption": {
+                            "text": "",
+                            "height": "1",
+                            "color": "#999999",
+                            "textAlign": "center",
+                            "fontSize": "13",
+                            "fontFamily": "",
+                            "fontWeight": "normal",
+                            "paddingLeft": "0",
+                            "paddingRight": "0",
+                            "paddingTop": "0",
+                            "paddingBottom": "0",
+                            "backgroundColor": "transparent"
+                        },
+                        "Legend": {
+                            "position": "bottom",
+                            "display": "block",
+                            "backgroundColor": "transparent",
+                            "borderStyle": "none",
+                            "hAlign": "center"
+                        }
+                    }
+                },
+                {
+                    "UnitFormatter": {
+                        "id": "unitfmt",
+                        "useThousandsSeparator": "true",
+                        "units": "auto",
+                        "unitSymbols": "[,K,M,G,T]",
+                        "divisor": "1000",
+                        "rounding": "none"
+                    }
+                },
+                {
+                    "DateFormatter": {
+                        "id": "dateFmt",
+                        "formatString": "YYYY/MM/DD"
+                    }
+                },
+                {
+                    "SeriesInterpolate": {
+                        "id": "si"
+                    }
+                },
+                {
+                    "SeriesSlide": {
+                        "id": "ss",
+                        "direction": "right"
+                    }
+                },
+                {
+                    "component": {
+                        "showDataTips": "true",
+                        "horizontalAxis": {
+                            "LinearAxis": {
+                                "id": "hAxis"
+                            }
+                        },
+                        "verticalAxis": {
+                            "LinearAxis": {
+                                "id": "vAxis",
+                                "formatter": "{unitfmt}",
+                                "minimum": "NaN",
+                                "maximum": "NaN",
+                                "interval": "NaN"
+                            }
+                        },
+                        "series": [
+                            {
+                                "Line2DSeries": {
+                                    "formatter": "{unitfmt}",
+                                    "dashLinePlacement": "after",
+                                    "dashLinePattern": "3",
+                                    "dashLineSeperatePos": "0",
+                                    "lineStyle": "normal",
+                                    "labelPosition": "none",
+                                    "yField": "소성변형",
+                                    "displayName": "소성변형",
+                                    "showDataEffect": "",
+                                    "color": "#808080",
+                                    "itemRenderer": "none",
+                                    "form": "curve",
+                                    "fills": [
+                                        {
+                                            "SolidColor": {
+                                                "color": "#ffffff"
+                                            }
+                                        }
+                                    ],
+                                    "stroke": {
+                                        "Stroke": {
+                                            "color": "#fabc05",
+                                            "weight": "2",
+                                            "alpha": "1"
+                                        }
+                                    },
+                                    "lineStroke": {
+                                        "Stroke": {
+                                            "color": "#fabc05",
+                                            "weight": 3,
+                                            "alpha": "1"
+                                        }
+                                    },
+                                    "_nodeName": "Line2DSeries",
+                                    "xField": "거리"
+                                }
+                            },
+                            {
+                                "Line2DSeries": {
+                                    "formatter": "{unitfmt}",
+                                    "dashLinePlacement": "after",
+                                    "dashLinePattern": "3",
+                                    "dashLineSeperatePos": "0",
+                                    "lineStyle": "normal",
+                                    "labelPosition": "none",
+                                    "yField": "종단평탄성",
+                                    "displayName": "종단평탄성",
+                                    "showDataEffect": "",
+                                    "color": "#808080",
+                                    "itemRenderer": "none",
+                                    "form": "curve",
+                                    "fills": [
+                                        {
+                                            "SolidColor": {
+                                                "color": "#ffffff"
+                                            }
+                                        }
+                                    ],
+                                    "stroke": {
+                                        "Stroke": {
+                                            "color": "#86c1e0",
+                                            "weight": "2",
+                                            "alpha": "1"
+                                        }
+                                    },
+                                    "lineStroke": {
+                                        "Stroke": {
+                                            "color": "#86c1e0",
+                                            "weight": 3,
+                                            "alpha": "1"
+                                        }
+                                    },
+                                    "_nodeName": "Line2DSeries",
+                                    "xField": "거리"
+                                }
+                            }
+                        ],
+                        "horizontalAxisRenderers": [
+                            {
+                                "Axis2DRenderer": {
+                                    "axis": "{hAxis}",
+                                    "showLine": "true",
+                                    "color": "#808080",
+                                    "axisStroke": {
+                                        "Stroke": {
+                                            "color": "#eeeeee",
+                                            "alpha": "1"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "verticalAxisRenderers": [
+                            {
+                                "Axis2DRenderer": {
+                                    "axis": "{vAxis}",
+                                    "showLine": "true",
+                                    "placement": "left",
+                                    "color": "#808080",
+                                    "axisStroke": {
+                                        "Stroke": {
+                                            "color": "#eeeeee",
+                                            "alpha": "1"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "backgroundElements": [
+                            {
+                                "GridLines": {
+                                    "direction": "horizontal",
+                                    "showBorderStroke": "false",
+                                    "horizontalStroke": {
+                                        "Stroke": {
+                                            "color": "#c3bcc7",
+                                            "alpha": 1,
+                                            "weight": "1"
+                                        }
+                                    },
+                                    "verticalStroke": {
+                                        "Stroke": {
+                                            "color": "#c3bcc7",
+                                            "alpha": 1,
+                                            "weight": "1"
+                                        }
+                                    },
+                                    "borderStroke": {
+                                        "Stroke": {
+                                            "color": "#eeeeee",
+                                            "alpha": "1",
+                                            "weight": "1"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "_cType": "Line2DChart"
+                    }
+                },
+                {
+                    "_attr": {
+                        "backgroundColor": "transparent",
+                        "alpha": "1",
+                        "fontSize": 12,
+                        "padding": 6
+                    }
+                }
+            ]
+        },
+        "componentLayoutType": "line",
+        "bindingSource": "4a7a2f14de639ef98cadf0b857e8af0b",
+        "referenceSources": []
+    },
+    "exportType": "widget"
+}
