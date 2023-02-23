@@ -1,0 +1,348 @@
+{
+    "options": {
+        "border": false,
+        "borderWidth": "0px",
+        "borderColor": "rgb(255, 255, 255)",
+        "borderRadius": "0px",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "0px",
+        "borderBottomRightRadius": "0px",
+        "borderBottomLeftRadius": "0px",
+        "resizable": true,
+        "allowDrop": true
+    },
+    "sid": "",
+    "x": -7,
+    "y": -7,
+    "width": 950,
+    "height": 343,
+    "layoutType": "headless",
+    "type": "chart",
+    "title": "직선 라인 차트",
+    "showMaximizer": true,
+    "label": "직선 라인 차트",
+    "icon": "widgetIcons/gray/chart_line_segment",
+    "userData": {},
+    "lock": false,
+    "backgroundColor": "transparent",
+    "backgroundImage": {},
+    "backgroundRepeat": "no-repeat",
+    "backgroundPosition": "center",
+    "backgroundSize": "cover",
+    "backgroundAlpha": 1,
+    "contentUrl": "/BIX5/Assets/Modules/Chart/Line-Line_Segment.html",
+    "contentHtml": "<script>\nwidget.componentReadyHandler = function(componentId){\n\tif(!widget.isBindingSource()){\n\t\tdocument.getElementById(componentId).setDataType(\"json\");\n\t\tdocument.getElementById(componentId).setDataURL(BIX5.getAssetsPath() + \"Datasources/Line-Line_Segment.json\");\n\t}\n  widget.componentId = componentId;\n}\nfunction rangeFunc(type, x, y){\n  var slide = widget.getSlide();\n  //사용자 정의 이벤트\n  var evt = BIX5.dashboard.createEvent(\"rangeUpdate\");\n  var detail = {};\n  detail.widgetId = widget.id;\n  detail.componentId = widget.componentId;\n  detail.type = type;\n  detail.x = x;\n  detail.y = y;\n  evt.detail = detail;\n  slide.dispatchEvent(evt);\n  \n}\n</script>",
+    "componentOptions": {
+        "isAggregation": false,
+        "dataFields": [
+            {
+                "label": "수평축 필드",
+                "columns": [
+                    {
+                        "id": 3689,
+                        "name": "거리",
+                        "label": "거리",
+                        "dataType": "numeric",
+                        "rm_internal_uid": "FB1B1CBC-FA20-E0C6-FA44-77C63CAB3DCC",
+                        "aggregate": "",
+                        "alias": "거리"
+                    }
+                ],
+                "maximum": 1,
+                "fieldName": "xField",
+                "category": "dimension",
+                "use": true
+            },
+            {
+                "label": "수직축 필드",
+                "columns": [
+                    {
+                        "id": 3698,
+                        "name": "균열량",
+                        "label": "균열량",
+                        "dataType": "numeric",
+                        "rm_internal_uid": "8632B43D-A7B9-58A3-7E98-77C655B2D9F4",
+                        "aggregate": "",
+                        "alias": "균열량"
+                    },
+                    {
+                        "id": 3699,
+                        "name": "균열율",
+                        "label": "균열율",
+                        "dataType": "numeric",
+                        "rm_internal_uid": "4544C871-DD68-5D26-83DD-77C65A127D1D",
+                        "aggregate": "",
+                        "alias": "균열율"
+                    }
+                ],
+                "maximum": 100,
+                "fieldName": "yField",
+                "category": "measure",
+                "use": true
+            }
+        ],
+        "customStyle": true,
+        "propertyOptions": [],
+        "layoutMetaData": {},
+        "isMultiView": false,
+        "multiViewRow": 1,
+        "multiViewColumn": 2,
+        "multiViewSubCategoryField": {
+            "label": "조사명",
+            "id": 3725,
+            "name": "조사명",
+            "rm_internal_uid": "2CE23D6B-EAD1-8613-F357-77C82C901D75"
+        },
+        "multiViewFillType": null,
+        "marginLeft": 0,
+        "marginTop": 0,
+        "marginRight": 0,
+        "marginBottom": 0,
+        "isAutoServiceStart": true,
+        "vars": "",
+        "componentLayout": "<BIX5 backgroundColor=\"transparent\" alpha=\"1\" fontSize=\"12\" padding=\"6\">\n  <Options>\n    <Caption text=\"\" height=\"1\" color=\"#333333\" textAlign=\"center\" fontSize=\"15\" fontFamily=\"\" fontWeight=\"normal\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"5\" backgroundColor=\"transparent\"/>\n    <SubCaption text=\"\" height=\"1\" color=\"#999999\" textAlign=\"center\" fontSize=\"13\" fontFamily=\"\" fontWeight=\"normal\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"0\" backgroundColor=\"transparent\"/>\n    <Legend position=\"top\" display=\"block\" backgroundColor=\"transparent\" borderStyle=\"none\" hAlign=\"center\"/>\n  </Options>\n  <UnitFormatter id=\"unitfmt\" useThousandsSeparator=\"true\" units=\"auto\" unitSymbols=\"[,K,M,G,T]\" divisor=\"1000\" rounding=\"none\"/>\n  <DateFormatter id=\"dateFmt\" formatString=\"YYYY/MM/DD\"/>\n  <SeriesInterpolate id=\"si\"/>\n  <SeriesSlide id=\"ss\" direction=\"right\"/>\n  <Line2DChart showDataTips=\"true\" _cType=\"Line2DChart\">\n    <horizontalAxis>\n      <LinearAxis id=\"hAxis\"/>\n    </horizontalAxis>\n    <verticalAxis>\n      <LinearAxis id=\"vAxis\" formatter=\"{unitfmt}\" minimum=\"NaN\" maximum=\"NaN\" interval=\"NaN\"/>\n    </verticalAxis>\n    <series>\n      <Line2DSeries formatter=\"{unitfmt}\" dashLinePlacement=\"after\" dashLinePattern=\"3\" dashLineSeperatePos=\"0\" lineStyle=\"normal\" labelPosition=\"none\" yField=\"균열량\" displayName=\"균열량\" showDataEffect=\"\" color=\"#808080\" itemRenderer=\"none\" form=\"curve\" _nodeName=\"Line2DSeries\" xField=\"거리\">\n        <fills>\n          <SolidColor color=\"#ffffff\"/>\n        </fills>\n        <stroke>\n          <Stroke color=\"#ffb808\" weight=\"2\" alpha=\"1\"/>\n        </stroke>\n        <lineStroke>\n          <Stroke color=\"#ffb808\" weight=\"3\" alpha=\"1\"/>\n        </lineStroke>\n      </Line2DSeries>\n      <Line2DSeries formatter=\"{unitfmt}\" dashLinePlacement=\"after\" dashLinePattern=\"3\" dashLineSeperatePos=\"0\" lineStyle=\"normal\" labelPosition=\"none\" yField=\"균열율\" displayName=\"균열율\" showDataEffect=\"\" color=\"#808080\" itemRenderer=\"none\" form=\"curve\" _nodeName=\"Line2DSeries\" xField=\"거리\">\n        <fills>\n          <SolidColor color=\"#ffffff\"/>\n        </fills>\n        <stroke>\n          <Stroke color=\"#86c1e0\" weight=\"2\" alpha=\"1\"/>\n        </stroke>\n        <lineStroke>\n          <Stroke color=\"#86c1e0\" weight=\"3\" alpha=\"1\"/>\n        </lineStroke>\n      </Line2DSeries>\n    </series>\n    <horizontalAxisRenderers>\n      <Axis2DRenderer axis=\"{hAxis}\" showLine=\"true\" color=\"#808080\">\n        <axisStroke>\n          <Stroke color=\"#eeeeee\" alpha=\"1\"/>\n        </axisStroke>\n      </Axis2DRenderer>\n    </horizontalAxisRenderers>\n    <verticalAxisRenderers>\n      <Axis2DRenderer axis=\"{vAxis}\" showLine=\"true\" placement=\"left\" color=\"#808080\">\n        <axisStroke>\n          <Stroke color=\"#eeeeee\" alpha=\"1\"/>\n        </axisStroke>\n      </Axis2DRenderer>\n    </verticalAxisRenderers>\n    <backgroundElements>\n      <GridLines direction=\"horizontal\" showBorderStroke=\"false\">\n        <horizontalStroke>\n          <Stroke color=\"#cecece\" alpha=\"1\" weight=\"1\"/>\n        </horizontalStroke>\n        <verticalStroke>\n          <Stroke color=\"#cecece\" alpha=\"1\" weight=\"1\"/>\n        </verticalStroke>\n        <borderStroke>\n          <Stroke color=\"#eeeeee\" alpha=\"1\" weight=\"1\"/>\n        </borderStroke>\n      </GridLines>\n    </backgroundElements>\n    <annotationElements>\n      <CrossRangeZoomer enableZooming=\"true\" rangeUpdateJsFunction=\"\"/>\n    </annotationElements>\n  </Line2DChart>\n</BIX5>",
+        "componentLayoutId": "Line-Line_Segment",
+        "componentLayoutJson": {
+            "BIX5": [
+                {
+                    "Options": {
+                        "Caption": {
+                            "text": "",
+                            "height": "1",
+                            "color": "#333333",
+                            "textAlign": "center",
+                            "fontSize": "15",
+                            "fontFamily": "",
+                            "fontWeight": "normal",
+                            "paddingLeft": "0",
+                            "paddingRight": "0",
+                            "paddingTop": "0",
+                            "paddingBottom": "5",
+                            "backgroundColor": "transparent"
+                        },
+                        "SubCaption": {
+                            "text": "",
+                            "height": "1",
+                            "color": "#999999",
+                            "textAlign": "center",
+                            "fontSize": "13",
+                            "fontFamily": "",
+                            "fontWeight": "normal",
+                            "paddingLeft": "0",
+                            "paddingRight": "0",
+                            "paddingTop": "0",
+                            "paddingBottom": "0",
+                            "backgroundColor": "transparent"
+                        },
+                        "Legend": {
+                            "position": "top",
+                            "display": "block",
+                            "backgroundColor": "transparent",
+                            "borderStyle": "none",
+                            "hAlign": "center"
+                        }
+                    }
+                },
+                {
+                    "UnitFormatter": {
+                        "id": "unitfmt",
+                        "useThousandsSeparator": "true",
+                        "units": "auto",
+                        "unitSymbols": "[,K,M,G,T]",
+                        "divisor": "1000",
+                        "rounding": "none"
+                    }
+                },
+                {
+                    "DateFormatter": {
+                        "id": "dateFmt",
+                        "formatString": "YYYY/MM/DD"
+                    }
+                },
+                {
+                    "SeriesInterpolate": {
+                        "id": "si"
+                    }
+                },
+                {
+                    "SeriesSlide": {
+                        "id": "ss",
+                        "direction": "right"
+                    }
+                },
+                {
+                    "component": {
+                        "showDataTips": "true",
+                        "horizontalAxis": {
+                            "LinearAxis": {
+                                "id": "hAxis"
+                            }
+                        },
+                        "verticalAxis": {
+                            "LinearAxis": {
+                                "id": "vAxis",
+                                "formatter": "{unitfmt}",
+                                "minimum": "NaN",
+                                "maximum": "NaN",
+                                "interval": "NaN"
+                            }
+                        },
+                        "series": [
+                            {
+                                "Line2DSeries": {
+                                    "formatter": "{unitfmt}",
+                                    "dashLinePlacement": "after",
+                                    "dashLinePattern": "3",
+                                    "dashLineSeperatePos": "0",
+                                    "lineStyle": "normal",
+                                    "labelPosition": "none",
+                                    "yField": "균열량",
+                                    "displayName": "균열량",
+                                    "showDataEffect": "",
+                                    "color": "#808080",
+                                    "itemRenderer": "none",
+                                    "form": "curve",
+                                    "fills": [
+                                        {
+                                            "SolidColor": {
+                                                "color": "#ffffff"
+                                            }
+                                        }
+                                    ],
+                                    "stroke": {
+                                        "Stroke": {
+                                            "color": "#ffb808",
+                                            "weight": "2",
+                                            "alpha": "1"
+                                        }
+                                    },
+                                    "lineStroke": {
+                                        "Stroke": {
+                                            "color": "#ffb808",
+                                            "weight": 3,
+                                            "alpha": "1"
+                                        }
+                                    },
+                                    "_nodeName": "Line2DSeries",
+                                    "xField": "거리"
+                                }
+                            },
+                            {
+                                "Line2DSeries": {
+                                    "formatter": "{unitfmt}",
+                                    "dashLinePlacement": "after",
+                                    "dashLinePattern": "3",
+                                    "dashLineSeperatePos": "0",
+                                    "lineStyle": "normal",
+                                    "labelPosition": "none",
+                                    "yField": "균열율",
+                                    "displayName": "균열율",
+                                    "showDataEffect": "",
+                                    "color": "#808080",
+                                    "itemRenderer": "none",
+                                    "form": "curve",
+                                    "fills": [
+                                        {
+                                            "SolidColor": {
+                                                "color": "#ffffff"
+                                            }
+                                        }
+                                    ],
+                                    "stroke": {
+                                        "Stroke": {
+                                            "color": "#86c1e0",
+                                            "weight": "2",
+                                            "alpha": "1"
+                                        }
+                                    },
+                                    "lineStroke": {
+                                        "Stroke": {
+                                            "color": "#86c1e0",
+                                            "weight": 3,
+                                            "alpha": "1"
+                                        }
+                                    },
+                                    "_nodeName": "Line2DSeries",
+                                    "xField": "거리"
+                                }
+                            }
+                        ],
+                        "horizontalAxisRenderers": [
+                            {
+                                "Axis2DRenderer": {
+                                    "axis": "{hAxis}",
+                                    "showLine": "true",
+                                    "color": "#808080",
+                                    "axisStroke": {
+                                        "Stroke": {
+                                            "color": "#eeeeee",
+                                            "alpha": "1"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "verticalAxisRenderers": [
+                            {
+                                "Axis2DRenderer": {
+                                    "axis": "{vAxis}",
+                                    "showLine": "true",
+                                    "placement": "left",
+                                    "color": "#808080",
+                                    "axisStroke": {
+                                        "Stroke": {
+                                            "color": "#eeeeee",
+                                            "alpha": "1"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "backgroundElements": [
+                            {
+                                "GridLines": {
+                                    "direction": "horizontal",
+                                    "showBorderStroke": "false",
+                                    "horizontalStroke": {
+                                        "Stroke": {
+                                            "color": "#cecece",
+                                            "alpha": 1,
+                                            "weight": "1"
+                                        }
+                                    },
+                                    "verticalStroke": {
+                                        "Stroke": {
+                                            "color": "#cecece",
+                                            "alpha": 1,
+                                            "weight": "1"
+                                        }
+                                    },
+                                    "borderStroke": {
+                                        "Stroke": {
+                                            "color": "#eeeeee",
+                                            "alpha": "1",
+                                            "weight": "1"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "_cType": "Line2DChart"
+                    }
+                },
+                {
+                    "_attr": {
+                        "backgroundColor": "transparent",
+                        "alpha": "1",
+                        "fontSize": 12,
+                        "padding": 6
+                    }
+                }
+            ]
+        },
+        "componentLayoutType": "line",
+        "bindingSource": "4a7a2f14de639ef98cadf0b857e8af0b",
+        "referenceSources": []
+    },
+    "exportType": "widget"
+}

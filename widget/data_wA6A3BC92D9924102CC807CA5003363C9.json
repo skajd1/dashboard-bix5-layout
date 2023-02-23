@@ -1,0 +1,364 @@
+{
+    "options": {
+        "border": false,
+        "borderWidth": "0px",
+        "borderColor": "rgb(255, 255, 255)",
+        "borderRadius": "0px",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "0px",
+        "borderBottomRightRadius": "0px",
+        "borderBottomLeftRadius": "0px",
+        "resizable": true,
+        "allowDrop": false
+    },
+    "sid": "",
+    "x": 21,
+    "y": 600,
+    "width": 1120,
+    "height": 421,
+    "layoutType": "headless",
+    "type": "chart",
+    "title": "박스형 컬럼 2D 차트 (stacked)",
+    "showMaximizer": true,
+    "label": "박스형 컬럼 2D 차트 (stacked)",
+    "icon": "widgetIcons/gray/chart_column_2d_stacked",
+    "userData": {},
+    "lock": false,
+    "backgroundColor": "transparent",
+    "backgroundImage": {},
+    "backgroundRepeat": "no-repeat",
+    "backgroundPosition": "center",
+    "backgroundSize": "cover",
+    "backgroundAlpha": 1,
+    "contentUrl": "/BIX5/Assets/Modules/Chart/Column-Column_Stacked.html",
+    "contentHtml": "<script>\nwidget.componentReadyHandler = function(componentId){\n\tif(!widget.isBindingSource()){\n\t\tdocument.getElementById(componentId).setDataType(\"json\");\n\t\tdocument.getElementById(componentId).setDataURL(BIX5.getAssetsPath() + \"Datasources/Column-Column_Stacked.json\");\n\t}\n}\n</script>",
+    "componentOptions": {
+        "isAggregation": false,
+        "dataFields": [
+            {
+                "label": "수평축 필드",
+                "columns": [
+                    {
+                        "id": 3729,
+                        "name": "종류",
+                        "label": "종류",
+                        "dataType": "string",
+                        "rm_internal_uid": "18562732-68CF-84BA-B63D-77BCDDD93733"
+                    }
+                ],
+                "maximum": 1,
+                "fieldName": "xField",
+                "category": "dimension",
+                "use": true
+            },
+            {
+                "label": "수직축 필드",
+                "columns": [
+                    {
+                        "id": 3727,
+                        "name": "L",
+                        "label": "L",
+                        "dataType": "numeric",
+                        "rm_internal_uid": "C72CE7CA-EFA5-2380-F850-77BCDDD98C22",
+                        "aggregate": "",
+                        "alias": "L"
+                    },
+                    {
+                        "id": 3728,
+                        "name": "M",
+                        "label": "M",
+                        "dataType": "numeric",
+                        "rm_internal_uid": "86E86A41-6F73-3735-3DF6-77BCDDD901E6",
+                        "aggregate": "",
+                        "alias": "M"
+                    },
+                    {
+                        "id": 3726,
+                        "name": "H",
+                        "label": "H",
+                        "dataType": "numeric",
+                        "rm_internal_uid": "B558786F-DD4F-6BB0-9445-77BCDDD90B90",
+                        "aggregate": "",
+                        "alias": "H"
+                    }
+                ],
+                "maximum": 100,
+                "fieldName": "yField",
+                "category": "measure",
+                "use": true
+            }
+        ],
+        "customStyle": false,
+        "propertyOptions": [],
+        "layoutMetaData": {},
+        "isMultiView": false,
+        "multiViewRow": 2,
+        "multiViewColumn": 2,
+        "multiViewSubCategoryField": {
+            "label": "종류",
+            "id": 3729,
+            "name": "종류"
+        },
+        "multiViewFillType": null,
+        "marginLeft": 0,
+        "marginTop": 0,
+        "marginRight": 0,
+        "marginBottom": 0,
+        "isAutoServiceStart": true,
+        "vars": "",
+        "componentLayout": "<BIX5 backgroundColor=\"transparent\" alpha=\"1\" fontSize=\"14\" padding=\"2\"><Options><Caption text=\"AP 균열\" color=\"#333333\" textAlign=\"center\" fontSize=\"18\" fontFamily=\"NanumGothic\" fontWeight=\"bold\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"5\" backgroundColor=\"transparent\" /><SubCaption text=\"\" height=\"1\" color=\"#999999\" textAlign=\"center\" fontSize=\"13\" fontFamily=\"\" fontWeight=\"normal\" paddingLeft=\"0\" paddingRight=\"0\" paddingTop=\"0\" paddingBottom=\"0\" backgroundColor=\"transparent\" /><Legend position=\"bottom\" display=\"block\" backgroundColor=\"transparent\" borderStyle=\"none\" hAlign=\"center\" /></Options><UnitFormatter id=\"unitfmt\" useThousandsSeparator=\"true\" units=\"auto\" unitSymbols=\"[,K,M,G,T]\" divisor=\"1000\" rounding=\"none\" /><DateFormatter id=\"dateFmt\" formatString=\"YYYY&#x2F;MM&#x2F;DD\" /><SeriesInterpolate id=\"si\" /><SeriesSlide id=\"ss\" direction=\"right\" /><Column2DChart showDataTips=\"true\" columnWidthRatio=\"0.45\" columnWidthMinRatio=\"1\" _cType=\"Column2DChart\"><horizontalAxis><CategoryAxis id=\"hAxis\" categoryField=\"종류\" formatter=\"\" /></horizontalAxis><verticalAxis><LinearAxis id=\"vAxis\" formatter=\"{unitfmt}\" minimum=\"NaN\" maximum=\"NaN\" interval=\"NaN\" /></verticalAxis><series><Column2DSet type=\"stacked\"><series><Column2DSeries itemRenderer=\"BoxItemRenderer\" labelPosition=\"none\" yField=\"L\" displayName=\"L\" showDataEffect=\"\" color=\"#808080\" _nodeName=\"Column2DSeries\" formatter=\"{unitfmt}\"><fills><SolidColor color=\"#86c1e0\" /></fills><stroke><Stroke color=\"#86c1e0\" weight=\"2\" alpha=\"1\" /></stroke></Column2DSeries><Column2DSeries itemRenderer=\"BoxItemRenderer\" labelPosition=\"none\" yField=\"M\" displayName=\"M\" showDataEffect=\"\" color=\"#808080\" _nodeName=\"Column2DSeries\" formatter=\"{unitfmt}\"><fills><SolidColor color=\"#ffb808\" /></fills><stroke><Stroke color=\"#ffb808\" weight=\"2\" alpha=\"1\" /></stroke></Column2DSeries><Column2DSeries itemRenderer=\"BoxItemRenderer\" labelPosition=\"none\" yField=\"H\" displayName=\"H\" showDataEffect=\"\" color=\"#808080\" _nodeName=\"Column2DSeries\" formatter=\"{unitfmt}\"><fills><SolidColor color=\"#ef4d4d\" /></fills><stroke><Stroke color=\"#ef4d4d\" weight=\"2\" alpha=\"1\" /></stroke></Column2DSeries></series></Column2DSet></series><horizontalAxisRenderers><Axis2DRenderer axis=\"{hAxis}\" showLine=\"true\" color=\"#808080\"><axisStroke><Stroke color=\"#d3d3d3\" alpha=\"1\" /></axisStroke></Axis2DRenderer></horizontalAxisRenderers><verticalAxisRenderers><Axis2DRenderer axis=\"{vAxis}\" showLine=\"true\" placement=\"left\" color=\"#808080\"><axisStroke><Stroke color=\"#eeeeee\" alpha=\"1\" /></axisStroke></Axis2DRenderer></verticalAxisRenderers><backgroundElements><GridLines direction=\"horizontal\" showBorderStroke=\"false\"><horizontalStroke><Stroke color=\"#a9a3ac\" alpha=\"1\" weight=\"1\" /></horizontalStroke><verticalStroke><Stroke color=\"#a9a3ac\" alpha=\"1\" weight=\"1\" /></verticalStroke><borderStroke><Stroke color=\"#eeeeee\" alpha=\"1\" weight=\"1\" /></borderStroke></GridLines></backgroundElements></Column2DChart></BIX5>",
+        "componentLayoutId": "Column-Stacked",
+        "componentLayoutJson": {
+            "BIX5": [
+                {
+                    "Options": {
+                        "Caption": {
+                            "text": "AP 균열",
+                            "color": "#333333",
+                            "textAlign": "center",
+                            "fontSize": "18",
+                            "fontFamily": "NanumGothic",
+                            "fontWeight": "bold",
+                            "paddingLeft": "0",
+                            "paddingRight": "0",
+                            "paddingTop": "0",
+                            "paddingBottom": "5",
+                            "backgroundColor": "transparent"
+                        },
+                        "SubCaption": {
+                            "text": "",
+                            "height": "1",
+                            "color": "#999999",
+                            "textAlign": "center",
+                            "fontSize": "13",
+                            "fontFamily": "",
+                            "fontWeight": "normal",
+                            "paddingLeft": "0",
+                            "paddingRight": "0",
+                            "paddingTop": "0",
+                            "paddingBottom": "0",
+                            "backgroundColor": "transparent"
+                        },
+                        "Legend": {
+                            "position": "bottom",
+                            "display": "block",
+                            "backgroundColor": "transparent",
+                            "borderStyle": "none",
+                            "hAlign": "center"
+                        }
+                    }
+                },
+                {
+                    "UnitFormatter": {
+                        "id": "unitfmt",
+                        "useThousandsSeparator": "true",
+                        "units": "auto",
+                        "unitSymbols": "[,K,M,G,T]",
+                        "divisor": "1000",
+                        "rounding": "none"
+                    }
+                },
+                {
+                    "DateFormatter": {
+                        "id": "dateFmt",
+                        "formatString": "YYYY/MM/DD"
+                    }
+                },
+                {
+                    "SeriesInterpolate": {
+                        "id": "si"
+                    }
+                },
+                {
+                    "SeriesSlide": {
+                        "id": "ss",
+                        "direction": "right"
+                    }
+                },
+                {
+                    "component": {
+                        "showDataTips": "true",
+                        "columnWidthRatio": 0.45,
+                        "columnWidthMinRatio": "1",
+                        "horizontalAxis": {
+                            "CategoryAxis": {
+                                "id": "hAxis",
+                                "categoryField": "종류",
+                                "formatter": ""
+                            }
+                        },
+                        "verticalAxis": {
+                            "LinearAxis": {
+                                "id": "vAxis",
+                                "formatter": "{unitfmt}",
+                                "minimum": "NaN",
+                                "maximum": "NaN",
+                                "interval": "NaN"
+                            }
+                        },
+                        "series": [
+                            {
+                                "Column2DSet": {
+                                    "type": "stacked",
+                                    "series": [
+                                        {
+                                            "Column2DSeries": {
+                                                "itemRenderer": "BoxItemRenderer",
+                                                "labelPosition": "none",
+                                                "yField": "L",
+                                                "displayName": "L",
+                                                "showDataEffect": "",
+                                                "color": "#808080",
+                                                "fills": [
+                                                    {
+                                                        "SolidColor": {
+                                                            "color": "#86c1e0"
+                                                        }
+                                                    }
+                                                ],
+                                                "stroke": {
+                                                    "Stroke": {
+                                                        "color": "#86c1e0",
+                                                        "weight": "2",
+                                                        "alpha": "1"
+                                                    }
+                                                },
+                                                "_nodeName": "Column2DSeries",
+                                                "formatter": "{unitfmt}"
+                                            }
+                                        },
+                                        {
+                                            "Column2DSeries": {
+                                                "itemRenderer": "BoxItemRenderer",
+                                                "labelPosition": "none",
+                                                "yField": "M",
+                                                "displayName": "M",
+                                                "showDataEffect": "",
+                                                "color": "#808080",
+                                                "fills": [
+                                                    {
+                                                        "SolidColor": {
+                                                            "color": "#ffb808"
+                                                        }
+                                                    }
+                                                ],
+                                                "stroke": {
+                                                    "Stroke": {
+                                                        "color": "#ffb808",
+                                                        "weight": "2",
+                                                        "alpha": "1"
+                                                    }
+                                                },
+                                                "_nodeName": "Column2DSeries",
+                                                "formatter": "{unitfmt}"
+                                            }
+                                        },
+                                        {
+                                            "Column2DSeries": {
+                                                "itemRenderer": "BoxItemRenderer",
+                                                "labelPosition": "none",
+                                                "yField": "H",
+                                                "displayName": "H",
+                                                "showDataEffect": "",
+                                                "color": "#808080",
+                                                "fills": [
+                                                    {
+                                                        "SolidColor": {
+                                                            "color": "#ef4d4d"
+                                                        }
+                                                    }
+                                                ],
+                                                "stroke": {
+                                                    "Stroke": {
+                                                        "color": "#ef4d4d",
+                                                        "weight": "2",
+                                                        "alpha": "1"
+                                                    }
+                                                },
+                                                "_nodeName": "Column2DSeries",
+                                                "formatter": "{unitfmt}"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "horizontalAxisRenderers": [
+                            {
+                                "Axis2DRenderer": {
+                                    "axis": "{hAxis}",
+                                    "showLine": "true",
+                                    "color": "#808080",
+                                    "axisStroke": {
+                                        "Stroke": {
+                                            "color": "#d3d3d3",
+                                            "alpha": "1"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "verticalAxisRenderers": [
+                            {
+                                "Axis2DRenderer": {
+                                    "axis": "{vAxis}",
+                                    "showLine": "true",
+                                    "placement": "left",
+                                    "color": "#808080",
+                                    "axisStroke": {
+                                        "Stroke": {
+                                            "color": "#eeeeee",
+                                            "alpha": "1"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "backgroundElements": [
+                            {
+                                "GridLines": {
+                                    "direction": "horizontal",
+                                    "showBorderStroke": "false",
+                                    "horizontalStroke": {
+                                        "Stroke": {
+                                            "color": "#a9a3ac",
+                                            "alpha": 1,
+                                            "weight": "1"
+                                        }
+                                    },
+                                    "verticalStroke": {
+                                        "Stroke": {
+                                            "color": "#a9a3ac",
+                                            "alpha": 1,
+                                            "weight": "1"
+                                        }
+                                    },
+                                    "borderStroke": {
+                                        "Stroke": {
+                                            "color": "#eeeeee",
+                                            "alpha": "1",
+                                            "weight": "1"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "_cType": "Column2DChart"
+                    }
+                },
+                {
+                    "_attr": {
+                        "backgroundColor": "transparent",
+                        "alpha": "1",
+                        "fontSize": 14,
+                        "padding": 2
+                    }
+                }
+            ]
+        },
+        "componentLayoutType": "column",
+        "bindingSource": "4afa1720e5a0ce3886603c34b3820712",
+        "referenceSources": []
+    },
+    "exportType": "widget"
+}
