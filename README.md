@@ -1,5 +1,10 @@
 # dashboard-bix5-layout2
 ## [사이트](https://dashboard-bix5-layout2.netlify.app/)
+###  ~~ version2. 그리드 클릭 -> 맵 연동 완료~~
+### TODO : 차트 클릭 -> 맵 | 맵 클릭 -> 그리드 |
+
+
+
 ### 1 .분석할 csv를 csv_transform.py 를 이용해 전처리후 대시보드에 연결하여 사용
 - 조사명 + "preprocessed.csv' 파일과 ap.json 파일을 bix5 데이터셋에 추가하여 사용한다 (원본 csv의 포멧이 달라지면 해당 python 코드를 약간 수정하여 전처리가 올바르게 되도록 변경하여야 함)
 
