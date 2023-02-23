@@ -1,6 +1,6 @@
 # dashboard-bix5-layout2
 ## [사이트](https://dashboard-bix5-layout2.netlify.app/)
-###  ~~ version2. 그리드 클릭 -> 맵 연동 완료~~
+###  ~~version2. 그리드 클릭 -> 맵 연동 완료~~
 ### TODO : 차트 클릭 -> 맵 | 맵 클릭 -> 그리드 |
 
 
