@@ -18,9 +18,11 @@
 
 ### 대시보드는 HTML 내 IFRAME 에서 생성되므로, IFRAME <-> 부모 DOM 간 통신을 해야 위젯 <-> 카카오 맵 연동이 가능함.
 - bix5 내부 소스코드에서 다음 함수를 이용하여 부모 프레임에 msg를 전송할 수 있음.
--     window.parent.postMessage(msg, '*')
+```
+window.parent.postMessage(msg, '*')
+```
 - 부모 프레임에선 이 함수를 이용해 msg를 받아 사용 가능
-- ```JavaScript
+ ```JavaScript
    window.addEventListener('message', (eventObj) => {
     // 사용자 함수(eventObj.data)
    }, false);
