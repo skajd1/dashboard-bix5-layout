@@ -17,7 +17,7 @@
 <br>
 
 ### 대시보드는 HTML 내 IFRAME 에서 생성되므로, IFRAME <-> 부모 DOM 간 통신을 해야 위젯 <-> 카카오 맵 연동이 가능함.
-- bix5 내부 소스코드에서 다음 함수를 이용하여 부모 프레임에 msg를 전송할 수 있음.
+- bix5 내부 소스코드에서 다음 함수를 이용하여 자식 프레임 -> 부모 프레임으로 msg를 전송할 수 있음.
 ```
 window.parent.postMessage(msg, '*')
 ```
@@ -27,6 +27,16 @@ window.parent.postMessage(msg, '*')
     // 사용자 함수(eventObj.data)
    }, false);
    ```
+   
+### 반대의 경우 ( 부모 -> 자식 )
+- 부모 프레임
+```
+child.contentWindow.postMessage( msg, '*' );
+```
+- 자식 프레임
+```
+window.addEventListener( 'message', cb() );
+```
 ### kakaomap.js 내에 selectData 함수에서 차트, 그리드, 혹은 맵 내의 마커 클릭 시 이미지 변경이 가능함
 - 초기 설정 시, 이미지가 있는 폴더를 설정하여 경로 설정 하게 
 ```JavaScript
