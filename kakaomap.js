@@ -216,14 +216,10 @@ function selectData(selectedRow) {
 
     let index = selectedRow;
     let position = new kakao.maps.LatLng(parseFloat(csv_data[index].latlng[0]), parseFloat(csv_data[index].latlng[1]))
-    //let status_img_src = './가산로(2103)_하_2_2/가산로(2103)_하_2_2_도로현황/D810/Camera1/0/' + csv_data[index].status_img
-    //let surf_img_src = './가산로(2103)_하_2_2/가산로(2103)_하_2_2_U_net-result/0/' + csv_data[index].surf_img
-    //let keys = ['AP_L', 'AP_T', 'AP_CJ', 'AP_AC', 'AP_P', 'AP_H'];
+
     deleteIw(infoWindows)
     // 선택된 행을 다시 눌렀을 때
     if (selected === index) {
-        // chart 부분
-
         if (map.getLevel() <= 4) {
             zoomOut()
         }
@@ -234,14 +230,16 @@ function selectData(selectedRow) {
     //    document.getElementById("status_img").src = status_img_src; // 도로 현황 이미지 변경
     //    document.getElementById("surf_img").src = surf_img_src; // 도로 표면 이미지 변경
     // 선택시 chart 생성하는 for문
-
     if (map.getLevel() > 4) {
         zoomIn()
     }
     map.setCenter(position) // 선택한 마커 중심으로 맵 이동
     selected = index
 }
-
+//let msg
 window.addEventListener('message', (eventObj) => {
-    selectData(eventObj.data.detail)
+    //msg = eventObj
+    //console.log(eventObj.data.index)
+    selectData(eventObj.data.index)
 }, false);
+
