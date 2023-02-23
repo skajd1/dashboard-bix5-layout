@@ -33,7 +33,17 @@ window.parent.postMessage(msg, '*')
   document.getElementById("status_img").src = status_img_src; // 도로 현황 이미지 변경
   document.getElementById("surf_img").src = surf_img_src; // 도로 표면 이미지 변경
   ```
-  
+### 차트 내 이벤트를 위젯 간 연동 시 다음과 같이 차트 클래스 내에 이벤트 발생 시 호출되는 함수를 설정하고, 스크립트에서 그 함수를 정의한다.
+```html
+< ... eventFunction = "@<functionName>" ... >
+```
+- 예시
+```html
+ <annotationElements>
+      <CrossRangeZoomer enableZooming="true" rangeUpdateJsFunction="@widget.rangeFunc"/>
+ </annotationElements>
+```
+
 
 
 ### 1 .분석할 csv를 csv_transform.py 를 이용해 전처리후 대시보드에 연결하여 사용
