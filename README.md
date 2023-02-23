@@ -39,7 +39,7 @@ window.parent.postMessage(msg, '*')
 ### 1 .분석할 csv를 csv_transform.py 를 이용해 전처리후 대시보드에 연결하여 사용
 - 조사명 + "preprocessed.csv' 파일과 ap.json 파일을 bix5 데이터셋에 추가하여 사용한다 (원본 csv의 포멧이 달라지면 해당 python 코드를 약간 수정하여 전처리가 올바르게 되도록 변경하여야 함)
 
-### 2. widget 폴더 내에 dashboard json 혹은 widget json을 bix5에 업로드하여 배치 혹은 스타일 등을 임의로 수정 후 사용.
+### 2. widget 폴더 내에 dashboard json을 bix5에 업로드하여 위젯 배치 혹은 스타일 등을 임의로 수정 후 사용.
 - 대시보드 EDIT 창에서 개발자 모드 허용 후, 코드 수정에서 스크립트 및 레이아웃을 수정 가능하다.
 
 
