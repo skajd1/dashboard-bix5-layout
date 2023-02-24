@@ -27,6 +27,7 @@ let marker_red = "./redcircle.png";
 let marker_yellow = "./yellowcircle.png";
 let marker_blue = './bluecircle.png';
 
+let img_src_folder = ''
 let fileInput = document.getElementById("upload")
 let selected = -1
 let invest_id
@@ -200,8 +201,10 @@ function selectData(selectedRow) {
         return
     }
     infoWindows[index].open(map, marker[index]); // 클릭할 때 인포 윈도우 생성
-    //document.getElementById("status_img").src = status_img_src; // 도로 현황 이미지 변경
-    //document.getElementById("surf_img").src = surf_img_src; // 도로 표면 이미지 변경
+    
+    // img_src_folder = 조사명 + "..."
+    //document.getElementById("status_img").src = img_src_folder + csv_data[selectedRow][status_img]; // 도로 현황 이미지 변경
+    //document.getElementById("surf_img").src = img_src_folder + csv_data[selectedRow][surf_img]; // 도로 표면 이미지 변경
     
     if (map.getLevel() > 4) {
         zoomIn()
@@ -226,7 +229,7 @@ fileInput.addEventListener('change', () =>{
         for (let i = 1; i < allRow.length - 1; i++) {
             let column = allRow[i].split(",")
             csv_data.push({
-                dist: column[0], SPI_1: column[14], SPI_2: column[15], SPI_3 : column[16] , latlng : [column[7], column[8]], note : column[35]
+                dist: column[0], SPI_1: column[14], SPI_2: column[15], SPI_3 : column[16] , latlng : [column[7], column[8]], note : column[35], status_img : column[36], surf_img : column[37]
             })
         }
         row = allRow[1].split(',')
