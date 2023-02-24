@@ -52,11 +52,11 @@ child.contentWindow.postMessage( msg, '*' );
 window.addEventListener( 'message', cb() );
 ```
 ### kakaomap.js 내에 selectData 함수에서 차트, 그리드, 혹은 맵 내의 마커 클릭 시 이미지 변경이 가능함
-- 초기 설정 시, 이미지가 있는 폴더를 설정하여 경로 설정 하게 
 ```JavaScript
-  document.getElementById("status_img").src = status_img_src; // 도로 현황 이미지 변경
-  document.getElementById("surf_img").src = surf_img_src; // 도로 표면 이미지 변경
-  ```
+   img_src_folder = 조사명 + "..."
+   document.getElementById("status_img").src = img_src_folder + csv_data[selectedRow][status_img]; // 도로 현황 이미지 변경
+   document.getElementById("surf_img").src = img_src_folder + csv_data[selectedRow][surf_img]; // 도로 표면 이미지 변경
+```
 ### 차트 내 이벤트를 위젯 간 연동 시 다음과 같이 차트 클래스 내에 이벤트 발생 시 호출되는 함수를 설정하고, 스크립트에서 그 함수를 정의한다.
 ```html
 < ... eventFunction = "@<functionName>" ... >
