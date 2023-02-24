@@ -1,8 +1,9 @@
 # dashboard-bix5-layout2
 ## [사이트](https://dashboard-bix5-layout2.netlify.app/)
 
-![image](https://user-images.githubusercontent.com/86655177/220827586-7828d152-8cd8-4737-a8ef-520bf2cb5447.png)
-![image](https://user-images.githubusercontent.com/86655177/220827606-180bc39c-ec87-40c9-9757-25149cde62d4.png)
+![image](https://user-images.githubusercontent.com/86655177/221071035-9a665163-f3b5-4d0b-9e8f-1147f8c5dc11.png)
+![image](https://user-images.githubusercontent.com/86655177/221071067-4a76bb28-6b65-494b-ae6a-c8d94ccb79e1.png)
+
 
 
 ### 1 .분석할 csv를 csv_transform.py 를 이용해 전처리후 대시보드에 연결하여 사용
