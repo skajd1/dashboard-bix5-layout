@@ -26,7 +26,7 @@ let marker_orange = "./orangecircle.png";
 let marker_red = "./redcircle.png";
 let marker_yellow = "./yellowcircle.png";
 let marker_blue = './bluecircle.png';
-let file = "경인로(51)_상_2_preprocessed.csv"
+
 let fileInput = document.getElementById("upload")
 let selected = -1
 let invest_id
@@ -38,8 +38,8 @@ let chart = {}
 
 let mapContainer = document.getElementById('map'), // 지도를 표시할 div  
     mapOption = {
-        center: new kakao.maps.LatLng(37, 125), // 지도의 중심좌표
-        level: 7 // 지도의 확대 레벨
+        center: new kakao.maps.LatLng(37.29157930905743, 126.82897670093509), // 지도의 중심좌표
+        level: 5 // 지도의 확대 레벨
     };
 
 let map = new kakao.maps.Map(mapContainer, mapOption);
@@ -235,6 +235,7 @@ fileInput.addEventListener('change', () =>{
         
         let position = new kakao.maps.LatLng(parseFloat(csv_data[parseInt(csv_data.length/2)].latlng[0]), parseFloat(csv_data[parseInt(csv_data.length/2)].latlng[1]))
         // 여기에 함수 추가.
+        map.setLevel(7)
         map.setCenter(position)
         createIw();
         setMarkers('radio-all');
