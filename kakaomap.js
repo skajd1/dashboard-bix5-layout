@@ -26,6 +26,8 @@ let marker_orange = "./orangecircle.png";
 let marker_red = "./redcircle.png";
 let marker_yellow = "./yellowcircle.png";
 let marker_blue = './bluecircle.png';
+let file = "경인로(51)_상_2_preprocessed.csv"
+let fileInput = document.getElementById("upload")
 let selected = -1
 let invest_id
 let invest_date
@@ -142,35 +144,6 @@ function deleteMarkers(marker) {
     }
 
 }
-// ajax call
-$(function () {
-    $.ajax({
-        url: '경인로(51)_상_2_preprocessed.csv',
-        dataType: "text",
-        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        success: function (data) {
-            let allRow = data.split("\n");
-            for (let i = 1; i < allRow.length - 1; i++) {
-                let column = allRow[i].split(",")
-                csv_data.push({
-                    dist: column[0], SPI_1: column[14], SPI_2: column[15], SPI_3 : column[16] , latlng : [column[7], column[8]], note : column[35]
-                })
-            }
-            row = allRow[1].split(',')
-            invest_id = row[row.length-2]
-            invest_date = row[row.length-1]
-            
-            let position = new kakao.maps.LatLng(parseFloat(csv_data[parseInt(csv_data.length/2)].latlng[0]), parseFloat(csv_data[parseInt(csv_data.length/2)].latlng[1]))
-            // 여기에 함수 추가.
-            map.setCenter(position)
-            createIw();
-            setMarkers('radio-all');
-            setText(invest_id,'invest-id')
-            setText(invest_date,'invest-date')
-
-        }
-    });
-});
 
 $(function () {
     $("#slider-range").slider({
@@ -212,7 +185,7 @@ function setText(value, ID) {
 
 function selectData(selectedRow) {
     //기존 선택되었던 컬럼 선택 해제,
-    //인포윈도 , 사진 변경, 해당 열 강조, 차트 값 변경
+    //인포윈도 , 사진 변경
 
     let index = selectedRow;
     let position = new kakao.maps.LatLng(parseFloat(csv_data[index].latlng[0]), parseFloat(csv_data[index].latlng[1]))
@@ -227,9 +200,9 @@ function selectData(selectedRow) {
         return
     }
     infoWindows[index].open(map, marker[index]); // 클릭할 때 인포 윈도우 생성
-    //    document.getElementById("status_img").src = status_img_src; // 도로 현황 이미지 변경
-    //    document.getElementById("surf_img").src = surf_img_src; // 도로 표면 이미지 변경
-    // 선택시 chart 생성하는 for문
+    //document.getElementById("status_img").src = status_img_src; // 도로 현황 이미지 변경
+    //document.getElementById("surf_img").src = surf_img_src; // 도로 표면 이미지 변경
+    
     if (map.getLevel() > 4) {
         zoomIn()
     }
@@ -242,4 +215,34 @@ window.addEventListener('message', (eventObj) => {
     //console.log(eventObj.data.index)
     selectData(eventObj.data.index)
 }, false);
+
+fileInput.addEventListener('change', () =>{
+    fr = new FileReader()
+    fr.readAsText(fileInput.files[0]);
+    
+    fr.onload = () => {
+        let allRow = fr.result.split("\n");
+        
+        for (let i = 1; i < allRow.length - 1; i++) {
+            let column = allRow[i].split(",")
+            csv_data.push({
+                dist: column[0], SPI_1: column[14], SPI_2: column[15], SPI_3 : column[16] , latlng : [column[7], column[8]], note : column[35]
+            })
+        }
+        row = allRow[1].split(',')
+        invest_id = row[row.length-2]
+        invest_date = row[row.length-1]
+        
+        let position = new kakao.maps.LatLng(parseFloat(csv_data[parseInt(csv_data.length/2)].latlng[0]), parseFloat(csv_data[parseInt(csv_data.length/2)].latlng[1]))
+        // 여기에 함수 추가.
+        map.setCenter(position)
+        createIw();
+        setMarkers('radio-all');
+        setText(invest_id,'invest-id')
+        setText(invest_date,'invest-date')
+    }
+    }
+)
+
+
 

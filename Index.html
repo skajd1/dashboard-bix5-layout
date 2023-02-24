@@ -45,7 +45,7 @@
         <div class='selectbox flex flex-col' id="select">
             <form method="get">
                 <fieldset class='radiobox'>
-                    <div class ="mb-2 text-xl font-semibold">도로상태유형</div>
+                    <div class ="mb-2text-xl font-semibold">도로상태유형</div>
                     <input class="form-check-input" type="radio" id="radio-all" name="select_form" value="All" checked
                         onclick='setMarkers(event.target.id)'>
                     <label for="radio-all"> 전체 </label><br>
@@ -108,6 +108,8 @@
             <div class = 'mx-auto text-black font-bold text-lg'>
                 <div>조사명 : </div><span class = "mt-2" id = 'invest-id'></span>
                 <div>조사 일자 : </div><span class = "mt-2" id = 'invest-date'></span>
+                <label for = "upload" class = "p-3 cursor-pointer bg-gray-700 hover:bg-gray-500 text-white font-bold rounded-lg mt-12"> 데이터 업로드 </label>
+                <input id = "upload" type = 'file' class = "hidden"/>
                 
             </div>
         </div>
