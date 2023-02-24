@@ -5,6 +5,18 @@
 ![image](https://user-images.githubusercontent.com/86655177/220827606-180bc39c-ec87-40c9-9757-25149cde62d4.png)
 
 
+### 1 .분석할 csv를 csv_transform.py 를 이용해 전처리후 대시보드에 연결하여 사용
+- 조사명 + "preprocessed.csv' 파일과 ap.json 파일을 bix5 데이터셋에 추가하여 사용한다 (원본 csv의 포멧이 달라지면 해당 python 코드를 약간 수정하여 전처리가 올바르게 되도록 변경하여야 함)
+
+### 2. widget 폴더 내에 dashboard json을 bix5에 업로드하여 위젯 배치 혹은 스타일 등을 임의로 수정 후 사용.
+- 대시보드 EDIT 창에서 개발자 모드 허용 후, 코드 수정에서 스크립트 및 레이아웃을 수정 가능하다.
+
+### 3. 연결한 데이터를 위젯에 드랍하여 대시보드 제작 ( 드랍 허용으로 설정 해야 함 )
+
+### 4. 사이트 내에서 '데이터 업로드' 버튼을 통해 전처리된 csv 파일을 업로드 하여 사용.
+
+
+
 
 ###  ~~version2. 그리드 클릭 -> 맵 연동 완료~~
 ### TODO
@@ -56,11 +68,6 @@ window.addEventListener( 'message', cb() );
 
 
 
-### 1 .분석할 csv를 csv_transform.py 를 이용해 전처리후 대시보드에 연결하여 사용
-- 조사명 + "preprocessed.csv' 파일과 ap.json 파일을 bix5 데이터셋에 추가하여 사용한다 (원본 csv의 포멧이 달라지면 해당 python 코드를 약간 수정하여 전처리가 올바르게 되도록 변경하여야 함)
-
-### 2. widget 폴더 내에 dashboard json을 bix5에 업로드하여 위젯 배치 혹은 스타일 등을 임의로 수정 후 사용.
-- 대시보드 EDIT 창에서 개발자 모드 허용 후, 코드 수정에서 스크립트 및 레이아웃을 수정 가능하다.
 
 
 
