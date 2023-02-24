@@ -105,11 +105,12 @@
                 </div>
             </div>
 
-            <div class = 'mx-auto text-black font-bold text-lg'>
-                <div>조사명 : </div><span class = "mt-2" id = 'invest-id'></span>
-                <div>조사 일자 : </div><span class = "mt-2" id = 'invest-date'></span>
-                <label for = "upload" class = "p-3 cursor-pointer bg-gray-700 hover:bg-gray-500 text-white font-bold rounded-lg mt-12"> 데이터 업로드 </label>
+            <div class = 'flex flex-col mx-auto text-black font-bold text-lg'>
+                <div class="ml-2 ">조사명 : </div><span class="ml-2" id = 'invest-id'></span>
+                <div class="ml-2 ">조사 일자 : </div><span class="ml-2" id = 'invest-date'></span>
+                <label for = "upload" class = "mx-auto p-3 cursor-pointer bg-gray-700 hover:bg-gray-500 text-white font-bold rounded-lg mt-12"> 데이터 업로드 </label>
                 <input id = "upload" type = 'file' class = "hidden"/>
+                <div class = "mx-2 mt-2 text-gray-400 text-sm">* 전처리 된 csv 파일을 업로드 해야합니다.</div>
                 
             </div>
         </div>
