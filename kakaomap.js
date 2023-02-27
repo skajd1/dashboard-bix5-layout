@@ -54,14 +54,14 @@ function zoomIn() {
     // 현재 지도의 레벨을 얻어옵니다
     var level = map.getLevel();
 
-    // 지도를 1레벨 내립니다
+    
     map.setLevel(level - 2);
 }
 function zoomOut() {
     // 현재 지도의 레벨을 얻어옵니다
     var level = map.getLevel();
 
-    // 지도를 1레벨 내립니다 (지도가 확대됩니다)
+    
     map.setLevel(level + 2);
 
 }
@@ -182,8 +182,6 @@ function setText(value, ID) {
     document.getElementById(ID).innerText = value
 }
 
-
-
 function selectData(selectedRow) {
     //기존 선택되었던 컬럼 선택 해제,
     //인포윈도 , 사진 변경
@@ -195,7 +193,7 @@ function selectData(selectedRow) {
     // 선택된 행을 다시 눌렀을 때
     if (selected === index) {
         if (map.getLevel() <= 4) {
-            zoomOut()
+            map.setLevel(7)
         }
         selected = -1
         return
@@ -207,10 +205,12 @@ function selectData(selectedRow) {
     //document.getElementById("surf_img").src = img_src_folder + csv_data[selectedRow][surf_img]; // 도로 표면 이미지 변경
     
     if (map.getLevel() > 4) {
-        zoomIn()
+        map.setLevel(3)
     }
     map.setCenter(position) // 선택한 마커 중심으로 맵 이동
     selected = index
+
+    sendToChild({ rowindex: index })
 }
 //let msg
 window.addEventListener('message', (eventObj) => {
@@ -218,6 +218,13 @@ window.addEventListener('message', (eventObj) => {
     //console.log(eventObj.data.index)
     selectData(eventObj.data.index)
 }, false);
+
+
+function sendToChild(msg) {
+    child = document.getElementById('bix5')
+    child.contentWindow.postMessage(msg, '*');
+}
+
 
 fileInput.addEventListener('change', () =>{
     fr = new FileReader()
