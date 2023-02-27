@@ -146,19 +146,7 @@ function deleteMarkers(marker) {
 
 }
 
-$(function () {
-    $("#slider-range").slider({
-        range: true,
-        min: 0,
-        max: 500,
-        values: [0, 500],
-        slide: function (event, ui) {
-            $("#amount").val(ui.values[0] + " - " + ui.values[1]);
-        }
-    });
-    $("#amount").val($("#slider-range").slider("values", 0) +
-        " - " + $("#slider-range").slider("values", 1));
-});
+
 
 
 function getSum(data_array) {
@@ -252,8 +240,7 @@ fileInput.addEventListener('change', () =>{
         setText(invest_id,'invest-id')
         setText(invest_date,'invest-date')
     }
-    }
-)
+})
 
 
 
